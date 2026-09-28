@@ -12,7 +12,7 @@ export interface FormState {
 
 const BEST_TIMES: BestTime[] = ["SUNSET", "MORNING", "AFTERNOON", "NIGHT", "ANYTIME"];
 
-/** Double verrou : contrôle applicatif ici, RLS `is_admin()` côté base. */
+/** Double verrou : contrôle applicatif ici, RLS `guide_is_admin()` côté base. */
 async function requireAdmin() {
   const supabase = await createClient();
   const {

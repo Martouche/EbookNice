@@ -2,6 +2,9 @@
 --  Nice & Côte d'Azur — Le Guide des Locaux
 --  Schéma complet : à exécuter tel quel dans Supabase > SQL Editor.
 --  Idempotent : peut être relancé sans casser l'existant.
+--  Base partagée : fonctions et trigger préfixés `guide_` pour ne pas écraser
+--  ceux du site (ex. public.is_admin). Les `drop policy` ne visent que les
+--  tables du guide ; admin_emails / services / projects ne sont pas touchées.
 -- ============================================================================
 
 create extension if not exists "pgcrypto";
@@ -97,7 +100,7 @@ create index if not exists itineraries_user_idx on public.custom_itineraries (us
 -- ----------------------------------------------------------------------------
 
 -- SECURITY DEFINER : évite la récursion RLS quand une policy interroge profiles.
-create or replace function public.is_admin()
+create or replace function public.guide_is_admin()
 returns boolean
 language sql
 stable
@@ -110,7 +113,7 @@ as $$
   );
 $$;
 
-create or replace function public.handle_new_user()
+create or replace function public.guide_handle_new_user()
 returns trigger
 language plpgsql
 security definer
@@ -129,10 +132,17 @@ begin
 end;
 $$;
 
-drop trigger if exists on_auth_user_created on auth.users;
-create trigger on_auth_user_created
+drop trigger if exists guide_on_auth_user_created on auth.users;
+create trigger guide_on_auth_user_created
   after insert on auth.users
-  for each row execute function public.handle_new_user();
+  for each row execute function public.guide_handle_new_user();
+
+-- Rattrapage : profils pour les comptes créés avant ce script (ex. admin du site).
+insert into public.profiles (id, email, full_name, avatar_url)
+select id, email, raw_user_meta_data ->> 'full_name', raw_user_meta_data ->> 'avatar_url'
+from auth.users
+where email is not null
+on conflict (id) do nothing;
 
 -- ----------------------------------------------------------------------------
 -- 4. Row Level Security
@@ -148,7 +158,7 @@ alter table public.custom_itineraries enable row level security;
 drop policy if exists "profiles_select_own_or_admin" on public.profiles;
 create policy "profiles_select_own_or_admin" on public.profiles
   for select to authenticated
-  using (id = auth.uid() or public.is_admin());
+  using (id = auth.uid() or public.guide_is_admin());
 
 drop policy if exists "profiles_update_own" on public.profiles;
 create policy "profiles_update_own" on public.profiles
@@ -158,7 +168,7 @@ create policy "profiles_update_own" on public.profiles
 drop policy if exists "profiles_admin_update" on public.profiles;
 create policy "profiles_admin_update" on public.profiles
   for update to authenticated
-  using (public.is_admin()) with check (public.is_admin());
+  using (public.guide_is_admin()) with check (public.guide_is_admin());
 
 -- Empêche l'auto-promotion : un utilisateur ne peut modifier que nom & avatar.
 revoke update on public.profiles from authenticated;
@@ -171,7 +181,7 @@ create policy "chapters_public_read" on public.chapters
 drop policy if exists "chapters_admin_write" on public.chapters;
 create policy "chapters_admin_write" on public.chapters
   for all to authenticated
-  using (public.is_admin()) with check (public.is_admin());
+  using (public.guide_is_admin()) with check (public.guide_is_admin());
 
 drop policy if exists "categories_public_read" on public.categories;
 create policy "categories_public_read" on public.categories
@@ -179,7 +189,7 @@ create policy "categories_public_read" on public.categories
 drop policy if exists "categories_admin_write" on public.categories;
 create policy "categories_admin_write" on public.categories
   for all to authenticated
-  using (public.is_admin()) with check (public.is_admin());
+  using (public.guide_is_admin()) with check (public.guide_is_admin());
 
 drop policy if exists "places_public_read" on public.places;
 create policy "places_public_read" on public.places
@@ -187,7 +197,7 @@ create policy "places_public_read" on public.places
 drop policy if exists "places_admin_write" on public.places;
 create policy "places_admin_write" on public.places
   for all to authenticated
-  using (public.is_admin()) with check (public.is_admin());
+  using (public.guide_is_admin()) with check (public.guide_is_admin());
 
 -- favorites : strictement privés.
 drop policy if exists "favorites_own" on public.favorites;
@@ -227,17 +237,17 @@ create policy "guide_assets_public_read" on storage.objects
 drop policy if exists "guide_assets_admin_insert" on storage.objects;
 create policy "guide_assets_admin_insert" on storage.objects
   for insert to authenticated
-  with check (bucket_id in ('places-images', 'gpx-tracks') and public.is_admin());
+  with check (bucket_id in ('places-images', 'gpx-tracks') and public.guide_is_admin());
 
 drop policy if exists "guide_assets_admin_update" on storage.objects;
 create policy "guide_assets_admin_update" on storage.objects
   for update to authenticated
-  using (bucket_id in ('places-images', 'gpx-tracks') and public.is_admin());
+  using (bucket_id in ('places-images', 'gpx-tracks') and public.guide_is_admin());
 
 drop policy if exists "guide_assets_admin_delete" on storage.objects;
 create policy "guide_assets_admin_delete" on storage.objects
   for delete to authenticated
-  using (bucket_id in ('places-images', 'gpx-tracks') and public.is_admin());
+  using (bucket_id in ('places-images', 'gpx-tracks') and public.guide_is_admin());
 
 -- ----------------------------------------------------------------------------
 -- 6. Données de départ (catégories, chapitres, spots)
