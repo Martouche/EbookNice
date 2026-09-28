@@ -15,20 +15,37 @@ export type MapPlace = Pick<PlaceWithRelations, "id" | "title" | "lat" | "lng" |
 interface PlacesMapProps {
   places: MapPlace[];
   selectedId?: string | null;
-  onSelect?: (id: string) => void;
+  onSelect?: (id: string | null) => void;
+  /** Survol synchronisé avec la liste (desktop). */
+  hoveredId?: string | null;
+  onHover?: (id: string | null) => void;
   /** Numéros d'étape à la place des icônes + tracé pointillé (itinéraires). */
   route?: boolean;
+  /** Marge de cadrage (px) — ex. panneau latéral ou barre de filtres superposés. */
+  padding?: { top?: number; bottom?: number; left?: number; right?: number };
+  /** Décalage vertical (px) du lieu sélectionné, pour le garder visible au-dessus d'un drawer. */
+  focusOffsetY?: number;
   className?: string;
 }
 
 const ROUTE_ID = "guide-route";
 
-export function PlacesMap({ places, selectedId, onSelect, route, className }: PlacesMapProps) {
+export function PlacesMap({
+  places,
+  selectedId,
+  onSelect,
+  hoveredId,
+  onHover,
+  route,
+  padding,
+  focusOffsetY = 0,
+  className,
+}: PlacesMapProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const instance = useMaplibre(containerRef);
   const markers = useRef(new Map<string, { marker: Marker; root: Root }>());
-  const onSelectRef = useRef(onSelect);
-  onSelectRef.current = onSelect;
+  const callbacks = useRef({ onSelect, onHover });
+  callbacks.current = { onSelect, onHover };
 
   // Synchronise les marqueurs avec la liste (filtrée) de lieux.
   useEffect(() => {
@@ -50,38 +67,55 @@ export function PlacesMap({ places, selectedId, onSelect, route, className }: Pl
         const el = document.createElement("div");
         el.addEventListener("click", (e) => {
           e.stopPropagation();
-          onSelectRef.current?.(place.id);
+          callbacks.current.onSelect?.(place.id);
         });
+        el.addEventListener("mouseenter", () => callbacks.current.onHover?.(place.id));
+        el.addEventListener("mouseleave", () => callbacks.current.onHover?.(null));
         const marker = new lib.Marker({ element: el, anchor: "center" }).setLngLat([place.lng, place.lat]).addTo(map);
         entry = { marker, root: createRoot(el) };
         current.set(place.id, entry);
       }
+      const isSelected = place.id === selectedId;
+      const isHovered = place.id === hoveredId;
       entry.marker.setLngLat([place.lng, place.lat]);
-      entry.marker.getElement().style.zIndex = place.id === selectedId ? "10" : "1";
+      entry.marker.getElement().style.zIndex = isSelected ? "20" : isHovered ? "10" : "1";
       entry.root.render(
         <MarkerPin
           color={CATEGORY_COLORS[place.category?.slug ?? ""] ?? DEFAULT_CATEGORY_COLOR}
           icon={place.category?.icon}
           label={place.title}
           index={route ? index : undefined}
-          selected={place.id === selectedId}
+          selected={isSelected}
+          highlighted={isHovered}
         />,
       );
     });
-  }, [instance, places, selectedId, route]);
+  }, [instance, places, selectedId, hoveredId, route]);
+
+  // Clic sur le fond de carte : désélection.
+  useEffect(() => {
+    if (!instance) return;
+    const onClick = () => callbacks.current.onSelect?.(null);
+    instance.map.on("click", onClick);
+    return () => {
+      instance.map.off("click", onClick);
+    };
+  }, [instance]);
 
   // Cadre la carte sur l'ensemble des résultats.
+  const paddingKey = JSON.stringify(padding ?? {});
   useEffect(() => {
     if (!instance || places.length === 0) return;
     const { map, lib } = instance;
+    const pad = { top: 64, bottom: 64, left: 64, right: 64, ...(JSON.parse(paddingKey) as PlacesMapProps["padding"]) };
     if (places.length === 1) {
       map.jumpTo({ center: [places[0].lng, places[0].lat], zoom: 14 });
       return;
     }
     const bounds = new lib.LngLatBounds();
     places.forEach((p) => bounds.extend([p.lng, p.lat]));
-    map.fitBounds(bounds, { padding: 64, maxZoom: 14, duration: 500 });
-  }, [instance, places]);
+    map.fitBounds(bounds, { padding: pad, maxZoom: 14, duration: 500 });
+  }, [instance, places, paddingKey]);
 
   // Vole vers le lieu sélectionné (uniquement au changement de sélection).
   const placesRef = useRef(places);
@@ -90,8 +124,13 @@ export function PlacesMap({ places, selectedId, onSelect, route, className }: Pl
     if (!instance || !selectedId) return;
     const place = placesRef.current.find((p) => p.id === selectedId);
     if (!place) return;
-    instance.map.flyTo({ center: [place.lng, place.lat], zoom: Math.max(instance.map.getZoom(), 13.5), speed: 1.6 });
-  }, [instance, selectedId]);
+    instance.map.flyTo({
+      center: [place.lng, place.lat],
+      zoom: Math.max(instance.map.getZoom(), 13.5),
+      offset: [0, -focusOffsetY],
+      speed: 1.6,
+    });
+  }, [instance, selectedId, focusOffsetY]);
 
   // Tracé d'itinéraire, réappliqué après chaque changement de style (thème).
   useEffect(() => {

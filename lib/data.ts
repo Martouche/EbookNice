@@ -1,4 +1,5 @@
 import "server-only";
+import { cache } from "react";
 import { createClient } from "@/lib/supabase/server";
 import type { Category, Chapter, CustomItinerary, PlaceWithRelations, Profile } from "@/lib/types";
 
@@ -13,11 +14,12 @@ export async function getChapters(): Promise<Chapter[]> {
   return (data as Chapter[] | null) ?? [];
 }
 
-export async function getChapterBySlug(slug: string): Promise<Chapter | null> {
+// cache() : dédoublonne l'appel entre generateMetadata, opengraph-image et la page.
+export const getChapterBySlug = cache(async (slug: string): Promise<Chapter | null> => {
   const supabase = await createClient();
   const { data } = await supabase.from("chapters").select("*").eq("slug", slug).maybeSingle();
   return data as Chapter | null;
-}
+});
 
 export async function getCategories(): Promise<Category[]> {
   const supabase = await createClient();
@@ -37,11 +39,11 @@ export async function getPlaces(filter?: { chapterId?: string; ids?: string[] })
   return (data as PlaceWithRelations[] | null) ?? [];
 }
 
-export async function getPlaceBySlug(slug: string): Promise<PlaceWithRelations | null> {
+export const getPlaceBySlug = cache(async (slug: string): Promise<PlaceWithRelations | null> => {
   const supabase = await createClient();
   const { data } = await supabase.from("places").select(PLACE_SELECT).eq("slug", slug).maybeSingle();
   return data as PlaceWithRelations | null;
-}
+});
 
 export async function getPlaceById(id: string): Promise<PlaceWithRelations | null> {
   const supabase = await createClient();

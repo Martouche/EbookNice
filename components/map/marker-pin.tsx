@@ -7,19 +7,27 @@ export function MarkerPin({
   label,
   index,
   selected,
+  highlighted,
 }: {
   color: string;
   icon?: string | null;
   label: string;
   index?: number;
   selected: boolean;
+  /** Survol de la carte correspondante dans la liste. */
+  highlighted?: boolean;
 }) {
+  const emphasized = selected || highlighted;
   return (
     <div className="group relative flex cursor-pointer flex-col items-center">
+      {highlighted && !selected && (
+        <span aria-hidden className="absolute top-0 size-8 animate-ping rounded-full opacity-60" style={{ backgroundColor: color }} />
+      )}
       <div
         className={cn(
-          "grid place-items-center rounded-full border-2 border-white text-white shadow-[0_2px_10px_rgb(0_0_0/0.35)] transition-transform duration-150 ease-out group-hover:scale-110",
+          "relative grid place-items-center rounded-full border-2 border-white text-white shadow-[0_2px_10px_rgb(0_0_0/0.35)] transition-transform duration-150 ease-out group-hover:scale-110",
           selected ? "size-10 scale-110" : "size-8",
+          highlighted && !selected && "scale-125",
         )}
         style={{ backgroundColor: color }}
       >
@@ -32,7 +40,7 @@ export function MarkerPin({
       <span
         className={cn(
           "pointer-events-none absolute top-full mt-1 whitespace-nowrap rounded-full bg-black/80 px-2 py-0.5 text-[11px] font-medium text-white backdrop-blur",
-          selected ? "opacity-100" : "opacity-0 group-hover:opacity-100",
+          emphasized ? "opacity-100" : "opacity-0 group-hover:opacity-100",
         )}
       >
         {label}

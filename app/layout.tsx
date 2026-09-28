@@ -24,6 +24,8 @@ export const metadata: Metadata = {
   },
   description:
     "L'ebook interactif des Niçois : plages secrètes, points de vue, tables locales et randonnées de la Côte d'Azur.",
+  openGraph: { siteName: "Le Guide des Locaux", locale: "fr_FR", type: "website" },
+  twitter: { card: "summary_large_image" },
 };
 
 export const viewport: Viewport = {

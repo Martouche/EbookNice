@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { Explorer } from "@/components/explorer/explorer";
 import { getCategories, getPlaces } from "@/lib/data";
+import { parseFilters, serializeFilters } from "@/lib/filters";
 
-export const metadata: Metadata = { title: "Explorer" };
-
-const list = (value: string | string[] | undefined) =>
-  typeof value === "string" && value ? value.split(",").filter(Boolean) : [];
+export const metadata: Metadata = {
+  title: "Explorer la carte",
+  description: "Carte interactive des spots des locaux : plages, points de vue, restaurants, randonnées — filtres gratuits inclus.",
+};
 
 export default async function ExplorerPage({
   searchParams,
@@ -13,19 +14,8 @@ export default async function ExplorerPage({
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const [params, places, categories] = await Promise.all([searchParams, getPlaces(), getCategories()]);
+  const { filters, view } = parseFilters(params);
 
-  return (
-    <Explorer
-      places={places}
-      categories={categories}
-      initialView={params.vue === "carte" ? "carte" : "liste"}
-      initialFilters={{
-        q: typeof params.q === "string" ? params.q : "",
-        free: params.gratuit === "1",
-        categories: list(params.categorie),
-        prices: list(params.prix).map(Number).filter((n) => n >= 0 && n <= 4),
-        tags: list(params.tags),
-      }}
-    />
-  );
+  // Remonte l'explorer si l'URL change par navigation (lien, header) ; nos replaceState internes, eux, ne déclenchent pas de rendu serveur.
+  return <Explorer key={serializeFilters(filters, view)} places={places} categories={categories} initialFilters={filters} initialView={view} />;
 }

@@ -70,7 +70,7 @@ export function Hero({ stats }: { stats: { places: number; free: number; chapter
               </a>
             </Button>
             <Button asChild size="lg" variant="glass">
-              <Link href="/explorer?vue=carte">
+              <Link href="/explorer?view=map">
                 <Map />
                 Carte interactive
               </Link>

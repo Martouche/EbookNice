@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { BLUR_DATA_URL } from "@/lib/image";
 import { CATEGORY_COLORS, DEFAULT_CATEGORY_COLOR } from "@/lib/constants";
 import type { Category } from "@/lib/types";
 import { cn } from "@/lib/utils";
@@ -28,6 +29,8 @@ export function PlaceCover({
         fill
         sizes={sizes}
         priority={priority}
+        placeholder="blur"
+        blurDataURL={BLUR_DATA_URL}
         className={cn("object-cover", className)}
       />
     );
