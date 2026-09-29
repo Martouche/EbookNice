@@ -36,6 +36,18 @@ export const CATEGORY_COLORS: Record<string, string> = {
 
 export const DEFAULT_CATEGORY_COLOR = "#8A8578";
 
+/** Teinte foncée de chaque catégorie : texte du badge, ombres des illustrations, titre sur fond clair. */
+export const CATEGORY_INK: Record<string, string> = {
+  restaurant: "#6E2A12",
+  "point-de-vue": "#5C3F06",
+  plage: "#174A6E",
+  activite: "#5E1C3D",
+  randonnee: "#1B4B31",
+};
+
+/** Fonds trop clairs pour un titre blanc (contraste insuffisant) : titre en teinte foncée. */
+export const CATEGORY_LIGHT_BG = new Set(["point-de-vue"]);
+
 export const NICE_CENTER = { lat: 43.7009, lng: 7.2683 };
 
 /** Présentation des catégories sur l'accueil : titres explicites + accroche, dans l'ordre d'affichage. */

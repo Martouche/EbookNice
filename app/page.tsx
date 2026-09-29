@@ -11,13 +11,11 @@ import { getCategories, getPlaces } from "@/lib/data";
 export default async function HomePage() {
   const [categories, places] = await Promise.all([getCategories(), getPlaces()]);
 
-  // Une tuile par type de lieu, fond = 1re photo de chaque adresse (les coups de cœur arrivent en tête).
+  // Une tuile illustrée par type de lieu (catégories vides masquées).
   const showcase: ShowcaseItem[] = CATEGORY_SHOWCASE.flatMap(({ slug, title, tagline }) => {
     const category = categories.find((c) => c.slug === slug);
-    const inCategory = places.filter((p) => p.category?.slug === slug);
-    if (!category || inCategory.length === 0) return [];
-    const photos = inCategory.map((p) => p.images[0]).filter((src): src is string => Boolean(src)).slice(0, 3);
-    return [{ category, title, tagline, count: inCategory.length, photos }];
+    const count = places.filter((p) => p.category?.slug === slug).length;
+    return category && count > 0 ? [{ category, title, tagline, count }] : [];
   });
   const featured = places.filter((p) => p.is_featured).slice(0, 6);
 
