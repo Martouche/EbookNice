@@ -55,6 +55,7 @@ export default async function PlacePage({ params }: Props) {
 
       <PhotoGallery
         images={place.images}
+        credits={place.image_credits}
         title={place.title}
         category={place.category}
         actions={

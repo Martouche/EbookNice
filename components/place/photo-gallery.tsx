@@ -6,20 +6,22 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { PlaceCover } from "@/components/place-cover";
 import { BLUR_DATA_URL } from "@/lib/image";
-import type { Category } from "@/lib/types";
+import type { Category, ImageCredit } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import { Lightbox } from "./lightbox";
+import { PhotoCredits } from "./photo-credit";
 
 interface PhotoGalleryProps {
   images: string[];
   title: string;
+  credits?: ImageCredit[] | null;
   category: Category | null;
   /** Éléments superposés (favori, partage) en haut à droite. */
   actions?: React.ReactNode;
 }
 
 /** Photo-first : carrousel plein cadre sur mobile, mosaïque bento sur desktop, lightbox au clic. */
-export function PhotoGallery({ images, title, category, actions }: PhotoGalleryProps) {
+export function PhotoGallery({ images, title, credits, category, actions }: PhotoGalleryProps) {
   const [openAt, setOpenAt] = useState<number | null>(null);
   const [emblaRef, embla] = useEmblaCarousel({ loop: images.length > 1 });
   const [index, setIndex] = useState(0);
@@ -127,7 +129,8 @@ export function PhotoGallery({ images, title, category, actions }: PhotoGalleryP
         )}
       </div>
 
-      <Lightbox images={images} title={title} openAt={openAt} onClose={() => setOpenAt(null)} />
+      <PhotoCredits images={images} credits={credits} />
+      <Lightbox images={images} title={title} credits={credits} openAt={openAt} onClose={() => setOpenAt(null)} />
     </>
   );
 }

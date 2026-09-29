@@ -3,6 +3,9 @@ import { redirect } from "next/navigation";
 import { AdminNav } from "@/components/admin/admin-nav";
 import { getSession } from "@/lib/data";
 
+// Recherche + upload de photos dans les Server Actions admin.
+export const maxDuration = 60;
+
 export const metadata: Metadata = { title: "Back-office", robots: { index: false } };
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {

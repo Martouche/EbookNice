@@ -7,10 +7,13 @@ import Image from "next/image";
 import { useEffect, useState, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 import { BLUR_DATA_URL } from "@/lib/image";
+import type { ImageCredit } from "@/lib/types";
+import { PhotoCredit, creditFor } from "./photo-credit";
 
 interface LightboxProps {
   images: string[];
   title: string;
+  credits?: ImageCredit[] | null;
   /** Index ouvert, `null` = fermée. */
   openAt: number | null;
   onClose: () => void;
@@ -19,18 +22,30 @@ interface LightboxProps {
 /** Galerie plein écran : swipe (Embla), flèches clavier, Échap pour fermer. */
 const noopSubscribe = () => () => {};
 
-export function Lightbox({ images, title, openAt, onClose }: LightboxProps) {
+export function Lightbox({ images, title, credits, openAt, onClose }: LightboxProps) {
   const mounted = useSyncExternalStore(noopSubscribe, () => true, () => false);
   if (!mounted) return null;
   return createPortal(
     <AnimatePresence>
-      {openAt !== null && <LightboxContent images={images} title={title} startIndex={openAt} onClose={onClose} />}
+      {openAt !== null && <LightboxContent images={images} title={title} credits={credits} startIndex={openAt} onClose={onClose} />}
     </AnimatePresence>,
     document.body,
   );
 }
 
-function LightboxContent({ images, title, startIndex, onClose }: { images: string[]; title: string; startIndex: number; onClose: () => void }) {
+function LightboxContent({
+  images,
+  title,
+  credits,
+  startIndex,
+  onClose,
+}: {
+  images: string[];
+  title: string;
+  credits?: ImageCredit[] | null;
+  startIndex: number;
+  onClose: () => void;
+}) {
   const [emblaRef, embla] = useEmblaCarousel({ startIndex, loop: images.length > 1 });
   const [index, setIndex] = useState(startIndex);
 
@@ -103,6 +118,12 @@ function LightboxContent({ images, title, startIndex, onClose }: { images: strin
           ))}
         </div>
       </div>
+
+      {creditFor(credits, images[index]) && (
+        <p className="px-4 pt-2 text-center text-[11px] text-white/60">
+          <PhotoCredit credit={creditFor(credits, images[index])!} />
+        </p>
+      )}
 
       {images.length > 1 && (
         <div className="flex items-center justify-center gap-3 px-4 py-4 pb-[max(1rem,env(safe-area-inset-bottom))]">

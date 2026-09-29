@@ -26,6 +26,16 @@ export interface Category {
   icon: string;
 }
 
+export interface ImageCredit {
+  url: string;
+  author: string;
+  license: string;
+  license_url: string | null;
+  source_url: string;
+  provider: "wikimedia" | "unsplash" | "pexels";
+  source_id: string;
+}
+
 export interface Place {
   id: string;
   title: string;
@@ -42,6 +52,8 @@ export interface Place {
   local_tip: string | null;
   audio_tip_url: string | null;
   images: string[];
+  /** Attributions des photos auto-importées (licences CC BY / BY-SA, Unsplash, Pexels). */
+  image_credits: ImageCredit[] | null;
   gpx_url: string | null;
   best_time_to_visit: BestTime;
   tags: string[];

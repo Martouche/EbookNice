@@ -2,7 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import { createClient } from "@/lib/supabase/server";
+import { requireAdmin } from "@/lib/admin-auth";
 import type { BestTime } from "@/lib/types";
 import { slugify } from "@/lib/utils";
 
@@ -11,18 +11,6 @@ export interface FormState {
 }
 
 const BEST_TIMES: BestTime[] = ["SUNSET", "MORNING", "AFTERNOON", "NIGHT", "ANYTIME"];
-
-/** Double verrou : contrôle applicatif ici, RLS `guide_is_admin()` côté base. */
-async function requireAdmin() {
-  const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-  if (!user) redirect("/connexion?next=/admin");
-  const { data: profile } = await supabase.from("profiles").select("role").eq("id", user.id).single();
-  if (profile?.role !== "ADMIN") redirect("/");
-  return supabase;
-}
 
 const text = (fd: FormData, key: string) => {
   const value = String(fd.get(key) ?? "").trim();

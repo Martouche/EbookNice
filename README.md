@@ -33,6 +33,23 @@ Tailwind CSS v4 · framer-motion · MapLibre GL (fonds CARTO, sans clé).
 | `/compte` | Profil, itinéraires sauvegardés |
 | `/admin` | Back-office (rôle `ADMIN`) : spots, chapitres, uploads Storage, placement sur carte |
 
+## Photos automatiques
+
+Recherche de 3 à 5 photos HD par spot (titre + ville, fallback par catégorie), avec crédits d'auteur et de licence
+affichés sur la fiche (obligatoires pour CC BY / BY-SA).
+
+- **Sources** : Wikimedia Commons (sans clé, photos copiées dans `places-images`), puis Unsplash / Pexels si
+  `UNSPLASH_ACCESS_KEY` / `PEXELS_API_KEY` sont définies (hotlink, comme l'exigent leurs conditions).
+- **Prérequis** : exécuter [`supabase/migrations/002_image_credits.sql`](supabase/migrations/002_image_credits.sql).
+- **Admin** : bouton « Auto-générer des photos » sur la fiche d'édition, « Auto-enrichir tous les spots sans photo » sur `/admin`.
+- **CLI** (requiert `SUPABASE_SERVICE_ROLE_KEY` dans `.env.local`, jamais commitée) :
+
+  ```bash
+  npm run enrich:photos -- --dry-run   # aperçu des photos choisies, sans écriture
+  npm run enrich:photos                # spots avec moins de 3 photos
+  npm run enrich:photos -- --all --slug=chez-pipo --limit=5
+  ```
+
 ## Déploiement Vercel
 
 Importer le dépôt, définir `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY` et
