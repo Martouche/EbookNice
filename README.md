@@ -25,7 +25,7 @@ Tailwind CSS v4 · framer-motion · MapLibre GL (fonds CARTO, sans clé).
 | Route | Rôle |
 | --- | --- |
 | `/` | Couverture, sommaire bento, itinéraire express, coups de cœur |
-| `/explorer` | Filtres + bascule Liste / Carte synchronisée (état dans l'URL : `?vue=carte&gratuit=1…`) |
+| `/explorer` | Filtres + bascule Liste / Carte synchronisée (état dans l'URL : `?category=plage&price=free&view=map`) |
 | `/chapitres/[slug]` | Chapitre de l'ebook |
 | `/lieux/[slug]` | Fiche éditoriale : carrousel, Conseil du Local, audio, Waze / Google Maps, GPX |
 | `/favoris` | Carnet personnel sur carte + partage, export GPX, impression PDF |
