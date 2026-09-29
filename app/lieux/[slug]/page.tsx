@@ -83,7 +83,7 @@ export default async function PlacePage({ params }: Props) {
             ))}
           </div>
 
-          <h1 className="mt-5 font-display text-5xl leading-[0.95] tracking-tight md:text-7xl">{place.title}</h1>
+          <h1 className="mt-5 font-display text-[clamp(2.5rem,11vw,3rem)] leading-[0.98] tracking-tight text-balance break-words md:text-7xl">{place.title}</h1>
           <p className="mt-3 flex items-center gap-1.5 text-sm text-muted-foreground">
             <MapPin className="size-4 text-ocre" />
             {place.address ? `${place.address}, ${place.city}` : place.city}

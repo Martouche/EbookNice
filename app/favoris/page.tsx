@@ -17,7 +17,7 @@ export default async function FavoritesPage() {
       <header className="mb-8 flex flex-col gap-6 border-b border-line pb-6 md:flex-row md:items-end md:justify-between">
         <div>
           <p className="font-mono text-[10px] tracking-[0.2em] text-ocre uppercase">Carnet de voyage</p>
-          <h1 className="mt-2 font-display text-6xl leading-none md:text-7xl">
+          <h1 className="mt-2 font-display text-[clamp(2.5rem,11vw,3.75rem)] leading-[1] text-balance break-words md:text-7xl">
             Mes <span className="italic text-muted-foreground">favoris</span>
           </h1>
           <p className="mt-3 text-sm text-muted-foreground">

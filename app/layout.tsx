@@ -45,7 +45,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
           <FavoritesProvider key={user?.id ?? "anon"} initialIds={favoriteIds} isAuthed={!!user}>
             <SiteHeader isAdmin={profile?.role === "ADMIN"} />
-            <main className="min-h-[calc(100dvh-4rem)] pb-24 md:pb-0">{children}</main>
+            <main className="min-h-[calc(100dvh-var(--header-h))] pb-24 md:pb-0">{children}</main>
             <BottomNav />
           </FavoritesProvider>
         </ThemeProvider>

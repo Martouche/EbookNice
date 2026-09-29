@@ -11,10 +11,10 @@ const spring = { type: "spring", stiffness: 400, damping: 30 } as const;
 export function Hero({ stats }: { stats: { places: number; free: number; chapters: number } }) {
   return (
     // Passe sous le header en verre (-mt) ; 100svh : hauteur stable quand la barre d'adresse mobile se replie.
-    <section className="relative -mt-14 overflow-hidden text-white md:-mt-16">
+    <section className="relative -mt-[var(--header-h)] overflow-hidden text-white">
       <HeroVideo />
 
-      <div className="relative mx-auto flex min-h-[100svh] max-w-7xl flex-col px-4 pt-20 pb-28 md:px-8 md:pt-24 md:pb-12">
+      <div className="relative mx-auto flex min-h-[100svh] max-w-7xl flex-col px-4 pt-[calc(var(--header-h)+1.5rem)] pb-28 md:px-8 md:pt-[calc(var(--header-h)+2rem)] md:pb-12">
         <div className="flex items-center justify-between font-mono text-[10px] tracking-[0.2em] text-white/70 uppercase">
           <span>Édition 2026 — N°01</span>
           <span>43°42′N · 7°15′E</span>

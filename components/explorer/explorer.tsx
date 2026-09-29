@@ -77,7 +77,7 @@ export function Explorer({
   if (view === "list") {
     return (
       <>
-        {filterBar("sticky top-14 md:top-16")}
+        {filterBar("sticky top-[var(--header-h)]")}
         <div className="mx-auto max-w-7xl px-4 py-8 md:px-8">
           <p className="mb-6 font-mono text-[10px] tracking-[0.2em] text-muted-foreground uppercase">
             {results.length} adresse{results.length > 1 ? "s" : ""}
@@ -100,7 +100,7 @@ export function Explorer({
 
   return (
     // Hauteur en dvh : pas de saut quand la barre d'adresse iOS/Android se replie.
-    <div className="relative -mb-24 flex h-[calc(100dvh-3.5rem)] flex-col md:mb-0 md:h-[calc(100dvh-4rem)]">
+    <div className="relative -mb-24 flex h-[calc(100dvh-var(--header-h))] flex-col md:mb-0">
       {filterBar("absolute inset-x-0 top-0 md:relative")}
 
       <div className="relative min-h-0 flex-1 md:flex">

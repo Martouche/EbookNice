@@ -52,26 +52,34 @@ export function PlaceCard({
           />
           <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/75 via-black/5 to-transparent" />
 
-          <div className="pointer-events-none absolute top-3.5 left-3 flex flex-wrap gap-1.5">
+          <div className="pointer-events-none absolute top-3.5 right-14 left-3 flex flex-wrap gap-1.5">
             {place.is_free && <Badge variant="free">Gratuit · FREE</Badge>}
             {place.category && <Badge variant="glass">{place.category.name}</Badge>}
           </div>
 
-          <div className="pointer-events-none absolute right-0 bottom-0 left-0 p-4 text-white">
+          <div className="pointer-events-none absolute right-0 bottom-0 left-0 min-w-0 p-4 text-white">
             {index !== undefined && (
               <span className="font-mono text-[10px] tracking-[0.2em] text-white/60">
                 N°{String(index + 1).padStart(2, "0")}
               </span>
             )}
-            <h3 className={cn("font-display leading-[1.05]", compact ? "text-2xl" : "text-3xl")}>{place.title}</h3>
-            <p className="mt-1.5 flex items-center gap-2 text-xs text-white/75">
+            <h3
+              lang="fr"
+              className={cn(
+                "font-display leading-[1.05] text-balance break-words hyphens-auto",
+                compact ? "text-[1.375rem] sm:text-2xl" : "text-[1.75rem] sm:text-3xl",
+              )}
+            >
+              {place.title}
+            </h3>
+            <p className="mt-1.5 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-white/75">
               <span>{place.city}</span>
               <span className="size-0.5 rounded-full bg-white/50" />
               <span>{priceLabel(place.price_level)}</span>
               {!compact && (
                 <>
                   <span className="size-0.5 rounded-full bg-white/50" />
-                  <span className="flex items-center gap-1">
+                  <span className="flex items-center gap-1 whitespace-nowrap">
                     <Clock className="size-3" />
                     {BEST_TIME_LABELS[place.best_time_to_visit]}
                   </span>

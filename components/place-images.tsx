@@ -10,8 +10,9 @@ import { cn } from "@/lib/utils";
 import { PlaceCover } from "./place-cover";
 
 /**
- * Visuels d'une carte : carrousel Embla si plusieurs photos (swipe mobile, flèches au survol desktop),
- * sinon couverture simple. Embla neutralise le clic après un glissement : le lien parent reste sûr.
+ * Visuels d'une carte. Pas de swipe interne : le glissement horizontal reste réservé au défilement
+ * des cartes. Changement de photo par zones de tap gauche/droite (type Stories) et flèches visibles ;
+ * le tap au centre ouvre la fiche (lien parent).
  */
 export function PlaceImages({
   images,
@@ -26,7 +27,7 @@ export function PlaceImages({
   sizes?: string;
   priority?: boolean;
 }) {
-  const [emblaRef, embla] = useEmblaCarousel({ loop: true });
+  const [emblaRef, embla] = useEmblaCarousel({ loop: true, watchDrag: false });
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -64,7 +65,7 @@ export function PlaceImages({
   return (
     <div className="group/images absolute inset-0">
       <div ref={emblaRef} className="h-full overflow-hidden">
-        <div className="flex h-full touch-pan-y">
+        <div className="flex h-full">
           {images.map((src, i) => (
             <div key={src} className="relative h-full min-w-0 flex-[0_0_100%]">
               <Image
@@ -73,6 +74,7 @@ export function PlaceImages({
                 fill
                 sizes={sizes}
                 priority={priority && i === 0}
+                loading={i === 0 ? undefined : "lazy"}
                 placeholder="blur"
                 blurDataURL={BLUR_DATA_URL}
                 className="object-cover"
@@ -84,25 +86,33 @@ export function PlaceImages({
 
       <div className="pointer-events-none absolute inset-x-3 top-1.5 z-10 flex gap-1">
         {images.map((src, i) => (
-          <span key={src} className={cn("h-0.5 flex-1 rounded-full", i === index ? "bg-white" : "bg-white/35")} />
+          <span
+            key={src}
+            className={cn("h-[3px] flex-1 rounded-full transition-colors duration-150", i === index ? "bg-white" : "bg-white/35")}
+          />
         ))}
       </div>
 
+      {/* Zones de tap (bas de la photo, sous les badges / le cœur) : 30 % à gauche, 30 % à droite. */}
       {[
-        { dir: -1 as const, Icon: ChevronLeft, side: "left-2", label: "Photo précédente" },
-        { dir: 1 as const, Icon: ChevronRight, side: "right-2", label: "Photo suivante" },
-      ].map(({ dir, Icon, side, label }) => (
+        { dir: -1 as const, Icon: ChevronLeft, zone: "left-0", arrow: "left-2", label: "Photo précédente" },
+        { dir: 1 as const, Icon: ChevronRight, zone: "right-0", arrow: "right-2", label: "Photo suivante" },
+      ].map(({ dir, Icon, zone, arrow, label }) => (
         <button
           key={dir}
           type="button"
           aria-label={label}
           onClick={(e) => go(e, dir)}
-          className={cn(
-            "absolute top-1/2 z-10 hidden size-8 -translate-y-1/2 place-items-center rounded-full bg-white/90 text-[#14120f] opacity-0 transition-opacity duration-150 group-hover/images:opacity-100 md:grid",
-            side,
-          )}
+          className={cn("absolute top-14 bottom-24 z-10 w-[30%] cursor-pointer", zone)}
         >
-          <Icon className="size-4" />
+          <span
+            className={cn(
+              "absolute top-1/2 grid size-8 -translate-y-1/2 place-items-center rounded-full bg-black/35 text-white backdrop-blur-sm transition-opacity duration-150 md:bg-white/90 md:text-[#14120f] md:opacity-0 md:group-hover/images:opacity-100",
+              arrow,
+            )}
+          >
+            <Icon className="size-4" />
+          </span>
         </button>
       ))}
     </div>

@@ -21,7 +21,7 @@ export default async function HomePage() {
       <Hero stats={{ places: places.length, free: places.filter((p) => p.is_free).length, chapters: chapters.length }} />
 
       <div className="mx-auto max-w-7xl space-y-24 px-4 py-16 md:px-8 md:py-24">
-        <section id="sommaire" className="scroll-mt-20">
+        <section id="sommaire">
           <SectionHeading kicker="Sommaire" title={<>Les chapitres <span className="italic text-muted-foreground">du guide</span></>} />
           {chapters.length > 0 ? (
             <ChaptersBento chapters={chapters} counts={counts} />
@@ -51,9 +51,9 @@ export default async function HomePage() {
                 </Link>
               }
             />
-            <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 md:mx-0 md:grid md:grid-cols-3 md:overflow-visible md:px-0">
+            <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory scroll-px-4 gap-4 overflow-x-auto overscroll-x-contain px-4 pb-1 md:mx-0 md:grid md:grid-cols-3 md:overflow-visible md:px-0">
               {featured.map((place, i) => (
-                <div key={place.id} className="w-[78vw] shrink-0 snap-start sm:w-[45vw] md:w-auto">
+                <div key={place.id} className="w-[80vw] max-w-sm shrink-0 snap-start sm:w-[45vw] md:w-auto md:max-w-none">
                   <PlaceCard place={place} index={i} />
                 </div>
               ))}

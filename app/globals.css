@@ -3,6 +3,8 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
+  /* Hauteur réelle du header, encoche iPhone comprise (viewport-fit=cover). */
+  --header-h: calc(3.5rem + env(safe-area-inset-top));
   --background: #f6f2ea;
   --foreground: #14120f;
   --card: #fbf8f2;
@@ -22,6 +24,12 @@
   --line: rgb(255 255 255 / 0.1);
   --line-strong: rgb(255 255 255 / 0.2);
   --glass: rgb(11 11 10 / 0.7);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --header-h: calc(4rem + env(safe-area-inset-top));
+  }
 }
 
 @theme inline {
@@ -48,8 +56,13 @@
   }
   html {
     -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: 100%;
+    /* Les ancres (#sommaire…) s'arrêtent sous le header au lieu de passer dessous. */
+    scroll-padding-top: calc(var(--header-h) + 1rem);
   }
   body {
+    /* Garde-fou : aucun élément ne peut créer de défilement horizontal de page (clip ≠ hidden : sticky préservé). */
+    overflow-x: clip;
     background: var(--background);
     color: var(--foreground);
     font-feature-settings: "ss01", "cv11";

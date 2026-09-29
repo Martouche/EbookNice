@@ -12,7 +12,7 @@ export function SiteHeader({ isAdmin }: { isAdmin: boolean }) {
   const pathname = usePathname();
 
   return (
-    <header className="no-print sticky top-0 z-40 border-b border-line bg-glass backdrop-blur-2xl">
+    <header className="no-print sticky top-0 z-40 border-b border-line bg-glass pt-[env(safe-area-inset-top)] backdrop-blur-2xl">
       <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-4 px-4 md:h-16 md:px-8">
         <Link href="/" className="group flex items-baseline gap-2">
           <span className="font-display text-2xl leading-none tracking-tight">

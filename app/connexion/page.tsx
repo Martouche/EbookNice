@@ -19,7 +19,7 @@ export default async function LoginPage({
     <div className="mx-auto grid max-w-5xl gap-12 px-4 py-12 md:grid-cols-2 md:items-center md:px-8 md:py-24">
       <div>
         <p className="font-mono text-[10px] tracking-[0.2em] text-ocre uppercase">Votre carnet de voyage</p>
-        <h1 className="mt-3 font-display text-6xl leading-[0.9] md:text-7xl">
+        <h1 className="mt-3 font-display text-[clamp(2.75rem,12vw,3.75rem)] leading-[0.95] text-balance break-words md:text-7xl">
           Gardez vos <span className="italic text-muted-foreground">adresses</span> sous la main.
         </h1>
         <p className="mt-6 max-w-sm leading-relaxed text-muted-foreground">

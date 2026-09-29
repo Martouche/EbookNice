@@ -14,11 +14,11 @@ export function SectionHeading({
 }) {
   return (
     <div className={cn("mb-8 flex items-end justify-between gap-6 border-b border-line pb-4", className)}>
-      <div>
+      <div className="min-w-0">
         <p className="font-mono text-[10px] tracking-[0.2em] text-muted-foreground uppercase">{kicker}</p>
-        <h2 className="mt-2 font-display text-4xl leading-none md:text-5xl">{title}</h2>
+        <h2 className="mt-2 font-display text-[2.25rem] leading-[1.05] text-balance break-words md:text-5xl">{title}</h2>
       </div>
-      {action}
+      {action && <div className="shrink-0">{action}</div>}
     </div>
   );
 }

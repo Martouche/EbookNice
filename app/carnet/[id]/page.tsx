@@ -30,7 +30,7 @@ export default async function CarnetPage({ params }: Props) {
           <p className="font-mono text-[10px] tracking-[0.2em] text-ocre uppercase">
             Carnet partagé · {places.length} étape{places.length > 1 ? "s" : ""}
           </p>
-          <h1 className="mt-2 font-display text-5xl leading-none md:text-7xl">{itinerary.title}</h1>
+          <h1 className="mt-2 font-display text-[clamp(2.25rem,10vw,3rem)] leading-[1] text-balance break-words md:text-7xl">{itinerary.title}</h1>
         </div>
         {itinerary.is_public && <CarnetActions title={itinerary.title} places={places} itineraryId={itinerary.id} />}
       </header>

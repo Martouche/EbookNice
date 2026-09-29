@@ -24,7 +24,7 @@ export default async function AccountPage() {
     <div className="mx-auto max-w-3xl px-4 py-8 md:px-8 md:py-12">
       <header className="border-b border-line pb-8">
         <p className="font-mono text-[10px] tracking-[0.2em] text-ocre uppercase">Mon compte</p>
-        <h1 className="mt-2 font-display text-6xl leading-none">
+        <h1 className="mt-2 font-display text-[clamp(2.5rem,11vw,3.75rem)] leading-[1] text-balance break-words">
           Bonjour, <span className="italic">{name}</span>
         </h1>
         <p className="mt-3 text-sm text-muted-foreground">{user.email}</p>

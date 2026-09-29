@@ -43,7 +43,7 @@ export default async function ChapterPage({ params }: Props) {
           <p className="mt-10 font-mono text-[10px] tracking-[0.2em] text-ocre uppercase">
             Chapitre {String(chapter.order_index || position + 1).padStart(2, "0")}
           </p>
-          <h1 className="mt-3 font-display text-6xl leading-[0.9] tracking-tight md:text-8xl">{chapter.title}</h1>
+          <h1 className="mt-3 font-display text-[clamp(2.75rem,12vw,3.75rem)] leading-[0.95] text-balance break-words tracking-tight md:text-8xl">{chapter.title}</h1>
           {chapter.description && (
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">{chapter.description}</p>
           )}
