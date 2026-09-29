@@ -9,6 +9,15 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "images.pexels.com" },
     ],
   },
+  async headers() {
+    // Vidéos du hero : cache CDN + navigateur (noms non versionnés → 7 jours, revalidation en arrière-plan).
+    return [
+      {
+        source: "/videos/:file*",
+        headers: [{ key: "Cache-Control", value: "public, max-age=604800, stale-while-revalidate=86400" }],
+      },
+    ];
+  },
   async redirects() {
     return [{ source: "/places/:slug", destination: "/lieux/:slug", permanent: true }];
   },
