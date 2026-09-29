@@ -18,8 +18,8 @@ export default function AuthPrompt({
     <ResponsiveSheet
       open={open}
       onOpenChange={onOpenChange}
-      title="Garde tes coups de cœur"
-      description="Connecte-toi en 1 clic pour sauvegarder tes adresses préférées et les retrouver partout."
+      title="Connectez-vous gratuitement"
+      description="Pour enregistrer vos adresses préférées dans votre carnet et les retrouver sur tous vos appareils. 1 clic, sans mot de passe."
     >
       <QuickAuth next={next} />
       <p className="mt-5 text-center text-xs text-muted-foreground">

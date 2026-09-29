@@ -36,7 +36,7 @@ export function FavoriteButton({
       whileTap={{ scale: 0.8 }}
       transition={{ type: "spring", stiffness: 500, damping: 30 }}
       className={cn(
-        "relative grid size-9 place-items-center rounded-full",
+        "relative grid size-9 place-items-center rounded-full after:absolute after:-inset-2 after:content-['']",
         variant === "glass"
           ? "border border-white/15 bg-black/40 text-white backdrop-blur-md"
           : "border border-line-strong bg-card text-foreground",
