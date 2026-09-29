@@ -1,35 +1,40 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { ChaptersBento } from "@/components/home/chapters-bento";
+import { CategoryShowcase, type ShowcaseItem } from "@/components/home/category-showcase";
 import { Hero } from "@/components/home/hero";
 import { ItineraryGenerator } from "@/components/home/itinerary-generator";
 import { PlaceCard } from "@/components/place-card";
 import { EmptyState, SectionHeading } from "@/components/section-heading";
-import { getChapters, getPlaces } from "@/lib/data";
+import { CATEGORY_SHOWCASE } from "@/lib/constants";
+import { getCategories, getPlaces } from "@/lib/data";
 
 export default async function HomePage() {
-  const [chapters, places] = await Promise.all([getChapters(), getPlaces()]);
+  const [categories, places] = await Promise.all([getCategories(), getPlaces()]);
 
-  const counts = places.reduce<Record<string, number>>((acc, p) => {
-    if (p.chapter_id) acc[p.chapter_id] = (acc[p.chapter_id] ?? 0) + 1;
-    return acc;
-  }, {});
+  // Une tuile par type de lieu, fond = 1re photo de chaque adresse (les coups de cœur arrivent en tête).
+  const showcase: ShowcaseItem[] = CATEGORY_SHOWCASE.flatMap(({ slug, title, tagline }) => {
+    const category = categories.find((c) => c.slug === slug);
+    const inCategory = places.filter((p) => p.category?.slug === slug);
+    if (!category || inCategory.length === 0) return [];
+    const photos = inCategory.map((p) => p.images[0]).filter((src): src is string => Boolean(src)).slice(0, 3);
+    return [{ category, title, tagline, count: inCategory.length, photos }];
+  });
   const featured = places.filter((p) => p.is_featured).slice(0, 6);
 
   return (
     <>
-      <Hero stats={{ places: places.length, free: places.filter((p) => p.is_free).length, chapters: chapters.length }} />
+      <Hero stats={{ places: places.length, free: places.filter((p) => p.is_free).length, categories: showcase.length }} />
 
       <div className="mx-auto max-w-7xl space-y-24 px-4 py-16 md:px-8 md:py-24">
-        <section id="sommaire">
-          <SectionHeading kicker="Sommaire" title={<>Les chapitres <span className="italic text-muted-foreground">du guide</span></>} />
-          {chapters.length > 0 ? (
-            <ChaptersBento chapters={chapters} counts={counts} />
+        <section id="envies">
+          <SectionHeading
+            kicker="Par envie"
+            title={<>Qu&apos;est-ce qui <span className="italic text-muted-foreground">vous tente ?</span></>}
+          />
+          {showcase.length > 0 ? (
+            <CategoryShowcase items={showcase} />
           ) : (
-            <EmptyState>
-              Le guide est encore vierge. Exécutez <code className="font-mono text-foreground">supabase/schema.sql</code> dans
-              le SQL Editor de Supabase pour charger les premiers chapitres.
-            </EmptyState>
+            <EmptyState>Aucune adresse pour l&apos;instant : ajoutez vos premiers spots depuis le back-office.</EmptyState>
           )}
         </section>
 

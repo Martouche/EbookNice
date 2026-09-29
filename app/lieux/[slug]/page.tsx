@@ -11,7 +11,7 @@ import { PlaceCard } from "@/components/place-card";
 import { ShareButton } from "@/components/share-button";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { BEST_TIME_LABELS, priceLabel } from "@/lib/constants";
+import { BEST_TIME_LABELS, CATEGORY_SHOWCASE, priceLabel } from "@/lib/constants";
 import { getPlaceBySlug, getPlaces } from "@/lib/data";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -35,8 +35,10 @@ export default async function PlacePage({ params }: Props) {
   const place = await getPlaceBySlug((await params).slug);
   if (!place) notFound();
 
-  const related = place.chapter_id
-    ? (await getPlaces({ chapterId: place.chapter_id })).filter((p) => p.id !== place.id).slice(0, 3)
+  // Même type de lieu (plages, points de vue…) : la navigation suit les « envies » de l'accueil.
+  const categoryTitle = CATEGORY_SHOWCASE.find((c) => c.slug === place.category?.slug)?.title ?? place.category?.name;
+  const related = place.category
+    ? (await getPlaces()).filter((p) => p.category?.slug === place.category?.slug && p.id !== place.id).slice(0, 3)
     : [];
 
   const destination = `${place.lat},${place.lng}`;
@@ -46,11 +48,11 @@ export default async function PlacePage({ params }: Props) {
   return (
     <article className="mx-auto max-w-7xl px-4 pt-4 pb-10 md:px-8 md:pt-8">
       <Link
-        href={place.chapter ? `/chapitres/${place.chapter.slug}` : "/explorer"}
+        href={place.category ? `/explorer?category=${place.category.slug}` : "/explorer"}
         className="mb-4 hidden items-center gap-1.5 text-sm text-muted-foreground transition-colors duration-100 hover:text-foreground md:inline-flex"
       >
         <ArrowLeft className="size-4" />
-        {place.chapter?.title ?? "Explorer"}
+        {categoryTitle ?? "Explorer"}
       </Link>
 
       <PhotoGallery
@@ -167,8 +169,8 @@ export default async function PlacePage({ params }: Props) {
 
       {related.length > 0 && (
         <section className="mt-16 border-t border-line pt-10">
-          <p className="font-mono text-[10px] tracking-[0.2em] text-muted-foreground uppercase">Dans le même chapitre</p>
-          <h2 className="mt-2 mb-6 font-display text-4xl">{place.chapter?.title}</h2>
+          <p className="font-mono text-[10px] tracking-[0.2em] text-muted-foreground uppercase">Dans la même envie</p>
+          <h2 className="mt-2 mb-6 font-display text-4xl">{categoryTitle}</h2>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {related.map((p) => (
               <PlaceCard key={p.id} place={p} compact />

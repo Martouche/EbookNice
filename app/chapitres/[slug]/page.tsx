@@ -34,11 +34,11 @@ export default async function ChapterPage({ params }: Props) {
         )}
         <div className="relative mx-auto max-w-7xl px-4 pt-8 pb-12 md:px-8 md:pt-12 md:pb-20">
           <Link
-            href="/#sommaire"
+            href="/#envies"
             className="inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors duration-100 hover:text-foreground"
           >
             <ArrowLeft className="size-4" />
-            Sommaire
+            Accueil
           </Link>
           <p className="mt-10 font-mono text-[10px] tracking-[0.2em] text-ocre uppercase">
             Chapitre {String(chapter.order_index || position + 1).padStart(2, "0")}

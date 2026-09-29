@@ -8,7 +8,7 @@ import { HeroVideo } from "./hero-video";
 
 const spring = { type: "spring", stiffness: 400, damping: 30 } as const;
 
-export function Hero({ stats }: { stats: { places: number; free: number; chapters: number } }) {
+export function Hero({ stats }: { stats: { places: number; free: number; categories: number } }) {
   return (
     // Passe sous le header en verre (-mt) ; 100svh : hauteur stable quand la barre d'adresse mobile se replie.
     <section className="relative -mt-[var(--header-h)] overflow-hidden text-white">
@@ -55,8 +55,8 @@ export function Hero({ stats }: { stats: { places: number; free: number; chapter
             className="mt-8 flex flex-wrap gap-3"
           >
             <Button asChild size="lg" variant="accent">
-              <a href="#sommaire">
-                Ouvrir le sommaire
+              <a href="#envies">
+                Explorer par envie
                 <ArrowDownRight />
               </a>
             </Button>
@@ -73,7 +73,7 @@ export function Hero({ stats }: { stats: { places: number; free: number; chapter
           {[
             { label: "Adresses", value: stats.places },
             { label: "Gratuites", value: stats.free },
-            { label: "Chapitres", value: stats.chapters },
+            { label: "Envies", value: stats.categories },
           ].map((s) => (
             <div key={s.label} className="px-4 py-3 first:pl-0">
               <dt className="font-mono text-[10px] tracking-[0.18em] text-white/65 uppercase">{s.label}</dt>

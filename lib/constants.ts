@@ -37,3 +37,12 @@ export const CATEGORY_COLORS: Record<string, string> = {
 export const DEFAULT_CATEGORY_COLOR = "#8A8578";
 
 export const NICE_CENTER = { lat: 43.7009, lng: 7.2683 };
+
+/** Présentation des catégories sur l'accueil : titres explicites + accroche, dans l'ordre d'affichage. */
+export const CATEGORY_SHOWCASE: { slug: string; title: string; tagline: string }[] = [
+  { slug: "plage", title: "Plages & criques", tagline: "Galets, rochers et eau turquoise : là où les Niçois se baignent vraiment." },
+  { slug: "point-de-vue", title: "Points de vue", tagline: "Belvédères et panoramas sur la Baie des Anges et la Riviera." },
+  { slug: "restaurant", title: "Tables locales", tagline: "Socca, pissaladière et adresses où l'on parle encore nissart." },
+  { slug: "randonnee", title: "Randonnées", tagline: "Sentiers du littoral et chemins muletiers qui se méritent." },
+  { slug: "activite", title: "Balades & activités", tagline: "Marchés, musées et flâneries au fil de la ville." },
+];

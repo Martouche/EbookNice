@@ -57,7 +57,7 @@
   html {
     -webkit-tap-highlight-color: transparent;
     -webkit-text-size-adjust: 100%;
-    /* Les ancres (#sommaire…) s'arrêtent sous le header au lieu de passer dessous. */
+    /* Les ancres (#envies…) s'arrêtent sous le header au lieu de passer dessous. */
     scroll-padding-top: calc(var(--header-h) + 1rem);
   }
   body {
