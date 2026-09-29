@@ -1,25 +1,28 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
+import { getImageProps } from "next/image";
 import { useEffect, useRef, useState } from "react";
+import posterMobile from "@/public/videos/hero-nice-poster-mobile.jpg";
 import poster from "@/public/videos/hero-nice-poster.jpg";
+
+const MOBILE_QUERY = "(max-width: 767px)";
 
 type Source = { src: string; type: string };
 
 /**
- * Choix du flux selon l'appareil (analysé : 3 fichiers de 30 s, 24 i/s, sans audio, moov en tête) :
- * - mobile (< 768px)        → 720p H.264 (4,1 Mo, 1,1 Mb/s) : léger, décodage matériel partout.
+ * Choix du flux selon l'appareil (fichiers de 30 s, 24 i/s, sans audio, moov en tête) :
+ * - mobile (< 768px)        → portrait 720×1280 H.264 (13 Mo) : plein cadre, sans recadrage flou d'un 16:9.
  * - tablette / ordinateur   → 1080p VP9 WebM (6,4 Mo, 1,8 Mb/s), repli 1080p H.264 (7,4 Mo) pour Safari.
- * - économie de données, 2G ou « réduire les animations » → poster seul, aucune vidéo téléchargée.
+ * - économie de données, 2G/3G ou « réduire les animations » → poster seul, aucune vidéo téléchargée.
  */
 function pickSources(): Source[] | null {
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return null;
   const connection = (navigator as Navigator & { connection?: { saveData?: boolean; effectiveType?: string } }).connection;
-  if (connection?.saveData || /(^|-)2g$/.test(connection?.effectiveType ?? "")) return null;
+  if (connection?.saveData || /(^|-)[23]g$/.test(connection?.effectiveType ?? "")) return null;
 
-  if (window.matchMedia("(max-width: 767px)").matches) {
-    return [{ src: "/videos/hero-nice-720p.mp4", type: "video/mp4" }];
+  if (window.matchMedia(MOBILE_QUERY).matches) {
+    return [{ src: "/videos/hero-nice-mobile.mp4", type: "video/mp4" }];
   }
   return [
     { src: "/videos/hero-nice-1080p.webm", type: 'video/webm; codecs="vp9"' },
@@ -28,6 +31,22 @@ function pickSources(): Source[] | null {
 }
 
 /** Fond vidéo du hero : poster instantané (LCP), vidéo en fondu dès la première image lue. */
+/** Poster adapté à l'écran (<picture>) : le navigateur ne télécharge que le bon, dès le HTML. */
+function Poster() {
+  const common = { alt: "", fill: true, priority: true, quality: 80, sizes: "100vw" };
+  const {
+    props: { srcSet: mobileSrcSet },
+  } = getImageProps({ ...common, src: posterMobile });
+  const { props } = getImageProps({ ...common, src: poster });
+  return (
+    <picture>
+      <source media={MOBILE_QUERY} srcSet={mobileSrcSet} />
+      {/* eslint-disable-next-line jsx-a11y/alt-text */}
+      <img {...props} className="object-cover" />
+    </picture>
+  );
+}
+
 export function HeroVideo() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [sources, setSources] = useState<Source[] | null>(null);
@@ -55,16 +74,7 @@ export function HeroVideo() {
 
   return (
     <div aria-hidden className="absolute inset-0 overflow-hidden bg-[#1b3a4b]">
-      <Image
-        src={poster}
-        alt=""
-        fill
-        priority
-        placeholder="blur"
-        sizes="100vw"
-        quality={80}
-        className="object-cover"
-      />
+      <Poster />
       {sources && (
         <motion.video
           ref={videoRef}
