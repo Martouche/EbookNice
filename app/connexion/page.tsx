@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { redirect } from "next/navigation";
 import { AuthForm } from "@/components/auth/auth-form";
 import { QuickAuth } from "@/components/auth/quick-auth";
@@ -37,6 +38,13 @@ export default async function LoginPage({
           next={next}
           initialError={erreur ? "Ce lien de confirmation est invalide ou a expiré." : undefined}
         />
+        <p className="text-center text-[11px] text-muted-foreground">
+          En continuant, vous acceptez notre{" "}
+          <Link href="/confidentialite" className="underline underline-offset-2 hover:text-foreground">
+            politique de confidentialité
+          </Link>
+          .
+        </p>
       </div>
     </div>
   );

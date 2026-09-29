@@ -32,6 +32,13 @@ export default function AuthPrompt({
           Connexion classique
         </Link>
       </p>
+      <p className="mt-2 text-center text-[11px] text-muted-foreground">
+        En continuant, vous acceptez notre{" "}
+        <Link href="/confidentialite" onClick={() => onOpenChange(false)} className="underline underline-offset-2">
+          politique de confidentialité
+        </Link>
+        .
+      </p>
     </ResponsiveSheet>
   );
 }

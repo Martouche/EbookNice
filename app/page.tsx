@@ -65,7 +65,12 @@ export default async function HomePage() {
       <footer className="border-t border-line">
         <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-10 text-xs text-muted-foreground md:flex-row md:justify-between md:px-8">
           <p className="font-display text-lg text-foreground">Nice<span className="text-ocre">.</span> Le guide des locaux</p>
-          <p>Fait à Nice, avec amour et un peu de socca.</p>
+          <p>
+            Fait à Nice, avec amour et un peu de socca ·{" "}
+            <Link href="/confidentialite" className="underline underline-offset-2 hover:text-foreground">
+              Confidentialité
+            </Link>
+          </p>
         </div>
       </footer>
     </>
