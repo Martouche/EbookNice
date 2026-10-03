@@ -31,7 +31,7 @@ export function CarnetBoard({
   return (
     <div className="grid gap-6 lg:grid-cols-[1fr_1.1fr]">
       <div className="no-print h-72 overflow-hidden rounded-[2rem] border border-line lg:sticky lg:top-[calc(var(--header-h)+2rem)] lg:h-[calc(100dvh-var(--header-h)-4rem)]">
-        <PlacesMap places={places} selectedId={selectedId} onSelect={setSelectedId} route={route} />
+        <PlacesMap places={places} selectedId={selectedId} onSelect={setSelectedId} route={route} geolocate />
       </div>
 
       <ol className="space-y-3">

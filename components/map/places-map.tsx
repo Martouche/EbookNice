@@ -8,7 +8,7 @@ import { CATEGORY_COLORS, DEFAULT_CATEGORY_COLOR } from "@/lib/constants";
 import type { PlaceWithRelations } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import { MarkerPin } from "./marker-pin";
-import { useMaplibre } from "./use-maplibre";
+import { useMaplibre, type MaplibreOptions } from "./use-maplibre";
 
 export type MapPlace = Pick<PlaceWithRelations, "id" | "title" | "lat" | "lng" | "category">;
 
@@ -25,6 +25,9 @@ interface PlacesMapProps {
   padding?: { top?: number; bottom?: number; left?: number; right?: number };
   /** Décalage vertical (px) du lieu sélectionné, pour le garder visible au-dessus d'un drawer. */
   focusOffsetY?: number;
+  /** Bouton « Me localiser » + point bleu. */
+  geolocate?: boolean;
+  controls?: MaplibreOptions["controls"];
   className?: string;
 }
 
@@ -39,10 +42,12 @@ export function PlacesMap({
   route,
   padding,
   focusOffsetY = 0,
+  geolocate,
+  controls,
   className,
 }: PlacesMapProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const instance = useMaplibre(containerRef);
+  const instance = useMaplibre(containerRef, { geolocate, controls });
   const markers = useRef(new Map<string, { marker: Marker; root: Root }>());
   const callbacks = useRef({ onSelect, onHover });
   callbacks.current = { onSelect, onHover };

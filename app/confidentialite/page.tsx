@@ -106,6 +106,11 @@ export default function PrivacyPage() {
               vous vous connectez, pour vous garder connecté ;
             </li>
             <li>
+              <strong>Votre position GPS</strong>, uniquement si vous touchez « Me localiser » sur la carte et
+              l&apos;autorisez : elle sert à afficher le point bleu et reste dans votre navigateur, sans jamais être
+              envoyée ni enregistrée ;
+            </li>
+            <li>
               <strong>Stockage local du navigateur</strong> : votre choix de thème clair/sombre, et l&apos;adresse que vous
               vouliez sauvegarder avant de vous connecter (effacée après connexion, ou au bout de 30 minutes).
             </li>

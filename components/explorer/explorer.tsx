@@ -133,6 +133,9 @@ export function Explorer({
             onHover={setHoveredId}
             padding={isDesktop ? { top: 48, bottom: 48 } : { top: 140, bottom: 110 }}
             focusOffsetY={isDesktop ? 0 : 140}
+            geolocate
+            controls={isDesktop ? "top-right" : "bottom-right"}
+            className="map-above-nav"
           />
 
 

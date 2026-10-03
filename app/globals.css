@@ -96,6 +96,21 @@
 .dark .maplibregl-ctrl-group button .maplibregl-ctrl-icon {
   filter: invert(1);
 }
+/* Boutons de la carte en bas à droite sur mobile : au-dessus de la barre de navigation. */
+.map-above-nav .maplibregl-ctrl-bottom-right {
+  bottom: calc(4.5rem + env(safe-area-inset-bottom));
+}
+@media (max-width: 767px) {
+  /* Pincer pour zoomer suffit sur mobile ; le bouton « Me localiser » devient une cible tactile confortable. */
+  .map-above-nav .maplibregl-ctrl-zoom-in,
+  .map-above-nav .maplibregl-ctrl-zoom-out {
+    display: none !important;
+  }
+  .maplibregl-ctrl-group .maplibregl-ctrl-geolocate {
+    width: 44px;
+    height: 44px;
+  }
+}
 .maplibregl-ctrl-attrib {
   font-size: 10px;
   background: var(--glass) !important;
