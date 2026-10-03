@@ -35,7 +35,7 @@ from (values
   -- Points de vue
   ('Parc du Vinaigrier', 'parc-du-vinaigrier',
    'Colline boisée à l''est de Nice, entre restanques et oliviers, avec vue sur la Baie des Anges et la rade de Villefranche.',
-   'collines-sentiers', 'point-de-vue', 'Boulevard du Mont Alban', 'Nice', 43.71624, 7.30217, 0,
+   'collines-sentiers', 'point-de-vue', null, 'Nice', 43.71624, 7.30217, 0,
    null, 'SUNSET', array['Vue mer', 'Ombragé', 'Apéro sunset'], 200),
   ('Jardin du monastère & arènes de Cimiez', 'jardin-monastere-cimiez',
    'Roseraie et pergolas du monastère franciscain, belvédère sur la vallée du Paillon et la colline du Château, à deux pas des arènes romaines.',
@@ -73,7 +73,7 @@ from (values
    null, 'AFTERNOON', array['Vue mer', 'Baignade', 'Famille'], 200),
   ('Plage de la Paloma', 'plage-de-la-paloma',
    'Petite crique abritée de Saint-Jean-Cap-Ferrat, au bord du sentier de la pointe Saint-Hospice.',
-   'riviera-secrete', 'plage', 'Avenue Jean Mermoz', 'Saint-Jean-Cap-Ferrat', 43.68617, 7.34188, 0,
+   'riviera-secrete', 'plage', null, 'Saint-Jean-Cap-Ferrat', 43.68617, 7.34188, 0,
    null, 'MORNING', array['Vue mer', 'Baignade'], 210),
   ('Plage de la Petite Afrique', 'plage-petite-afrique',
    'Plage de Beaulieu-sur-Mer adossée aux falaises, réputée pour son microclimat et ses eaux calmes.',
