@@ -23,6 +23,7 @@ export const SUGGESTED_TAGS = [
   "PMR",
   "Chiens admis",
   "Ombragé",
+  "Excursion",
 ];
 
 /** Teinte de marque par catégorie (slug) — utilisée pour les marqueurs et pastilles. */

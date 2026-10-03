@@ -29,13 +29,20 @@ export async function getCategories(): Promise<Category[]> {
 
 export async function getPlaces(filter?: { chapterId?: string; ids?: string[] }): Promise<PlaceWithRelations[]> {
   const supabase = await createClient();
-  let query = supabase.from("places").select(PLACE_SELECT).order("is_featured", { ascending: false }).order("title");
-  if (filter?.chapterId) query = query.eq("chapter_id", filter.chapterId);
-  if (filter?.ids) {
-    if (filter.ids.length === 0) return [];
-    query = query.in("id", filter.ids);
-  }
-  const { data } = await query;
+  if (filter?.ids?.length === 0) return [];
+  const run = (orderColumn: "sort_order" | "is_featured") => {
+    let query = supabase
+      .from("places")
+      .select(PLACE_SELECT)
+      .order(orderColumn, { ascending: orderColumn === "sort_order" })
+      .order("title");
+    if (filter?.chapterId) query = query.eq("chapter_id", filter.chapterId);
+    if (filter?.ids) query = query.in("id", filter.ids);
+    return query;
+  };
+  // Ordre éditorial (/admin/ordre) ; repli sur « coups de cœur d'abord » tant que la migration 003 n'est pas passée.
+  let { data, error } = await run("sort_order");
+  if (error?.code === "42703") ({ data, error } = await run("is_featured"));
   return (data as PlaceWithRelations[] | null) ?? [];
 }
 

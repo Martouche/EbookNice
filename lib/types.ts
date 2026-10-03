@@ -58,6 +58,8 @@ export interface Place {
   best_time_to_visit: BestTime;
   tags: string[];
   is_featured: boolean;
+  /** Ordre éditorial (plus petit = affiché en premier), réglé dans /admin/ordre. */
+  sort_order: number;
   created_at: string;
 }
 

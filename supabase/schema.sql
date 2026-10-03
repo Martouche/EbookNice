@@ -70,11 +70,14 @@ create table if not exists public.places (
   best_time_to_visit  public.best_time not null default 'ANYTIME',
   tags                text[] not null default '{}',
   is_featured         boolean not null default false,
+  sort_order          integer not null default 1000,
   created_at          timestamptz not null default now()
 );
 
 -- Bases créées avant l'ajout des crédits photo.
 alter table public.places add column if not exists image_credits jsonb not null default '[]';
+alter table public.places add column if not exists sort_order integer not null default 1000;
+create index if not exists places_sort_idx on public.places (sort_order, title);
 
 create index if not exists places_chapter_idx  on public.places (chapter_id);
 create index if not exists places_category_idx on public.places (category_id);

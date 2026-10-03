@@ -101,3 +101,30 @@ export async function deleteChapter(id: string) {
   await supabase.from("chapters").delete().eq("id", id);
   revalidatePath("/", "layout");
 }
+
+/** Enregistre l'ordre d'une liste de spots (index × 10 : laisse de la place pour des insertions). */
+export async function reorderPlaces(orderedIds: string[]): Promise<FormState> {
+  const supabase = await requireAdmin();
+  const results = await Promise.all(
+    orderedIds.map((id, index) => supabase.from("places").update({ sort_order: (index + 1) * 10 }).eq("id", id)),
+  );
+  const failed = results.find((r) => r.error);
+  if (failed?.error) {
+    return {
+      error:
+        failed.error.code === "42703" || failed.error.code === "PGRST204"
+          ? "Colonne sort_order absente : exécutez supabase/migrations/003_ordre_et_nouvelles_adresses.sql."
+          : failed.error.message,
+    };
+  }
+  revalidatePath("/", "layout");
+  return {};
+}
+
+export async function setPlaceFeatured(id: string, featured: boolean): Promise<FormState> {
+  const supabase = await requireAdmin();
+  const { error } = await supabase.from("places").update({ is_featured: featured }).eq("id", id);
+  if (error) return { error: error.message };
+  revalidatePath("/", "layout");
+  return {};
+}
