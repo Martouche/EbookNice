@@ -64,7 +64,7 @@ export function FilterBar({
           />
         </div>
 
-        <div className="no-scrollbar -mx-4 flex gap-2 overflow-x-auto px-4 md:mx-0 md:px-0">
+        <div className="no-scrollbar -mx-4 flex gap-2 overflow-x-auto pr-12 pl-4 [mask-image:linear-gradient(to_right,black_88%,transparent)] md:mx-0 md:px-0 md:[mask-image:none]">
           <Chip
             active={isFree}
             onClick={() => setFilters((f) => ({ ...f, prices: toggleIn(f.prices, 0) }))}
@@ -108,7 +108,7 @@ export function FilterBar({
               className="overflow-hidden"
             >
               <div className="space-y-3 pb-1">
-                <div className="no-scrollbar -mx-4 flex items-center gap-2 overflow-x-auto px-4 md:mx-0 md:px-0">
+                <div className="no-scrollbar -mx-4 flex items-center gap-2 overflow-x-auto pr-12 pl-4 [mask-image:linear-gradient(to_right,black_88%,transparent)] md:mx-0 md:px-0 md:[mask-image:none]">
                   <span className="w-12 shrink-0 font-mono text-[10px] tracking-[0.18em] text-muted-foreground uppercase">Prix</span>
                   {PRICE_LABELS.slice(1).map((label, i) => (
                     <Chip
@@ -121,7 +121,7 @@ export function FilterBar({
                   ))}
                 </div>
                 {tags.length > 0 && (
-                  <div className="no-scrollbar -mx-4 flex items-center gap-2 overflow-x-auto px-4 md:mx-0 md:px-0">
+                  <div className="no-scrollbar -mx-4 flex items-center gap-2 overflow-x-auto pr-12 pl-4 [mask-image:linear-gradient(to_right,black_88%,transparent)] md:mx-0 md:px-0 md:[mask-image:none]">
                     <span className="w-12 shrink-0 font-mono text-[10px] tracking-[0.18em] text-muted-foreground uppercase">Envie</span>
                     {tags.map((tag) => (
                       <Chip

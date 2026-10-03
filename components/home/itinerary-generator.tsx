@@ -53,14 +53,14 @@ export function ItineraryGenerator({ places }: { places: PlaceWithRelations[] })
   return (
     <div className="overflow-hidden rounded-[2rem] border border-line bg-card">
       <div className="grid gap-8 p-5 md:grid-cols-[1fr_1.1fr] md:p-10">
-        <div>
+        <div className="min-w-0">
           <p className="font-mono text-[10px] tracking-[0.2em] text-ocre uppercase">Itinéraire express</p>
-          <h2 className="mt-3 font-display text-5xl leading-[0.95] md:text-6xl">
+          <h2 className="mt-3 font-display text-[clamp(2.5rem,11vw,3rem)] leading-[0.95] text-balance md:text-6xl">
             Combien de temps <span className="italic text-muted-foreground">as-tu ?</span>
           </h2>
 
           <div className="mt-8 space-y-6">
-            <div className="no-scrollbar -mx-5 overflow-x-auto px-5 md:mx-0 md:px-0">
+            <div className="no-scrollbar -mx-5 overflow-x-auto pr-12 pl-5 [mask-image:linear-gradient(to_right,black_85%,transparent)] md:mx-0 md:px-0 md:[mask-image:none]">
               <Segmented
                 id="duration"
                 value={duration}
@@ -105,7 +105,7 @@ export function ItineraryGenerator({ places }: { places: PlaceWithRelations[] })
           </div>
         </div>
 
-        <div className="min-h-64">
+        <div className="min-h-64 min-w-0">
           <AnimatePresence mode="popLayout" initial={false}>
             {!stops ? (
               <motion.div
