@@ -3,6 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
 import { useEffect, type ReactNode } from "react";
+import { useI18n } from "@/lib/i18n/client";
 import { useIsDesktop } from "@/lib/use-media-query";
 import { Drawer, DrawerContent, DrawerDescription, DrawerTitle } from "./drawer";
 
@@ -17,6 +18,7 @@ interface ResponsiveSheetProps {
 /** Bottom sheet (vaul) sur mobile, modale centrée sur desktop. */
 export function ResponsiveSheet({ open, onOpenChange, title, description, children }: ResponsiveSheetProps) {
   const isDesktop = useIsDesktop();
+  const { t } = useI18n();
 
   useEffect(() => {
     if (!open || !isDesktop) return;
@@ -62,7 +64,7 @@ export function ResponsiveSheet({ open, onOpenChange, title, description, childr
           >
             <button
               type="button"
-              aria-label="Fermer"
+              aria-label={t.common.close}
               onClick={() => onOpenChange(false)}
               className="absolute top-4 right-4 grid size-8 place-items-center rounded-full text-muted-foreground transition-colors duration-100 hover:bg-muted hover:text-foreground"
             >

@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { PlaceCover } from "@/components/place-cover";
 import { BLUR_DATA_URL } from "@/lib/image";
+import { useI18n } from "@/lib/i18n/client";
 import type { Category, ImageCredit } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import { Lightbox } from "./lightbox";
@@ -22,6 +23,7 @@ interface PhotoGalleryProps {
 
 /** Photo-first : carrousel plein cadre sur mobile, mosaïque bento sur desktop, lightbox au clic. */
 export function PhotoGallery({ images, title, credits, category, actions }: PhotoGalleryProps) {
+  const { t } = useI18n();
   const [openAt, setOpenAt] = useState<number | null>(null);
   const [emblaRef, embla] = useEmblaCarousel({ loop: images.length > 1 });
   const [index, setIndex] = useState(0);
@@ -57,12 +59,12 @@ export function PhotoGallery({ images, title, credits, category, actions }: Phot
                 key={src}
                 type="button"
                 onClick={() => setOpenAt(i)}
-                aria-label={`Agrandir la photo ${i + 1}`}
+                aria-label={t.place.enlarge(i + 1)}
                 className="relative aspect-[4/5] min-w-0 flex-[0_0_100%]"
               >
                 <Image
                   src={src}
-                  alt={`${title} — photo ${i + 1}`}
+                  alt={t.place.photoAlt(title, i + 1)}
                   fill
                   sizes="100vw"
                   priority={i === 0}
@@ -96,7 +98,7 @@ export function PhotoGallery({ images, title, credits, category, actions }: Phot
             key={src}
             type="button"
             onClick={() => setOpenAt(i)}
-            aria-label={`Agrandir la photo ${i + 1}`}
+            aria-label={t.place.enlarge(i + 1)}
             className={cn(
               "group relative overflow-hidden bg-muted",
               tiles.length >= 3 && i === 0 && "col-span-2 row-span-2",
@@ -106,7 +108,7 @@ export function PhotoGallery({ images, title, credits, category, actions }: Phot
           >
             <Image
               src={src}
-              alt={`${title} — photo ${i + 1}`}
+              alt={t.place.photoAlt(title, i + 1)}
               fill
               sizes={i === 0 ? "(min-width: 768px) 50vw, 100vw" : "25vw"}
               priority={i === 0}
@@ -124,7 +126,7 @@ export function PhotoGallery({ images, title, credits, category, actions }: Phot
             className="absolute right-4 bottom-4 flex items-center gap-2 rounded-full border border-black/10 bg-white px-4 py-2 text-sm font-medium text-[#14120f] transition-transform duration-100 active:scale-95"
           >
             <Grid2x2 className="size-4" />
-            Voir les {images.length} photos
+            {t.place.seeAllPhotos(images.length)}
           </button>
         )}
       </div>

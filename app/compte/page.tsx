@@ -6,15 +6,20 @@ import { signOut } from "@/app/actions/auth";
 import { deleteItinerary, setItineraryVisibility } from "@/app/actions/itineraries";
 import { EmptyState } from "@/components/section-heading";
 import { Button } from "@/components/ui/button";
+import { FAVORITES_TITLE } from "@/lib/constants";
 import { getFavoriteIds, getMyItineraries, getSession } from "@/lib/data";
+import { getI18n } from "@/lib/i18n/server";
 
-export const metadata: Metadata = { title: "Mon compte" };
+export async function generateMetadata(): Promise<Metadata> {
+  return { title: (await getI18n()).t.meta.account };
+}
 
 export default async function AccountPage() {
-  const [{ user, profile }, itineraries, favoriteIds] = await Promise.all([
+  const [{ user, profile }, itineraries, favoriteIds, { t, locale }] = await Promise.all([
     getSession(),
     getMyItineraries(),
     getFavoriteIds(),
+    getI18n(),
   ]);
   if (!user) redirect("/connexion?next=/compte");
 
@@ -23,37 +28,37 @@ export default async function AccountPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 md:px-8 md:py-12">
       <header className="border-b border-line pb-8">
-        <p className="font-mono text-[10px] tracking-[0.2em] text-ocre uppercase">Mon compte</p>
+        <p className="font-mono text-[10px] tracking-[0.2em] text-ocre uppercase">{t.account.kicker}</p>
         <h1 className="mt-2 font-display text-[clamp(2.5rem,11vw,3.75rem)] leading-[1] text-balance break-words">
-          Bonjour, <span className="italic">{name}</span>
+          {t.account.hello}<span className="italic">{name}</span>
         </h1>
         <p className="mt-3 text-sm text-muted-foreground">{user.email}</p>
         <div className="mt-6 flex flex-wrap gap-2">
           <Button asChild variant="outline">
-            <Link href="/favoris">{favoriteIds.length} favori{favoriteIds.length > 1 ? "s" : ""}</Link>
+            <Link href="/favoris">{t.account.favorites(favoriteIds.length)}</Link>
           </Button>
           {profile?.role === "ADMIN" && (
             <Button asChild variant="outline">
               <Link href="/admin">
                 <ShieldCheck className="text-ocre" />
-                Back-office
+                {t.account.backoffice}
               </Link>
             </Button>
           )}
           <form action={signOut}>
             <Button variant="ghost" type="submit">
               <LogOut />
-              Se déconnecter
+              {t.account.logout}
             </Button>
           </form>
         </div>
       </header>
 
       <section className="mt-10">
-        <h2 className="mb-4 font-display text-3xl">Mes itinéraires</h2>
+        <h2 className="mb-4 font-display text-3xl">{t.account.itineraries}</h2>
         {itineraries.length === 0 ? (
           <EmptyState>
-            Aucun itinéraire pour l&apos;instant. Composez-en un avec le générateur express de la page d&apos;accueil.
+            {t.account.noItineraries}
           </EmptyState>
         ) : (
           <ul className="divide-y divide-line border-y border-line">
@@ -61,21 +66,21 @@ export default async function AccountPage() {
               <li key={it.id} className="flex items-center gap-3 py-4">
                 <Link href={`/carnet/${it.id}`} className="group min-w-0 flex-1">
                   <p className="flex items-center gap-1.5 truncate font-medium group-hover:underline">
-                    {it.title}
+                    {it.title === FAVORITES_TITLE ? t.carnet.favoritesTitle : it.title}
                     <ArrowUpRight className="size-3.5 text-muted-foreground" />
                   </p>
                   <p className="text-xs text-muted-foreground">
-                    {it.place_ids.length} étapes · {new Date(it.created_at).toLocaleDateString("fr-FR")}
+                    {t.account.steps(it.place_ids.length)} · {new Date(it.created_at).toLocaleDateString(locale === "en" ? "en-GB" : "fr-FR")}
                   </p>
                 </Link>
                 <form action={setItineraryVisibility.bind(null, it.id, !it.is_public)}>
-                  <Button type="submit" size="sm" variant="outline" title={it.is_public ? "Rendre privé" : "Rendre public"}>
+                  <Button type="submit" size="sm" variant="outline" title={it.is_public ? t.account.makePrivate : t.account.makePublic}>
                     {it.is_public ? <Globe /> : <Lock />}
-                    {it.is_public ? "Public" : "Privé"}
+                    {it.is_public ? t.account.public : t.account.private}
                   </Button>
                 </form>
                 <form action={deleteItinerary.bind(null, it.id)}>
-                  <Button type="submit" size="icon" variant="ghost" aria-label="Supprimer l'itinéraire">
+                  <Button type="submit" size="icon" variant="ghost" aria-label={t.account.deleteItinerary}>
                     <Trash2 />
                   </Button>
                 </form>

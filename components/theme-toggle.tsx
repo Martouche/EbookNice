@@ -4,19 +4,21 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useSyncExternalStore } from "react";
+import { useI18n } from "@/lib/i18n/client";
 import { cn } from "@/lib/utils";
 
 const subscribe = () => () => {};
 
 export function ThemeToggle({ className }: { className?: string }) {
   const { resolvedTheme, setTheme } = useTheme();
+  const { t } = useI18n();
   const mounted = useSyncExternalStore(subscribe, () => true, () => false);
   const isDark = mounted ? resolvedTheme === "dark" : true;
 
   return (
     <button
       type="button"
-      aria-label={isDark ? "Passer en thème clair" : "Passer en thème sombre"}
+      aria-label={isDark ? t.theme.toLight : t.theme.toDark}
       onClick={() => setTheme(isDark ? "light" : "dark")}
       className={cn(
         "relative grid size-9 place-items-center overflow-hidden rounded-full border border-line transition-colors duration-100 hover:bg-muted",

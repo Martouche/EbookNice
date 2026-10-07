@@ -7,7 +7,7 @@ import { useState } from "react";
 import { CategoryIcon } from "@/components/category-icon";
 import { FavoriteButton } from "@/components/favorite-button";
 import { PlaceCover } from "@/components/place-cover";
-import { priceLabel } from "@/lib/constants";
+import { useI18n } from "@/lib/i18n/client";
 import type { PlaceWithRelations } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
@@ -26,6 +26,7 @@ export function CarnetBoard({
   route?: boolean;
   editable?: boolean;
 }) {
+  const { t } = useI18n();
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
   return (
@@ -61,7 +62,7 @@ export function CarnetBoard({
               <div className="min-w-0 flex-1 py-1">
                 <p className="flex items-center gap-1.5 text-xs text-muted-foreground">
                   <CategoryIcon icon={place.category?.icon} className="size-3.5" />
-                  {place.category?.name} · {place.city} · {priceLabel(place.price_level)}
+                  {place.category?.name} · {place.city} · {t.price[place.price_level]}
                 </p>
                 <Link href={`/lieux/${place.slug}`} className="mt-1 block font-display text-2xl leading-tight hover:underline">
                   {place.title}

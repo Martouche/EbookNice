@@ -4,14 +4,19 @@ const escapeXml = (s: string) =>
   s.replace(/[<>&'"]/g, (c) => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;", "'": "&apos;", '"': "&quot;" })[c]!);
 
 /** Exporte une liste de lieux en waypoints GPX (lisible par Komoot, OsmAnd, Google Earth…). */
-export function placesToGpx(title: string, places: PlaceWithRelations[], siteUrl: string) {
+export function placesToGpx(
+  title: string,
+  places: PlaceWithRelations[],
+  siteUrl: string,
+  labels: { link: string; place: string } = { link: "Voir dans le guide", place: "Lieu" },
+) {
   const waypoints = places
     .map(
       (p) => `  <wpt lat="${p.lat}" lon="${p.lng}">
     <name>${escapeXml(p.title)}</name>
     <desc>${escapeXml([p.local_tip, p.address, p.city].filter(Boolean).join(" — "))}</desc>
-    <link href="${escapeXml(`${siteUrl}/lieux/${p.slug}`)}"><text>Voir dans le guide</text></link>
-    <type>${escapeXml(p.category?.name ?? "Lieu")}</type>
+    <link href="${escapeXml(`${siteUrl}/lieux/${p.slug}`)}"><text>${escapeXml(labels.link)}</text></link>
+    <type>${escapeXml(p.category?.name ?? labels.place)}</type>
   </wpt>`,
     )
     .join("\n");

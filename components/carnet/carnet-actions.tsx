@@ -6,6 +6,7 @@ import { useState, useTransition } from "react";
 import { shareFavorites } from "@/app/actions/itineraries";
 import { Button } from "@/components/ui/button";
 import { placesToGpx } from "@/lib/gpx";
+import { useI18n } from "@/lib/i18n/client";
 import type { PlaceWithRelations } from "@/lib/types";
 import { slugify } from "@/lib/utils";
 
@@ -19,6 +20,7 @@ interface CarnetActionsProps {
 export function CarnetActions({ title, places, itineraryId }: CarnetActionsProps) {
   const [pending, startTransition] = useTransition();
   const [feedback, setFeedback] = useState<string | null>(null);
+  const { t } = useI18n();
 
   const flash = (message: string) => {
     setFeedback(message);
@@ -30,20 +32,20 @@ export function CarnetActions({ title, places, itineraryId }: CarnetActionsProps
       let id = itineraryId;
       if (!id) {
         const result = await shareFavorites();
-        if (!("id" in result) || !result.id) return flash("Impossible de publier le carnet.");
+        if (!("id" in result) || !result.id) return flash(t.carnet.publishError);
         id = result.id;
       }
       const url = `${window.location.origin}/carnet/${id}`;
       if (navigator.share) {
-        await navigator.share({ title, text: "Mon carnet de la Côte d'Azur", url }).catch(() => undefined);
+        await navigator.share({ title, text: t.carnet.shareText, url }).catch(() => undefined);
       } else {
         await navigator.clipboard.writeText(url);
-        flash("Lien copié !");
+        flash(t.carnet.linkCopied);
       }
     });
 
   const exportGpx = () => {
-    const blob = new Blob([placesToGpx(title, places, window.location.origin)], { type: "application/gpx+xml" });
+    const blob = new Blob([placesToGpx(title, places, window.location.origin, { link: t.carnet.gpxLink, place: t.carnet.gpxPlace })], { type: "application/gpx+xml" });
     const url = URL.createObjectURL(blob);
     const a = Object.assign(document.createElement("a"), { href: url, download: `${slugify(title) || "carnet"}.gpx` });
     a.click();
@@ -54,15 +56,15 @@ export function CarnetActions({ title, places, itineraryId }: CarnetActionsProps
     <div className="no-print flex flex-wrap items-center gap-2">
       <Button variant="accent" onClick={share} disabled={pending || places.length === 0}>
         {pending ? <Loader2 className="animate-spin" /> : <Share2 />}
-        Partager
+        {t.carnet.share}
       </Button>
       <Button variant="outline" onClick={exportGpx} disabled={places.length === 0}>
         <Download />
-        Export GPX
+        {t.carnet.exportGpx}
       </Button>
       <Button variant="outline" onClick={() => window.print()} disabled={places.length === 0}>
         <Printer />
-        PDF
+        {t.carnet.pdf}
       </Button>
       <AnimatePresence>
         {feedback && (

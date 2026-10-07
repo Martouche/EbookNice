@@ -142,6 +142,18 @@ export function PlaceForm({
         <Field label="Description" htmlFor="description">
           <Textarea id="description" name="description" defaultValue={place?.description ?? ""} rows={4} />
         </Field>
+        <div className="space-y-4 rounded-2xl border border-dashed border-line-strong p-4">
+          <p className="text-xs text-muted-foreground">
+            🇬🇧 <strong className="text-foreground">Version anglaise</strong> — affichée aux visiteurs anglophones. Vide = le
+            texte français est affiché.
+          </p>
+          <Field label="Titre (EN)" htmlFor="title_en">
+            <Input id="title_en" name="title_en" defaultValue={place?.title_en ?? ""} placeholder={title} />
+          </Field>
+          <Field label="Description (EN)" htmlFor="description_en">
+            <Textarea id="description_en" name="description_en" defaultValue={place?.description_en ?? ""} rows={3} />
+          </Field>
+        </div>
         <label className="flex items-center gap-3 text-sm">
           <input type="checkbox" name="is_featured" defaultChecked={place?.is_featured} className="size-4 accent-ocre" />
           Mettre en avant (coups de cœur de l&apos;accueil)
@@ -151,6 +163,9 @@ export function PlaceForm({
       <Panel title="Conseil du Local">
         <Field label="Le tip qui fait la différence" htmlFor="local_tip">
           <Textarea id="local_tip" name="local_tip" defaultValue={place?.local_tip ?? ""} rows={3} className="font-display text-lg italic" />
+        </Field>
+        <Field label="Local's tip (EN)" htmlFor="local_tip_en">
+          <Textarea id="local_tip_en" name="local_tip_en" defaultValue={place?.local_tip_en ?? ""} rows={2} className="font-display text-lg italic" />
         </Field>
         <div className="flex flex-wrap items-center gap-3">
           <label className="cursor-pointer">

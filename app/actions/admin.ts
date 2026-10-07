@@ -43,6 +43,9 @@ export async function savePlace(_: FormState, fd: FormData): Promise<FormState> 
     title,
     slug: slugify(text(fd, "slug") ?? title),
     description: text(fd, "description"),
+    title_en: text(fd, "title_en"),
+    description_en: text(fd, "description_en"),
+    local_tip_en: text(fd, "local_tip_en"),
     chapter_id: text(fd, "chapter_id"),
     category_id: text(fd, "category_id"),
     address: text(fd, "address"),
@@ -64,7 +67,9 @@ export async function savePlace(_: FormState, fd: FormData): Promise<FormState> 
     : await supabase.from("places").insert(payload);
 
   if (error) {
-    return { error: error.code === "23505" ? "Ce slug est déjà utilisé par un autre spot." : error.message };
+    if (error.code === "23505") return { error: "Ce slug est déjà utilisé par un autre spot." };
+    if (error.code === "PGRST204" || error.code === "42703") return { error: "Colonnes anglaises absentes : exécutez supabase/migrations/004_english.sql." };
+    return { error: error.message };
   }
 
   revalidatePath("/", "layout");
@@ -87,6 +92,8 @@ export async function saveChapter(fd: FormData) {
     title,
     slug: slugify(text(fd, "slug") ?? title),
     description: text(fd, "description"),
+    title_en: text(fd, "title_en"),
+    description_en: text(fd, "description_en"),
     cover_image: text(fd, "cover_image"),
     order_index: Number(fd.get("order_index")) || 0,
   };

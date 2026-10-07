@@ -2,6 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import { getI18n } from "@/lib/i18n/server";
 import { createClient } from "@/lib/supabase/server";
 
 export interface AuthState {
@@ -21,7 +22,7 @@ export async function signIn(_: AuthState, formData: FormData): Promise<AuthStat
     email: String(formData.get("email") ?? ""),
     password: String(formData.get("password") ?? ""),
   });
-  if (error) return { error: "Email ou mot de passe incorrect." };
+  if (error) return { error: (await getI18n()).t.auth.errors.invalidCredentials };
 
   revalidatePath("/", "layout");
   redirect(safeNext(formData.get("next")));
@@ -29,7 +30,7 @@ export async function signIn(_: AuthState, formData: FormData): Promise<AuthStat
 
 export async function signUp(_: AuthState, formData: FormData): Promise<AuthState> {
   const password = String(formData.get("password") ?? "");
-  if (password.length < 8) return { error: "Le mot de passe doit contenir au moins 8 caractères." };
+  if (password.length < 8) return { error: (await getI18n()).t.auth.errors.passwordTooShort };
 
   const supabase = await createClient();
   const next = safeNext(formData.get("next"));
@@ -48,7 +49,7 @@ export async function signUp(_: AuthState, formData: FormData): Promise<AuthStat
     revalidatePath("/", "layout");
     redirect(next);
   }
-  return { message: "Presque fini ! Confirmez votre adresse via le lien reçu par email." };
+  return { message: (await getI18n()).t.auth.errors.confirmEmail };
 }
 
 export async function signOut() {

@@ -11,16 +11,16 @@ import { PlaceCard } from "@/components/place-card";
 import { ShareButton } from "@/components/share-button";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { BEST_TIME_LABELS, CATEGORY_SHOWCASE, priceLabel } from "@/lib/constants";
 import { getPlaceBySlug, getPlaces } from "@/lib/data";
+import { tagLabel } from "@/lib/i18n/dictionaries";
+import { getI18n } from "@/lib/i18n/server";
 
 type Props = { params: Promise<{ slug: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const place = await getPlaceBySlug((await params).slug);
+  const [place, { t }] = await Promise.all([getPlaceBySlug((await params).slug), getI18n()]);
   if (!place) return {};
-  const description =
-    place.description ?? place.local_tip ?? `${place.category?.name ?? "Spot"} à ${place.city}, sélectionné par les locaux.`;
+  const description = place.description ?? place.local_tip ?? t.meta.placeFallback(place.category?.name ?? "Spot", place.city);
   // L'image OpenGraph est générée par ./opengraph-image.tsx (photo HD ou couverture typographique).
   return {
     title: place.title,
@@ -32,11 +32,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function PlacePage({ params }: Props) {
-  const place = await getPlaceBySlug((await params).slug);
+  const [place, { t }] = await Promise.all([getPlaceBySlug((await params).slug), getI18n()]);
   if (!place) notFound();
 
   // Même type de lieu (plages, points de vue…) : la navigation suit les « envies » de l'accueil.
-  const categoryTitle = CATEGORY_SHOWCASE.find((c) => c.slug === place.category?.slug)?.title ?? place.category?.name;
+  const categoryTitle = t.showcase[place.category?.slug ?? ""]?.title ?? place.category?.name;
   const related = place.category
     ? (await getPlaces()).filter((p) => p.category?.slug === place.category?.slug && p.id !== place.id).slice(0, 3)
     : [];
@@ -52,7 +52,7 @@ export default async function PlacePage({ params }: Props) {
         className="mb-4 hidden items-center gap-1.5 text-sm text-muted-foreground transition-colors duration-100 hover:text-foreground md:inline-flex"
       >
         <ArrowLeft className="size-4" />
-        {categoryTitle ?? "Explorer"}
+        {categoryTitle ?? t.common.explore}
       </Link>
 
       <PhotoGallery
@@ -71,7 +71,7 @@ export default async function PlacePage({ params }: Props) {
       <div className="mt-8 grid gap-10 md:grid-cols-[1fr_340px] md:gap-14 lg:grid-cols-[1fr_380px]">
         <div className="min-w-0">
           <div className="flex flex-wrap items-center gap-2">
-            {place.is_free && <Badge variant="free">Gratuit · FREE</Badge>}
+            {place.is_free && <Badge variant="free">{t.common.freeBadge}</Badge>}
             {place.category && (
               <Badge>
                 <CategoryIcon icon={place.category.icon} />
@@ -80,7 +80,7 @@ export default async function PlacePage({ params }: Props) {
             )}
             {place.tags.map((tag) => (
               <Link key={tag} href={`/explorer?tags=${encodeURIComponent(tag)}`}>
-                <Badge className="bg-transparent text-muted-foreground transition-colors duration-100 hover:text-foreground">{tag}</Badge>
+                <Badge className="bg-transparent text-muted-foreground transition-colors duration-100 hover:text-foreground">{tagLabel(t, tag)}</Badge>
               </Link>
             ))}
           </div>
@@ -101,7 +101,7 @@ export default async function PlacePage({ params }: Props) {
             <aside className="relative mt-10 rounded-3xl border border-ocre/30 bg-ocre/10 p-6">
               <Badge variant="accent" className="absolute -top-3 left-5 bg-background">
                 <Quote />
-                Conseil du Local
+                {t.place.localTip}
               </Badge>
               <p className="font-display text-2xl leading-snug italic">« {place.local_tip} »</p>
             </aside>
@@ -129,15 +129,15 @@ export default async function PlacePage({ params }: Props) {
             <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-line bg-line text-sm">
               <div className="bg-card p-3">
                 <dt className="flex items-center gap-1.5 font-mono text-[10px] tracking-[0.18em] text-muted-foreground uppercase">
-                  <Ticket className="size-3" /> Prix
+                  <Ticket className="size-3" /> {t.place.price}
                 </dt>
-                <dd className="mt-1 font-medium">{place.is_free ? "Gratuit" : priceLabel(place.price_level)}</dd>
+                <dd className="mt-1 font-medium">{t.price[place.price_level]}</dd>
               </div>
               <div className="bg-card p-3">
                 <dt className="flex items-center gap-1.5 font-mono text-[10px] tracking-[0.18em] text-muted-foreground uppercase">
-                  <Clock className="size-3" /> Moment
+                  <Clock className="size-3" /> {t.place.moment}
                 </dt>
-                <dd className="mt-1 font-medium">{BEST_TIME_LABELS[place.best_time_to_visit]}</dd>
+                <dd className="mt-1 font-medium">{t.bestTime[place.best_time_to_visit]}</dd>
               </div>
             </dl>
 
@@ -145,7 +145,7 @@ export default async function PlacePage({ params }: Props) {
               <Button asChild variant="accent" size="lg">
                 <a href={googleMaps} target="_blank" rel="noopener noreferrer">
                   <Navigation />
-                  Y aller avec Google Maps
+                  {t.place.googleMaps}
                 </a>
               </Button>
               <Button asChild variant="outline" size="lg">
@@ -158,7 +158,7 @@ export default async function PlacePage({ params }: Props) {
                 <Button asChild variant="outline" size="lg">
                   <a href={place.gpx_url} download>
                     <Download />
-                    Télécharger le tracé GPX
+                    {t.place.gpx}
                   </a>
                 </Button>
               )}
@@ -169,7 +169,7 @@ export default async function PlacePage({ params }: Props) {
 
       {related.length > 0 && (
         <section className="mt-16 border-t border-line pt-10">
-          <p className="font-mono text-[10px] tracking-[0.2em] text-muted-foreground uppercase">Dans la même envie</p>
+          <p className="font-mono text-[10px] tracking-[0.2em] text-muted-foreground uppercase">{t.place.sameCategory}</p>
           <h2 className="mt-2 mb-6 font-display text-4xl">{categoryTitle}</h2>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {related.map((p) => (

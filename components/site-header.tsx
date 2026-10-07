@@ -5,11 +5,14 @@ import { ShieldCheck } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { useI18n } from "@/lib/i18n/client";
+import { LanguageToggle } from "./language-toggle";
 import { NAV_ITEMS, isActive } from "./nav-items";
 import { ThemeToggle } from "./theme-toggle";
 
 export function SiteHeader({ isAdmin }: { isAdmin: boolean }) {
   const pathname = usePathname();
+  const { t } = useI18n();
 
   return (
     <header className="no-print sticky top-0 z-40 border-b border-line bg-glass pt-[env(safe-area-inset-top)] backdrop-blur-2xl">
@@ -19,12 +22,12 @@ export function SiteHeader({ isAdmin }: { isAdmin: boolean }) {
             Nice<span className="text-ocre">.</span>
           </span>
           <span className="hidden font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground sm:inline">
-            Le guide des locaux
+            {t.brand.tagline}
           </span>
         </Link>
 
-        <nav aria-label="Navigation principale" className="hidden items-center gap-1 md:flex">
-          {NAV_ITEMS.map(({ href, label }) => {
+        <nav aria-label={t.nav.main} className="hidden items-center gap-1 md:flex">
+          {NAV_ITEMS.map(({ href, key }) => {
             const active = isActive(pathname, href);
             return (
               <Link
@@ -42,7 +45,7 @@ export function SiteHeader({ isAdmin }: { isAdmin: boolean }) {
                     transition={{ type: "spring", stiffness: 400, damping: 30 }}
                   />
                 )}
-                <span className="relative">{label}</span>
+                <span className="relative">{t.nav[key]}</span>
               </Link>
             );
           })}
@@ -55,9 +58,10 @@ export function SiteHeader({ isAdmin }: { isAdmin: boolean }) {
               className="flex h-9 items-center gap-1.5 rounded-full border border-line px-3 text-xs font-medium transition-colors duration-100 hover:bg-muted"
             >
               <ShieldCheck className="size-3.5 text-ocre" />
-              Admin
+              {t.nav.admin}
             </Link>
           )}
+          <LanguageToggle />
           <ThemeToggle />
         </div>
       </div>

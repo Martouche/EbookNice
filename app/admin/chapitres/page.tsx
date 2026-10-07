@@ -16,13 +16,17 @@ function ChapterFields({ chapter }: { chapter?: Chapter }) {
         <Input name="slug" defaultValue={chapter?.slug} placeholder="slug (auto)" aria-label="Slug" className="font-mono" />
       </div>
       <Textarea name="description" defaultValue={chapter?.description ?? ""} placeholder="Chapô du chapitre" rows={2} aria-label="Description" />
+      <div className="grid gap-3 md:grid-cols-[1fr_2fr]">
+        <Input name="title_en" defaultValue={chapter?.title_en ?? ""} placeholder="🇬🇧 Title (EN)" aria-label="Titre anglais" />
+        <Input name="description_en" defaultValue={chapter?.description_en ?? ""} placeholder="🇬🇧 Description (EN)" aria-label="Description anglaise" />
+      </div>
       <Input name="cover_image" type="url" defaultValue={chapter?.cover_image ?? ""} placeholder="URL de couverture (Supabase Storage)" aria-label="Image de couverture" />
     </>
   );
 }
 
 export default async function AdminChaptersPage() {
-  const chapters = await getChapters();
+  const chapters = await getChapters({ raw: true });
 
   return (
     <div className="space-y-4">

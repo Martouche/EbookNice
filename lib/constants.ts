@@ -49,6 +49,9 @@ export const CATEGORY_INK: Record<string, string> = {
 /** Fonds trop clairs pour un titre blanc (contraste insuffisant) : titre en teinte foncée. */
 export const CATEGORY_LIGHT_BG = new Set(["point-de-vue"]);
 
+/** Titre-clé (en base) du carnet de favoris publié ; traduit à l'affichage. */
+export const FAVORITES_TITLE = "Mon carnet de favoris";
+
 export const NICE_CENTER = { lat: 43.7009, lng: 7.2683 };
 
 /** Présentation des catégories sur l'accueil : titres explicites + accroche, dans l'ordre d'affichage. */

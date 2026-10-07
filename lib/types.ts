@@ -17,6 +17,9 @@ export interface Chapter {
   description: string | null;
   cover_image: string | null;
   order_index: number;
+  /** Version anglaise (migration 004) ; vide = repli sur le français. */
+  title_en?: string | null;
+  description_en?: string | null;
 }
 
 export interface Category {
@@ -50,6 +53,10 @@ export interface Place {
   price_level: number;
   is_free: boolean;
   local_tip: string | null;
+  /** Version anglaise (migration 004) ; vide = repli sur le français. */
+  title_en?: string | null;
+  description_en?: string | null;
+  local_tip_en?: string | null;
   audio_tip_url: string | null;
   images: string[];
   /** Attributions des photos auto-importées (licences CC BY / BY-SA, Unsplash, Pexels). */
@@ -65,7 +72,7 @@ export interface Place {
 
 export interface PlaceWithRelations extends Place {
   category: Category | null;
-  chapter: Pick<Chapter, "id" | "title" | "slug"> | null;
+  chapter: Pick<Chapter, "id" | "title" | "slug" | "title_en"> | null;
 }
 
 export interface CustomItinerary {

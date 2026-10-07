@@ -4,7 +4,7 @@ import { getCategories, getChapters, getPlaceById } from "@/lib/data";
 
 export default async function EditPlacePage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const [place, chapters, categories] = await Promise.all([getPlaceById(id), getChapters(), getCategories()]);
+  const [place, chapters, categories] = await Promise.all([getPlaceById(id), getChapters({ raw: true }), getCategories({ raw: true })]);
   if (!place) notFound();
 
   return (

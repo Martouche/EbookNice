@@ -7,15 +7,17 @@ import { PlaceCard } from "@/components/place-card";
 import { EmptyState, SectionHeading } from "@/components/section-heading";
 import { CATEGORY_SHOWCASE } from "@/lib/constants";
 import { getCategories, getPlaces } from "@/lib/data";
+import { getI18n } from "@/lib/i18n/server";
 
 export default async function HomePage() {
-  const [categories, places] = await Promise.all([getCategories(), getPlaces()]);
+  const [categories, places, { t }] = await Promise.all([getCategories(), getPlaces(), getI18n()]);
 
   // Une tuile illustrée par type de lieu (catégories vides masquées).
   const showcase: ShowcaseItem[] = CATEGORY_SHOWCASE.flatMap(({ slug, title, tagline }) => {
     const category = categories.find((c) => c.slug === slug);
     const count = places.filter((p) => p.category?.slug === slug).length;
-    return category && count > 0 ? [{ category, title, tagline, count }] : [];
+    const text = t.showcase[slug] ?? { title, tagline };
+    return category && count > 0 ? [{ category, title: text.title, tagline: text.tagline, count }] : [];
   });
   const featured = places.filter((p) => p.is_featured).slice(0, 6);
 
@@ -26,13 +28,13 @@ export default async function HomePage() {
       <div className="mx-auto max-w-7xl space-y-24 px-4 py-16 md:px-8 md:py-24">
         <section id="envies">
           <SectionHeading
-            kicker="Par envie"
-            title={<>Qu&apos;est-ce qui <span className="italic text-muted-foreground">vous tente ?</span></>}
+            kicker={t.home.showcaseKicker}
+            title={<>{t.home.showcaseTitle[0]}<span className="italic text-muted-foreground">{t.home.showcaseTitle[1]}</span></>}
           />
           {showcase.length > 0 ? (
             <CategoryShowcase items={showcase} />
           ) : (
-            <EmptyState>Aucune adresse pour l&apos;instant : ajoutez vos premiers spots depuis le back-office.</EmptyState>
+            <EmptyState>{t.home.showcaseEmpty}</EmptyState>
           )}
         </section>
 
@@ -43,14 +45,14 @@ export default async function HomePage() {
         {featured.length > 0 && (
           <section>
             <SectionHeading
-              kicker="Coups de cœur"
-              title={<>Là où l&apos;on <span className="italic text-muted-foreground">emmène les amis</span></>}
+              kicker={t.home.featuredKicker}
+              title={<>{t.home.featuredTitle[0]}<span className="italic text-muted-foreground">{t.home.featuredTitle[1]}</span></>}
               action={
                 <Link
                   href="/explorer"
                   className="hidden items-center gap-1.5 text-sm text-muted-foreground transition-colors duration-100 hover:text-foreground sm:flex"
                 >
-                  Tout explorer <ArrowRight className="size-4" />
+                  {t.home.exploreAll} <ArrowRight className="size-4" />
                 </Link>
               }
             />
@@ -67,11 +69,11 @@ export default async function HomePage() {
 
       <footer className="border-t border-line">
         <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-10 text-xs text-muted-foreground md:flex-row md:justify-between md:px-8">
-          <p className="font-display text-lg text-foreground">Nice<span className="text-ocre">.</span> Le guide des locaux</p>
+          <p className="font-display text-lg text-foreground">Nice<span className="text-ocre">.</span> {t.brand.tagline}</p>
           <p>
-            Fait à Nice, avec amour et un peu de socca ·{" "}
+            {t.brand.footer} ·{" "}
             <Link href="/confidentialite" className="underline underline-offset-2 hover:text-foreground">
-              Confidentialité
+              {t.brand.privacy}
             </Link>
           </p>
         </div>

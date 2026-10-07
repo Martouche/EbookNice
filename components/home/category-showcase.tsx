@@ -6,6 +6,7 @@ import Link from "next/link";
 import type { CSSProperties } from "react";
 import { CategoryIcon } from "@/components/category-icon";
 import { CATEGORY_COLORS, CATEGORY_INK, CATEGORY_LIGHT_BG, DEFAULT_CATEGORY_COLOR } from "@/lib/constants";
+import { useI18n } from "@/lib/i18n/client";
 import type { Category } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import { CategoryIllustration } from "./category-illustrations";
@@ -31,6 +32,7 @@ const LAYOUT = [
 const spring = { type: "spring", stiffness: 400, damping: 30 } as const;
 
 export function CategoryShowcase({ items }: { items: ShowcaseItem[] }) {
+  const { t } = useI18n();
   return (
     <div className="grid grid-cols-1 gap-3 md:grid-cols-6 md:gap-4">
       {items.map((item, i) => {
@@ -65,7 +67,7 @@ export function CategoryShowcase({ items }: { items: ShowcaseItem[] }) {
               <div className="flex items-start justify-between gap-3 p-5 md:p-6">
                 <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1 text-xs font-semibold text-(--ink)">
                   <CategoryIcon icon={icon} className="size-3.5" />
-                  {item.count} adresse{item.count > 1 ? "s" : ""}
+                  {t.common.places(item.count)}
                 </span>
                 <motion.span
                   variants={{ rest: { rotate: 0 }, hover: { rotate: 45 } }}

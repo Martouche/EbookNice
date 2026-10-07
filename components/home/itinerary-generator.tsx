@@ -13,6 +13,7 @@ import { Button } from "@/components/ui/button";
 import { Chip } from "@/components/ui/chip";
 import { Segmented } from "@/components/ui/segmented";
 import { DURATIONS, VIBES, buildItinerary, type DurationId, type ItineraryStop, type VibeId } from "@/lib/itinerary";
+import { useI18n } from "@/lib/i18n/client";
 import type { PlaceWithRelations } from "@/lib/types";
 
 const PlacesMap = dynamic(() => import("@/components/map/places-map").then((m) => m.PlacesMap), { ssr: false });
@@ -21,6 +22,7 @@ const spring = { type: "spring", stiffness: 400, damping: 30 } as const;
 
 export function ItineraryGenerator({ places }: { places: PlaceWithRelations[] }) {
   const router = useRouter();
+  const { t } = useI18n();
   const { isAuthed } = useFavorites();
   const [duration, setDuration] = useState<DurationId>("half");
   const [vibe, setVibe] = useState<VibeId>("all");
@@ -39,10 +41,9 @@ export function ItineraryGenerator({ places }: { places: PlaceWithRelations[] })
       router.push("/connexion?next=/");
       return;
     }
-    const label = DURATIONS.find((d) => d.id === duration)?.label ?? "";
     startSaving(async () => {
       const result = await createItinerary({
-        title: `${label} · ${VIBES.find((v) => v.id === vibe)?.label}`,
+        title: `${t.itinerary.durations[duration]} · ${t.itinerary.vibes[vibe]}`,
         placeIds: stops.map((s) => s.place.id),
         isPublic: true,
       });
@@ -54,9 +55,9 @@ export function ItineraryGenerator({ places }: { places: PlaceWithRelations[] })
     <div className="overflow-hidden rounded-[2rem] border border-line bg-card">
       <div className="grid gap-8 p-5 md:grid-cols-[1fr_1.1fr] md:p-10">
         <div className="min-w-0">
-          <p className="font-mono text-[10px] tracking-[0.2em] text-ocre uppercase">Itinéraire express</p>
+          <p className="font-mono text-[10px] tracking-[0.2em] text-ocre uppercase">{t.itinerary.kicker}</p>
           <h2 className="mt-3 font-display text-[clamp(2.5rem,11vw,3rem)] leading-[0.95] text-balance md:text-6xl">
-            Combien de temps <span className="italic text-muted-foreground">as-tu ?</span>
+            {t.itinerary.title[0]}<span className="italic text-muted-foreground">{t.itinerary.title[1]}</span>
           </h2>
 
           <div className="mt-8 space-y-6">
@@ -68,12 +69,12 @@ export function ItineraryGenerator({ places }: { places: PlaceWithRelations[] })
                   setDuration(d);
                   if (stops) generate(d, vibe);
                 }}
-                options={DURATIONS.map((d) => ({ value: d.id, label: d.label }))}
+                options={DURATIONS.map((d) => ({ value: d.id, label: t.itinerary.durations[d.id] }))}
               />
             </div>
 
             <div>
-              <p className="mb-3 text-[11px] font-medium tracking-[0.14em] text-muted-foreground uppercase">Envie du moment</p>
+              <p className="mb-3 text-[11px] font-medium tracking-[0.14em] text-muted-foreground uppercase">{t.itinerary.vibesLabel}</p>
               <div className="flex flex-wrap gap-2">
                 {VIBES.map((v) => (
                   <Chip
@@ -84,7 +85,7 @@ export function ItineraryGenerator({ places }: { places: PlaceWithRelations[] })
                       if (stops) generate(duration, v.id);
                     }}
                   >
-                    {v.label}
+                    {t.itinerary.vibes[v.id]}
                   </Chip>
                 ))}
               </div>
@@ -93,12 +94,12 @@ export function ItineraryGenerator({ places }: { places: PlaceWithRelations[] })
             <div className="flex flex-wrap gap-3">
               <Button size="lg" variant="accent" onClick={() => generate()} disabled={places.length === 0}>
                 {stops ? <Dices /> : <Footprints />}
-                {stops ? "Une autre idée" : "Composer ma balade"}
+                {stops ? t.itinerary.another : t.itinerary.compose}
               </Button>
               {stops && stops.length > 0 && (
                 <Button size="lg" variant="outline" onClick={save} disabled={saving}>
                   {saving ? <Loader2 className="animate-spin" /> : <BookmarkPlus />}
-                  Garder dans mon carnet
+                  {t.itinerary.save}
                 </Button>
               )}
             </div>
@@ -116,7 +117,7 @@ export function ItineraryGenerator({ places }: { places: PlaceWithRelations[] })
                 transition={spring}
                 className="grid h-full min-h-64 place-items-center rounded-3xl border border-dashed border-line-strong p-8 text-center text-sm text-muted-foreground"
               >
-                Choisis ta durée et ton humeur : on s&apos;occupe du reste, en regroupant les étapes proches.
+                {t.itinerary.empty}
               </motion.div>
             ) : stops.length === 0 ? (
               <motion.div
@@ -126,7 +127,7 @@ export function ItineraryGenerator({ places }: { places: PlaceWithRelations[] })
                 exit={{ opacity: 0 }}
                 className="grid h-full min-h-64 place-items-center rounded-3xl border border-dashed border-line-strong p-8 text-center text-sm text-muted-foreground"
               >
-                Aucune adresse ne correspond encore à cette envie.
+                {t.itinerary.none}
               </motion.div>
             ) : (
               <motion.div
@@ -144,7 +145,7 @@ export function ItineraryGenerator({ places }: { places: PlaceWithRelations[] })
                   {stops.map((stop, i) => (
                     <li key={stop.place.id}>
                       {(i === 0 || stops[i - 1].day !== stop.day) && duration === "weekend" && (
-                        <p className="pt-3 pb-1 font-mono text-[10px] tracking-[0.2em] text-ocre uppercase">Jour {stop.day}</p>
+                        <p className="pt-3 pb-1 font-mono text-[10px] tracking-[0.2em] text-ocre uppercase">{t.itinerary.day(stop.day)}</p>
                       )}
                       <Link href={`/lieux/${stop.place.slug}`} className="group flex items-center gap-4 py-3">
                         <span className="w-12 shrink-0 font-mono text-xs text-muted-foreground">{stop.start}</span>
@@ -159,7 +160,7 @@ export function ItineraryGenerator({ places }: { places: PlaceWithRelations[] })
                           </span>
                         </span>
                         {stop.place.is_free && (
-                          <span className="font-mono text-[10px] tracking-wider text-emerald-500 uppercase">Free</span>
+                          <span className="font-mono text-[10px] tracking-wider text-emerald-500 uppercase">{t.common.free}</span>
                         )}
                       </Link>
                     </li>

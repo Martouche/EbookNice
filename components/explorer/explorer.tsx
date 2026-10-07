@@ -9,6 +9,8 @@ import { EmptyState } from "@/components/section-heading";
 import { Drawer, DrawerContent, DrawerTitle } from "@/components/ui/drawer";
 import { Skeleton } from "@/components/ui/skeleton";
 import { filterPlaces, serializeFilters, type ExplorerFilters, type ExplorerView } from "@/lib/filters";
+import { useI18n } from "@/lib/i18n/client";
+import { tagLabel } from "@/lib/i18n/dictionaries";
 import type { Category, PlaceWithRelations } from "@/lib/types";
 import { useIsDesktop } from "@/lib/use-media-query";
 import { FilterBar } from "./filter-bar";
@@ -33,6 +35,7 @@ export function Explorer({
   initialView: ExplorerView;
 }) {
   const isDesktop = useIsDesktop();
+  const { t, locale } = useI18n();
   const [filters, setFilters] = useState(initialFilters);
   const [view, setView] = useState(initialView);
   const [selectedId, setSelectedId] = useState<string | null>(null);
@@ -41,8 +44,15 @@ export function Explorer({
 
   // La frappe reste fluide même avec beaucoup de spots : le filtrage suit en différé.
   const deferredFilters = useDeferredValue(filters);
-  const results = useMemo(() => filterPlaces(places, deferredFilters), [places, deferredFilters]);
-  const tags = useMemo(() => [...new Set(places.flatMap((p) => p.tags))].sort((a, b) => a.localeCompare(b, "fr")), [places]);
+  // Les tags sont stockés en français : on cherche aussi dans leur traduction (« sea view », « rainy day »…).
+  const results = useMemo(
+    () => filterPlaces(places, deferredFilters, (p) => p.tags.map((tag) => tagLabel(t, tag)).join(" ")),
+    [places, deferredFilters, t],
+  );
+  const tags = useMemo(
+    () => [...new Set(places.flatMap((p) => p.tags))].sort((a, b) => tagLabel(t, a).localeCompare(tagLabel(t, b), locale)),
+    [places, t, locale],
+  );
   const selected = results.find((p) => p.id === selectedId) ?? null;
 
   // URL partageable (`?category=plage&price=free`) sans relancer le rendu serveur.
@@ -80,10 +90,10 @@ export function Explorer({
         {filterBar("sticky top-[var(--header-h)]")}
         <div className="mx-auto max-w-7xl px-4 py-8 md:px-8">
           <p className="mb-6 font-mono text-[10px] tracking-[0.2em] text-muted-foreground uppercase">
-            {results.length} adresse{results.length > 1 ? "s" : ""}
+            {t.common.places(results.length)}
           </p>
           {results.length === 0 ? (
-            <EmptyState>Aucune adresse ne correspond. Essayez d&apos;assouplir un filtre.</EmptyState>
+            <EmptyState>{t.explorer.noResults}</EmptyState>
           ) : (
             <motion.div layout className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
               <AnimatePresence mode="popLayout">
@@ -108,9 +118,9 @@ export function Explorer({
         {isDesktop && (
           <aside ref={asideRef} className="no-scrollbar w-[380px] shrink-0 space-y-3 overflow-y-auto border-r border-line p-4 lg:w-[420px]">
             <p className="font-mono text-[10px] tracking-[0.2em] text-muted-foreground uppercase">
-              {results.length} adresse{results.length > 1 ? "s" : ""} sur la carte
+              {t.explorer.onMap(results.length)}
             </p>
-            {results.length === 0 && <EmptyState>Aucune adresse ne correspond.</EmptyState>}
+            {results.length === 0 && <EmptyState>{t.explorer.noResultsShort}</EmptyState>}
             {results.map((place) => (
               <div key={place.id} data-place-id={place.id}>
                 <PlaceCard
@@ -152,7 +162,7 @@ export function Explorer({
               >
                 <button
                   type="button"
-                  aria-label="Fermer l'aperçu"
+                  aria-label={t.explorer.closePreview}
                   onClick={() => setSelectedId(null)}
                   className="absolute -top-3 -right-3 z-10 grid size-8 place-items-center rounded-full border border-line bg-background text-muted-foreground transition-colors duration-100 hover:text-foreground"
                 >

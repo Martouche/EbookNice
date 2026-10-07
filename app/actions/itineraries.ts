@@ -1,9 +1,8 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+import { FAVORITES_TITLE } from "@/lib/constants";
 import { createClient } from "@/lib/supabase/server";
-
-const FAVORITES_TITLE = "Mon carnet de favoris";
 
 async function requireUser() {
   const supabase = await createClient();

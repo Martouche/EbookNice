@@ -5,6 +5,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { useCallback, useEffect, useState, type MouseEvent } from "react";
 import { BLUR_DATA_URL } from "@/lib/image";
+import { useI18n } from "@/lib/i18n/client";
 import type { Category } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import { PlaceCover } from "./place-cover";
@@ -27,6 +28,7 @@ export function PlaceImages({
   sizes?: string;
   priority?: boolean;
 }) {
+  const { t } = useI18n();
   const [emblaRef, embla] = useEmblaCarousel({ loop: true, watchDrag: false });
   const [index, setIndex] = useState(0);
 
@@ -70,7 +72,7 @@ export function PlaceImages({
             <div key={src} className="relative h-full min-w-0 flex-[0_0_100%]">
               <Image
                 src={src}
-                alt={`${title} — photo ${i + 1}`}
+                alt={t.place.photoAlt(title, i + 1)}
                 fill
                 sizes={sizes}
                 priority={priority && i === 0}
@@ -95,8 +97,8 @@ export function PlaceImages({
 
       {/* Zones de tap (bas de la photo, sous les badges / le cœur) : 30 % à gauche, 30 % à droite. */}
       {[
-        { dir: -1 as const, Icon: ChevronLeft, zone: "left-0", arrow: "left-2", label: "Photo précédente" },
-        { dir: 1 as const, Icon: ChevronRight, zone: "right-0", arrow: "right-2", label: "Photo suivante" },
+        { dir: -1 as const, Icon: ChevronLeft, zone: "left-0", arrow: "left-2", label: t.card.prevPhoto },
+        { dir: 1 as const, Icon: ChevronRight, zone: "right-0", arrow: "right-2", label: t.card.nextPhoto },
       ].map(({ dir, Icon, zone, arrow, label }) => (
         <button
           key={dir}

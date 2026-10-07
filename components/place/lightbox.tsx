@@ -7,6 +7,7 @@ import Image from "next/image";
 import { useEffect, useState, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 import { BLUR_DATA_URL } from "@/lib/image";
+import { useI18n } from "@/lib/i18n/client";
 import type { ImageCredit } from "@/lib/types";
 import { PhotoCredit, creditFor } from "./photo-credit";
 
@@ -46,6 +47,7 @@ function LightboxContent({
   startIndex: number;
   onClose: () => void;
 }) {
+  const { t } = useI18n();
   const [emblaRef, embla] = useEmblaCarousel({ startIndex, loop: images.length > 1 });
   const [index, setIndex] = useState(startIndex);
 
@@ -77,7 +79,7 @@ function LightboxContent({
     <motion.div
       role="dialog"
       aria-modal="true"
-      aria-label={`Photos — ${title}`}
+      aria-label={t.place.gallery(title)}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -92,7 +94,7 @@ function LightboxContent({
         <button
           type="button"
           onClick={onClose}
-          aria-label="Fermer la galerie"
+          aria-label={t.place.closeGallery}
           className="grid size-10 place-items-center rounded-full bg-white/10 transition-colors duration-100 hover:bg-white/20"
         >
           <X className="size-5" />
@@ -105,7 +107,7 @@ function LightboxContent({
             <div key={src} className="relative h-full min-w-0 flex-[0_0_100%]">
               <Image
                 src={src}
-                alt={`${title} — photo ${i + 1}`}
+                alt={t.place.photoAlt(title, i + 1)}
                 fill
                 sizes="100vw"
                 quality={90}
@@ -130,7 +132,7 @@ function LightboxContent({
           <button
             type="button"
             onClick={() => embla?.scrollPrev()}
-            aria-label="Photo précédente"
+            aria-label={t.card.prevPhoto}
             className="grid size-11 place-items-center rounded-full bg-white/10 transition-colors duration-100 hover:bg-white/20"
           >
             <ChevronLeft className="size-5" />
@@ -140,7 +142,7 @@ function LightboxContent({
               <button
                 key={src}
                 type="button"
-                aria-label={`Photo ${i + 1}`}
+                aria-label={t.place.photo(i + 1)}
                 onClick={() => embla?.scrollTo(i)}
                 className={`relative size-12 shrink-0 overflow-hidden rounded-lg transition-opacity duration-100 ${i === index ? "opacity-100 ring-2 ring-white" : "opacity-50 hover:opacity-80"}`}
               >
@@ -151,7 +153,7 @@ function LightboxContent({
           <button
             type="button"
             onClick={() => embla?.scrollNext()}
-            aria-label="Photo suivante"
+            aria-label={t.card.nextPhoto}
             className="grid size-11 place-items-center rounded-full bg-white/10 transition-colors duration-100 hover:bg-white/20"
           >
             <ChevronRight className="size-5" />

@@ -6,8 +6,9 @@ import { useState, type Dispatch, type SetStateAction } from "react";
 import { CategoryIcon } from "@/components/category-icon";
 import { Chip } from "@/components/ui/chip";
 import { Segmented } from "@/components/ui/segmented";
-import { PRICE_LABELS } from "@/lib/constants";
 import type { ExplorerFilters, ExplorerView } from "@/lib/filters";
+import { useI18n } from "@/lib/i18n/client";
+import { tagLabel } from "@/lib/i18n/dictionaries";
 import type { Category } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
@@ -34,6 +35,7 @@ export function FilterBar({
   resultCount: number;
   className?: string;
 }) {
+  const { t } = useI18n();
   const [showMore, setShowMore] = useState(filters.prices.some((p) => p > 0) || filters.tags.length > 0);
   const isFree = filters.prices.includes(0);
   const activeCount = filters.categories.length + filters.prices.length + filters.tags.length;
@@ -48,8 +50,8 @@ export function FilterBar({
               type="search"
               value={filters.q}
               onChange={(e) => setFilters((f) => ({ ...f, q: e.target.value }))}
-              placeholder="Socca, sunset, cascade…"
-              aria-label="Rechercher un spot"
+              placeholder={t.explorer.searchPlaceholder}
+              aria-label={t.explorer.searchLabel}
               className="h-10 w-full rounded-full border border-line bg-card pr-4 pl-10 text-[16px] placeholder:text-muted-foreground focus-visible:border-ocre/60 focus-visible:outline-none md:text-sm"
             />
           </label>
@@ -58,8 +60,8 @@ export function FilterBar({
             value={view}
             onChange={setView}
             options={[
-              { value: "list", label: <><LayoutGrid /><span className="hidden sm:inline">Liste</span></> },
-              { value: "map", label: <><MapIcon /><span className="hidden sm:inline">Carte</span></> },
+              { value: "list", label: <><LayoutGrid /><span className="hidden sm:inline">{t.explorer.list}</span></> },
+              { value: "map", label: <><MapIcon /><span className="hidden sm:inline">{t.explorer.map}</span></> },
             ]}
           />
         </div>
@@ -72,7 +74,7 @@ export function FilterBar({
               isFree ? "border-emerald-500 bg-emerald-500 text-white" : "border-emerald-500/40 text-emerald-600 dark:text-emerald-400",
             )}
           >
-            Gratuit · FREE
+            {t.common.freeBadge}
           </Chip>
           <Divider />
           {categories.map((c) => (
@@ -88,12 +90,12 @@ export function FilterBar({
           <Divider />
           <Chip active={showMore} onClick={() => setShowMore((s) => !s)}>
             <SlidersHorizontal />
-            Filtres
+            {t.explorer.filters}
           </Chip>
           {activeCount > 0 && (
             <Chip onClick={() => setFilters((f) => ({ q: f.q, categories: [], prices: [], tags: [] }))}>
               <X />
-              Effacer ({activeCount})
+              {t.explorer.clear(activeCount)}
             </Chip>
           )}
         </div>
@@ -109,8 +111,8 @@ export function FilterBar({
             >
               <div className="space-y-3 pb-1">
                 <div className="no-scrollbar -mx-4 flex items-center gap-2 overflow-x-auto pr-12 pl-4 [mask-image:linear-gradient(to_right,black_88%,transparent)] md:mx-0 md:px-0 md:[mask-image:none]">
-                  <span className="w-12 shrink-0 font-mono text-[10px] tracking-[0.18em] text-muted-foreground uppercase">Prix</span>
-                  {PRICE_LABELS.slice(1).map((label, i) => (
+                  <span className="w-12 shrink-0 font-mono text-[10px] tracking-[0.18em] text-muted-foreground uppercase">{t.explorer.priceRow}</span>
+                  {t.price.slice(1).map((label, i) => (
                     <Chip
                       key={label}
                       active={filters.prices.includes(i + 1)}
@@ -122,14 +124,14 @@ export function FilterBar({
                 </div>
                 {tags.length > 0 && (
                   <div className="no-scrollbar -mx-4 flex items-center gap-2 overflow-x-auto pr-12 pl-4 [mask-image:linear-gradient(to_right,black_88%,transparent)] md:mx-0 md:px-0 md:[mask-image:none]">
-                    <span className="w-12 shrink-0 font-mono text-[10px] tracking-[0.18em] text-muted-foreground uppercase">Envie</span>
+                    <span className="w-12 shrink-0 font-mono text-[10px] tracking-[0.18em] text-muted-foreground uppercase">{t.explorer.tagsRow}</span>
                     {tags.map((tag) => (
                       <Chip
                         key={tag}
                         active={filters.tags.includes(tag)}
                         onClick={() => setFilters((f) => ({ ...f, tags: toggleIn(f.tags, tag) }))}
                       >
-                        {tag}
+                        {tagLabel(t, tag)}
                       </Chip>
                     ))}
                   </div>
@@ -140,7 +142,7 @@ export function FilterBar({
         </AnimatePresence>
 
         <p className="sr-only" role="status">
-          {resultCount} résultat{resultCount > 1 ? "s" : ""}
+          {t.common.results(resultCount)}
         </p>
       </div>
     </div>

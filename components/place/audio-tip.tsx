@@ -3,10 +3,12 @@
 import { motion } from "framer-motion";
 import { Pause, Play } from "lucide-react";
 import { useRef, useState } from "react";
+import { useI18n } from "@/lib/i18n/client";
 
 const BARS = 28;
 
 export function AudioTip({ src }: { src: string }) {
+  const { t } = useI18n();
   const audioRef = useRef<HTMLAudioElement>(null);
   const [playing, setPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -25,13 +27,13 @@ export function AudioTip({ src }: { src: string }) {
         onClick={toggle}
         whileTap={{ scale: 0.9 }}
         transition={{ type: "spring", stiffness: 500, damping: 30 }}
-        aria-label={playing ? "Mettre en pause" : "Écouter le conseil du local"}
+        aria-label={playing ? t.place.pause : t.place.listen}
         className="grid size-11 shrink-0 place-items-center rounded-full bg-ocre text-[#14120f]"
       >
         {playing ? <Pause className="size-5 fill-current" /> : <Play className="ml-0.5 size-5 fill-current" />}
       </motion.button>
       <div className="min-w-0 flex-1">
-        <p className="text-sm font-medium">Écouter le local</p>
+        <p className="text-sm font-medium">{t.place.listenLocal}</p>
         <div className="mt-1.5 flex h-5 items-center gap-[3px]" aria-hidden>
           {Array.from({ length: BARS }, (_, i) => (
             <span

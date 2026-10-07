@@ -2,18 +2,18 @@ import type { PlaceWithRelations } from "./types";
 import { haversineKm } from "./utils";
 
 export const DURATIONS = [
-  { id: "2h", label: "2 heures", stops: 2 },
-  { id: "half", label: "Demi-journée", stops: 3 },
-  { id: "day", label: "Une journée", stops: 5 },
-  { id: "weekend", label: "Un week-end", stops: 8 },
+  { id: "2h", stops: 2 },
+  { id: "half", stops: 3 },
+  { id: "day", stops: 5 },
+  { id: "weekend", stops: 8 },
 ] as const;
 
 export const VIBES = [
-  { id: "all", label: "Un peu de tout", match: () => true },
-  { id: "free", label: "100 % gratuit", match: (p: PlaceWithRelations) => p.is_free },
-  { id: "sunset", label: "Apéro sunset", match: (p: PlaceWithRelations) => p.best_time_to_visit === "SUNSET" || p.tags.includes("Apéro sunset") },
-  { id: "rain", label: "Jour de pluie", match: (p: PlaceWithRelations) => p.tags.includes("Jour de pluie") },
-  { id: "family", label: "En famille", match: (p: PlaceWithRelations) => p.tags.includes("Famille") },
+  { id: "all", match: () => true },
+  { id: "free", match: (p: PlaceWithRelations) => p.is_free },
+  { id: "sunset", match: (p: PlaceWithRelations) => p.best_time_to_visit === "SUNSET" || p.tags.includes("Apéro sunset") },
+  { id: "rain", match: (p: PlaceWithRelations) => p.tags.includes("Jour de pluie") },
+  { id: "family", match: (p: PlaceWithRelations) => p.tags.includes("Famille") },
 ] as const;
 
 export type DurationId = (typeof DURATIONS)[number]["id"];

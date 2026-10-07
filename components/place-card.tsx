@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Clock } from "lucide-react";
 import Link from "next/link";
-import { BEST_TIME_LABELS, priceLabel } from "@/lib/constants";
+import { useI18n } from "@/lib/i18n/client";
 import type { PlaceWithRelations } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import { FavoriteButton } from "./favorite-button";
@@ -26,6 +26,7 @@ export function PlaceCard({
   priority?: boolean;
   onHoverChange?: (hovered: boolean) => void;
 }) {
+  const { t, locale } = useI18n();
   return (
     <motion.article
       layout
@@ -53,7 +54,7 @@ export function PlaceCard({
           <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/75 via-black/5 to-transparent" />
 
           <div className="pointer-events-none absolute top-3.5 right-14 left-3 flex flex-wrap gap-1.5">
-            {place.is_free && <Badge variant="free">Gratuit · FREE</Badge>}
+            {place.is_free && <Badge variant="free">{t.common.freeBadge}</Badge>}
             {place.category && <Badge variant="glass">{place.category.name}</Badge>}
           </div>
 
@@ -64,7 +65,7 @@ export function PlaceCard({
               </span>
             )}
             <h3
-              lang="fr"
+              lang={locale}
               className={cn(
                 "font-display leading-[1.05] text-balance break-words hyphens-auto",
                 compact ? "text-[1.375rem] sm:text-2xl" : "text-[1.75rem] sm:text-3xl",
@@ -75,13 +76,13 @@ export function PlaceCard({
             <p className="mt-1.5 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-white/75">
               <span>{place.city}</span>
               <span className="size-0.5 rounded-full bg-white/50" />
-              <span>{priceLabel(place.price_level)}</span>
+              <span>{t.price[place.price_level]}</span>
               {!compact && (
                 <>
                   <span className="size-0.5 rounded-full bg-white/50" />
                   <span className="flex items-center gap-1 whitespace-nowrap">
                     <Clock className="size-3" />
-                    {BEST_TIME_LABELS[place.best_time_to_visit]}
+                    {t.bestTime[place.best_time_to_visit]}
                   </span>
                 </>
               )}

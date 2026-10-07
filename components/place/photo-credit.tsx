@@ -1,3 +1,6 @@
+"use client";
+
+import { useI18n } from "@/lib/i18n/client";
 import type { ImageCredit } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
@@ -32,11 +35,12 @@ export function PhotoCredit({ credit, className }: { credit: ImageCredit; classN
 
 /** Crédits de toutes les photos affichées, sous la galerie. */
 export function PhotoCredits({ images, credits }: { images: string[]; credits: ImageCredit[] | null | undefined }) {
+  const { t } = useI18n();
   const list = images.map((url) => creditFor(credits, url)).filter((c): c is ImageCredit => !!c);
   if (list.length === 0) return null;
   return (
     <p className="mt-2 text-[11px] leading-relaxed text-muted-foreground">
-      Photos :{" "}
+      {t.place.photosCredit}{" "}
       {list.map((credit, i) => (
         <span key={credit.url}>
           {i > 0 && " — "}

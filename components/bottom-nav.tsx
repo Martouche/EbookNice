@@ -4,19 +4,21 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { useI18n } from "@/lib/i18n/client";
 import { NAV_ITEMS, isActive } from "./nav-items";
 
 export function BottomNav() {
   const pathname = usePathname();
+  const { t } = useI18n();
   if (pathname.startsWith("/admin")) return null;
 
   return (
     <nav
-      aria-label="Navigation principale"
+      aria-label={t.nav.main}
       className="no-print fixed inset-x-0 bottom-0 z-40 border-t border-line bg-glass pb-safe backdrop-blur-2xl md:hidden"
     >
       <ul className="mx-auto grid max-w-md grid-cols-4">
-        {NAV_ITEMS.map(({ href, label, icon: Icon }) => {
+        {NAV_ITEMS.map(({ href, key, icon: Icon }) => {
           const active = isActive(pathname, href);
           return (
             <li key={href}>
@@ -37,7 +39,7 @@ export function BottomNav() {
                 <motion.span whileTap={{ scale: 0.85 }} className="relative grid h-8 place-items-center">
                   <Icon className={cn("size-5", active && "stroke-[2.25]")} />
                 </motion.span>
-                <span className="relative">{label}</span>
+                <span className="relative">{t.nav[key]}</span>
               </Link>
             </li>
           );

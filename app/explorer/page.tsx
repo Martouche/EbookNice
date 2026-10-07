@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import { Explorer } from "@/components/explorer/explorer";
 import { getCategories, getPlaces } from "@/lib/data";
 import { parseFilters, serializeFilters } from "@/lib/filters";
+import { getI18n } from "@/lib/i18n/server";
 
-export const metadata: Metadata = {
-  title: "Explorer la carte",
-  description: "Carte interactive des spots des locaux : plages, points de vue, restaurants, randonnées — filtres gratuits inclus.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const { t } = await getI18n();
+  return { title: t.meta.explorerTitle, description: t.meta.explorerDescription };
+}
 
 export default async function ExplorerPage({
   searchParams,

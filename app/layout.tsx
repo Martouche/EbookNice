@@ -5,6 +5,8 @@ import { FavoritesProvider } from "@/components/favorites-provider";
 import { SiteHeader } from "@/components/site-header";
 import { ThemeProvider } from "@/components/theme-provider";
 import { getFavoriteIds, getSession } from "@/lib/data";
+import { I18nProvider } from "@/lib/i18n/client";
+import { getI18n } from "@/lib/i18n/server";
 import "./globals.css";
 
 const display = Instrument_Serif({
@@ -16,17 +18,17 @@ const display = Instrument_Serif({
 const sans = Geist({ subsets: ["latin"], variable: "--font-geist" });
 const mono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" });
 
-export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
-  title: {
-    default: "Nice & Côte d'Azur — Le Guide des Locaux",
-    template: "%s · Le Guide des Locaux",
-  },
-  description:
-    "L'ebook interactif des Niçois : plages secrètes, points de vue, tables locales et randonnées de la Côte d'Azur.",
-  openGraph: { siteName: "Le Guide des Locaux", locale: "fr_FR", type: "website" },
-  twitter: { card: "summary_large_image" },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const { locale, t } = await getI18n();
+  const siteName = locale === "en" ? "The Locals' Guide" : "Le Guide des Locaux";
+  return {
+    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
+    title: { default: t.meta.title, template: `%s · ${siteName}` },
+    description: t.meta.description,
+    openGraph: { siteName, locale: locale === "en" ? "en_GB" : "fr_FR", alternateLocale: locale === "en" ? "fr_FR" : "en_GB", type: "website" },
+    twitter: { card: "summary_large_image" },
+  };
+}
 
 export const viewport: Viewport = {
   themeColor: [
@@ -37,11 +39,12 @@ export const viewport: Viewport = {
 };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const [{ user, profile }, favoriteIds] = await Promise.all([getSession(), getFavoriteIds()]);
+  const [{ user, profile }, favoriteIds, { locale }] = await Promise.all([getSession(), getFavoriteIds(), getI18n()]);
 
   return (
-    <html lang="fr" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <body className={`${display.variable} ${sans.variable} ${mono.variable} font-sans antialiased`}>
+        <I18nProvider locale={locale}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
           <FavoritesProvider key={user?.id ?? "anon"} initialIds={favoriteIds} isAuthed={!!user}>
             <SiteHeader isAdmin={profile?.role === "ADMIN"} />
@@ -49,6 +52,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <BottomNav />
           </FavoritesProvider>
         </ThemeProvider>
+        </I18nProvider>
       </body>
     </html>
   );

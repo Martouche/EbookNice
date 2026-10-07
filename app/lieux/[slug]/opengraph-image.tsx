@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
-import { CATEGORY_COLORS, DEFAULT_CATEGORY_COLOR, priceLabel } from "@/lib/constants";
+import { CATEGORY_COLORS, DEFAULT_CATEGORY_COLOR } from "@/lib/constants";
 import { getPlaceBySlug } from "@/lib/data";
+import { getI18n } from "@/lib/i18n/server";
 
 export const alt = "Spot du Guide des Locaux — Nice & Côte d'Azur";
 export const size = { width: 1200, height: 630 };
@@ -20,14 +21,14 @@ async function loadDisplayFont(text: string) {
 }
 
 export default async function OpengraphImage({ params }: { params: Promise<{ slug: string }> }) {
-  const place = await getPlaceBySlug((await params).slug);
-  const title = place?.title ?? "Le Guide des Locaux";
+  const [place, { t }] = await Promise.all([getPlaceBySlug((await params).slug), getI18n()]);
+  const title = place?.title ?? t.meta.title;
   const photo = place?.images[0];
   const color = CATEGORY_COLORS[place?.category?.slug ?? ""] ?? DEFAULT_CATEGORY_COLOR;
   const meta = place
-    ? [place.category?.name, place.city, place.is_free ? "Gratuit · FREE" : priceLabel(place.price_level)].filter(Boolean).join("  ·  ")
-    : "Nice & Côte d'Azur";
-  const font = await loadDisplayFont(`${title}Nice.Le guide des locaux`);
+    ? [place.category?.name, place.city, place.is_free ? t.common.freeBadge : t.price[place.price_level]].filter(Boolean).join("  ·  ")
+    : t.hero.subtitle.replace(/^& /, "");
+  const font = await loadDisplayFont(`${title}Nice.${t.brand.tagline}`);
 
   return new ImageResponse(
     (
@@ -58,7 +59,7 @@ export default async function OpengraphImage({ params }: { params: Promise<{ slu
             <span style={{ fontFamily: "Display", fontSize: 44 }}>
               Nice<span style={{ color: "#e3a13b" }}>.</span>
             </span>
-            <span style={{ fontSize: 18, letterSpacing: 4, textTransform: "uppercase", opacity: 0.75 }}>Le guide des locaux</span>
+            <span style={{ fontSize: 18, letterSpacing: 4, textTransform: "uppercase", opacity: 0.75 }}>{t.brand.tagline}</span>
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
             <span style={{ fontSize: 24, opacity: 0.85 }}>{meta}</span>

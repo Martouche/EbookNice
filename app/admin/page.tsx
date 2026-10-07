@@ -12,7 +12,7 @@ import { getPlaces } from "@/lib/data";
 import { MIN_PHOTOS } from "@/lib/photos/enrich";
 
 export default async function AdminPage() {
-  const places = await getPlaces();
+  const places = await getPlaces(undefined, { raw: true });
 
   return (
     <div>

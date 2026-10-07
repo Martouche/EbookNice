@@ -3,6 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { Heart } from "lucide-react";
 import { useState } from "react";
+import { useI18n } from "@/lib/i18n/client";
 import { cn } from "@/lib/utils";
 import { useFavorites } from "./favorites-provider";
 
@@ -19,6 +20,7 @@ export function FavoriteButton({
   variant?: "glass" | "solid";
 }) {
   const { isFavorite, toggle, isAuthed } = useFavorites();
+  const { t } = useI18n();
   const active = isFavorite(placeId);
   const [burst, setBurst] = useState(0);
 
@@ -26,7 +28,7 @@ export function FavoriteButton({
     <motion.button
       type="button"
       aria-pressed={active}
-      aria-label={active ? "Retirer du carnet" : "Ajouter au carnet"}
+      aria-label={active ? t.card.removeFavorite : t.card.addFavorite}
       onClick={(e) => {
         e.preventDefault();
         e.stopPropagation();

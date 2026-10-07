@@ -4,6 +4,7 @@ import type { Map as MapLibreMap } from "maplibre-gl";
 import { useTheme } from "next-themes";
 import { useEffect, useRef, useState, type RefObject } from "react";
 import { NICE_CENTER } from "@/lib/constants";
+import { useI18n } from "@/lib/i18n/client";
 import { MAP_STYLES } from "./map-styles";
 
 type MapLibreModule = typeof import("maplibre-gl");
@@ -17,12 +18,6 @@ export interface MaplibreOptions {
   controls?: "top-right" | "bottom-right";
 }
 
-const LOCALE_FR = {
-  "GeolocateControl.FindMyLocation": "Me localiser",
-  "GeolocateControl.LocationNotAvailable": "Position indisponible",
-  "NavigationControl.ZoomIn": "Zoomer",
-  "NavigationControl.ZoomOut": "Dézoomer",
-};
 
 /** Instancie une carte MapLibre côté client et suit le thème clair/sombre. */
 export function useMaplibre(
@@ -30,6 +25,13 @@ export function useMaplibre(
   options: MaplibreOptions = {},
 ) {
   const { resolvedTheme } = useTheme();
+  const { t } = useI18n();
+  const mapLocale = useRef({
+    "GeolocateControl.FindMyLocation": t.map.locate,
+    "GeolocateControl.LocationNotAvailable": t.map.locationUnavailable,
+    "NavigationControl.ZoomIn": t.map.zoomIn,
+    "NavigationControl.ZoomOut": t.map.zoomOut,
+  });
   const [state, setState] = useState<{ map: MapLibreMap; lib: MapLibreModule } | null>(null);
   const initialOptions = useRef(options);
   const themeRef = useRef(resolvedTheme);
@@ -52,7 +54,7 @@ export function useMaplibre(
         center: [center.lng, center.lat],
         zoom,
         attributionControl: { compact: true },
-        locale: LOCALE_FR,
+        locale: mapLocale.current,
       });
       map = instance;
       instance.addControl(new lib.NavigationControl({ showCompass: false }), controls);

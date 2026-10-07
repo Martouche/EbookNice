@@ -45,7 +45,12 @@ export function serializeFilters(filters: ExplorerFilters, view: ExplorerView) {
 /** Minuscule + sans accents : « cascade » trouve « Cascade », « nicois » trouve « Niçois ». */
 const normalize = (s: string) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
 
-export function filterPlaces(places: PlaceWithRelations[], filters: ExplorerFilters) {
+/** `extraText` : texte de recherche supplémentaire par lieu (ex. tags traduits). */
+export function filterPlaces(
+  places: PlaceWithRelations[],
+  filters: ExplorerFilters,
+  extraText?: (place: PlaceWithRelations) => string,
+) {
   const terms = normalize(filters.q).split(/\s+/).filter(Boolean);
   return places.filter((p) => {
     if (filters.categories.length && !filters.categories.includes(p.category?.slug ?? "")) return false;
@@ -53,7 +58,7 @@ export function filterPlaces(places: PlaceWithRelations[], filters: ExplorerFilt
     if (filters.tags.length && !filters.tags.every((t) => p.tags.includes(t))) return false;
     if (terms.length) {
       const haystack = normalize(
-        [p.title, p.city, p.address, p.description, p.local_tip, p.category?.name, p.chapter?.title, ...p.tags]
+        [p.title, p.city, p.address, p.description, p.local_tip, p.category?.name, p.chapter?.title, ...p.tags, extraText?.(p)]
           .filter(Boolean)
           .join(" "),
       );

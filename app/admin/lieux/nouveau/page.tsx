@@ -2,7 +2,7 @@ import { PlaceForm } from "@/components/admin/place-form";
 import { getCategories, getChapters } from "@/lib/data";
 
 export default async function NewPlacePage() {
-  const [chapters, categories] = await Promise.all([getChapters(), getCategories()]);
+  const [chapters, categories] = await Promise.all([getChapters({ raw: true }), getCategories({ raw: true })]);
 
   return (
     <>

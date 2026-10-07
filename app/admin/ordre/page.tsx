@@ -4,7 +4,7 @@ import { CATEGORY_SHOWCASE } from "@/lib/constants";
 import { getCategories, getPlaces } from "@/lib/data";
 
 export default async function AdminOrderPage() {
-  const [places, categories] = await Promise.all([getPlaces(), getCategories()]);
+  const [places, categories] = await Promise.all([getPlaces(undefined, { raw: true }), getCategories({ raw: true })]);
 
   // Une liste par catégorie, dans l'ordre des « envies » de l'accueil, puis les éventuelles autres catégories.
   const known = CATEGORY_SHOWCASE.map((c) => c.slug);

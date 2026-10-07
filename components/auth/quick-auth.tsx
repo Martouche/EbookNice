@@ -5,6 +5,7 @@ import { Loader2, MailCheck, Sparkles } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useI18n } from "@/lib/i18n/client";
 import { createClient } from "@/lib/supabase/client";
 
 function GoogleIcon() {
@@ -23,6 +24,7 @@ export function QuickAuth({ next }: { next: string }) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "google" | "sending" | "sent">("idle");
   const [error, setError] = useState<string | null>(null);
+  const { t } = useI18n();
 
   const redirectTo = () => `${window.location.origin}/auth/callback?next=${encodeURIComponent(next)}`;
 
@@ -31,7 +33,7 @@ export function QuickAuth({ next }: { next: string }) {
     setError(null);
     const { error } = await createClient().auth.signInWithOAuth({ provider: "google", options: { redirectTo: redirectTo() } });
     if (error) {
-      setError("Connexion Google indisponible pour le moment.");
+      setError(t.auth.googleError);
       setStatus("idle");
     }
   };
@@ -42,7 +44,7 @@ export function QuickAuth({ next }: { next: string }) {
     setError(null);
     const { error } = await createClient().auth.signInWithOtp({ email, options: { emailRedirectTo: redirectTo() } });
     if (error) {
-      setError(error.status === 429 ? "Trop de tentatives, réessayez dans une minute." : "Envoi impossible, vérifiez l'adresse.");
+      setError(error.status === 429 ? t.auth.tooMany : t.auth.sendError);
       setStatus("idle");
       return;
     }
@@ -62,19 +64,19 @@ export function QuickAuth({ next }: { next: string }) {
           role="status"
         >
           <MailCheck className="size-7 text-emerald-500" />
-          <p className="font-medium">Lien envoyé à {email}</p>
-          <p className="text-sm text-muted-foreground">Ouvrez-le sur cet appareil : votre adresse sera gardée automatiquement.</p>
+          <p className="font-medium">{t.auth.sentTo(email)}</p>
+          <p className="text-sm text-muted-foreground">{t.auth.sentHint}</p>
         </motion.div>
       ) : (
         <motion.div key="form" exit={{ opacity: 0 }} className="space-y-4">
           <Button type="button" size="lg" variant="outline" className="w-full" onClick={withGoogle} disabled={status !== "idle"}>
             {status === "google" ? <Loader2 className="animate-spin" /> : <GoogleIcon />}
-            Continuer avec Google
+            {t.auth.google}
           </Button>
 
           <div className="flex items-center gap-3 font-mono text-[10px] tracking-[0.2em] text-muted-foreground uppercase">
             <span className="h-px flex-1 bg-line" />
-            ou
+            {t.auth.or}
             <span className="h-px flex-1 bg-line" />
           </div>
 
@@ -83,14 +85,14 @@ export function QuickAuth({ next }: { next: string }) {
               type="email"
               required
               autoComplete="email"
-              placeholder="vous@exemple.com"
-              aria-label="Adresse email"
+              placeholder={t.auth.emailPlaceholder}
+              aria-label={t.auth.emailLabel}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
             <Button type="submit" size="lg" variant="accent" className="shrink-0" disabled={status !== "idle"}>
               {status === "sending" ? <Loader2 className="animate-spin" /> : <Sparkles />}
-              Lien magique
+              {t.auth.magicLink}
             </Button>
           </form>
           {error && <p className="text-sm text-red-500">{error}</p>}

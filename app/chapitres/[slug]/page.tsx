@@ -7,6 +7,8 @@ import { PlaceMiniMap } from "@/components/place/place-mini-map";
 import { PlaceCard } from "@/components/place-card";
 import { EmptyState } from "@/components/section-heading";
 import { getChapterBySlug, getChapters, getPlaces } from "@/lib/data";
+import { getI18n } from "@/lib/i18n/server";
+
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -19,7 +21,7 @@ export default async function ChapterPage({ params }: Props) {
   const chapter = await getChapterBySlug((await params).slug);
   if (!chapter) notFound();
 
-  const [places, chapters] = await Promise.all([getPlaces({ chapterId: chapter.id }), getChapters()]);
+  const [places, chapters, { t }] = await Promise.all([getPlaces({ chapterId: chapter.id }), getChapters(), getI18n()]);
   const position = chapters.findIndex((c) => c.id === chapter.id);
   const next = chapters[position + 1];
 
@@ -38,10 +40,10 @@ export default async function ChapterPage({ params }: Props) {
             className="inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors duration-100 hover:text-foreground"
           >
             <ArrowLeft className="size-4" />
-            Accueil
+            {t.chapter.back}
           </Link>
           <p className="mt-10 font-mono text-[10px] tracking-[0.2em] text-ocre uppercase">
-            Chapitre {String(chapter.order_index || position + 1).padStart(2, "0")}
+            {t.chapter.label(String(chapter.order_index || position + 1).padStart(2, "0"))}
           </p>
           <h1 className="mt-3 font-display text-[clamp(2.75rem,12vw,3.75rem)] leading-[0.95] text-balance break-words tracking-tight md:text-8xl">{chapter.title}</h1>
           {chapter.description && (
@@ -52,7 +54,7 @@ export default async function ChapterPage({ params }: Props) {
 
       <div className="mx-auto max-w-7xl space-y-12 px-4 py-12 md:px-8">
         {places.length === 0 ? (
-          <EmptyState>Ce chapitre attend encore ses premières adresses.</EmptyState>
+          <EmptyState>{t.chapter.empty}</EmptyState>
         ) : (
           <>
             <div className="h-64 overflow-hidden rounded-[2rem] border border-line md:h-80">
@@ -72,7 +74,7 @@ export default async function ChapterPage({ params }: Props) {
             className="group flex items-end justify-between gap-6 border-t border-line pt-8"
           >
             <div>
-              <p className="font-mono text-[10px] tracking-[0.2em] text-muted-foreground uppercase">Chapitre suivant</p>
+              <p className="font-mono text-[10px] tracking-[0.2em] text-muted-foreground uppercase">{t.chapter.next}</p>
               <p className="mt-2 font-display text-4xl transition-colors duration-100 group-hover:text-ocre md:text-5xl">
                 {next.title}
               </p>
