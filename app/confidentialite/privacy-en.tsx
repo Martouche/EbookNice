@@ -97,6 +97,11 @@ export function PrivacyEn() {
             </li>
           </ul>
           <p>No advertising, analytics or social media cookies.</p>
+          <p>
+            To know which pages are visited, we use <strong>Vercel Web Analytics</strong>, an anonymous, cookie-free audience
+            measurement: it stores nothing on your device, does not track you across sites and only keeps aggregated
+            statistics (page views, country, device type).
+          </p>
         </Section>
 
         <Section id="providers" title="Service providers and hosting">
@@ -106,7 +111,7 @@ export function PrivacyEn() {
               <strong>Supabase</strong>: database, authentication and photo storage;
             </li>
             <li>
-              <strong>Vercel</strong>: hosting and delivery of the site;
+              <strong>Vercel</strong>: hosting and delivery of the site, anonymous visit statistics;
             </li>
             <li>
               <strong>Google</strong>: only if you choose to sign in with Google;

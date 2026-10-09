@@ -98,6 +98,11 @@ export function PrivacyFr() {
             </li>
           </ul>
           <p>Aucun cookie publicitaire, de mesure d&apos;audience ou de réseau social.</p>
+          <p>
+            Pour savoir quelles pages sont consultées, nous utilisons <strong>Vercel Web Analytics</strong>, une mesure
+            d&apos;audience anonyme et sans cookie : elle ne dépose rien sur votre appareil, ne vous suit pas d&apos;un site à
+            l&apos;autre et ne conserve que des statistiques agrégées (pages vues, pays, type d&apos;appareil).
+          </p>
         </Section>
 
         <Section id="prestataires" title="Prestataires et hébergement">
@@ -107,7 +112,7 @@ export function PrivacyFr() {
               <strong>Supabase</strong> : base de données, authentification et stockage des photos ;
             </li>
             <li>
-              <strong>Vercel</strong> : hébergement et diffusion du site ;
+              <strong>Vercel</strong> : hébergement et diffusion du site, statistiques de visite anonymes ;
             </li>
             <li>
               <strong>Google</strong> : uniquement si vous choisissez la connexion Google ;

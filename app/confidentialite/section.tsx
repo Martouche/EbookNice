@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-export const UPDATED_AT = { fr: "7 octobre 2026", en: "7 October 2026" };
+export const UPDATED_AT = { fr: "9 octobre 2026", en: "9 October 2026" };
 export const CONTACT = "martin.vantalon@gmail.com";
 
 export function Section({ id, title, children }: { id: string; title: string; children: ReactNode }) {

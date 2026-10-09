@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import { BottomNav } from "@/components/bottom-nav";
@@ -55,6 +56,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <main className="min-h-[calc(100dvh-var(--header-h))] pb-24 md:pb-0">{children}</main>
             <BottomNav />
             <ServiceWorker />
+            <Analytics />
           </FavoritesProvider>
         </ThemeProvider>
         </I18nProvider>
