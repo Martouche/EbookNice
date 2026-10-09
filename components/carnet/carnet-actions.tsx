@@ -6,7 +6,7 @@ import { useState, useTransition } from "react";
 import { shareFavorites } from "@/app/actions/itineraries";
 import { Button } from "@/components/ui/button";
 import { placesToGpx } from "@/lib/gpx";
-import { useI18n } from "@/lib/i18n/client";
+import { useI18n, useLocalize } from "@/lib/i18n/client";
 import type { PlaceWithRelations } from "@/lib/types";
 import { slugify } from "@/lib/utils";
 
@@ -21,6 +21,7 @@ export function CarnetActions({ title, places, itineraryId }: CarnetActionsProps
   const [pending, startTransition] = useTransition();
   const [feedback, setFeedback] = useState<string | null>(null);
   const { t } = useI18n();
+  const localize = useLocalize();
 
   const flash = (message: string) => {
     setFeedback(message);
@@ -35,7 +36,7 @@ export function CarnetActions({ title, places, itineraryId }: CarnetActionsProps
         if (!("id" in result) || !result.id) return flash(t.carnet.publishError);
         id = result.id;
       }
-      const url = `${window.location.origin}/carnet/${id}`;
+      const url = `${window.location.origin}${localize(`/carnet/${id}`)}`;
       if (navigator.share) {
         await navigator.share({ title, text: t.carnet.shareText, url }).catch(() => undefined);
       } else {

@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Clock } from "lucide-react";
-import Link from "next/link";
+import { Clock, Navigation } from "lucide-react";
+import { formatDistance } from "@/lib/geo";
+import Link from "@/components/link";
 import { useI18n } from "@/lib/i18n/client";
 import type { PlaceWithRelations } from "@/lib/types";
 import { cn } from "@/lib/utils";
@@ -16,6 +17,7 @@ export function PlaceCard({
   compact,
   active,
   priority,
+  distance,
   onHoverChange,
 }: {
   place: PlaceWithRelations;
@@ -24,6 +26,8 @@ export function PlaceCard({
   /** Mise en évidence (survol du marqueur correspondant sur la carte). */
   active?: boolean;
   priority?: boolean;
+  /** Distance (m) depuis la position du visiteur (« Autour de moi »). */
+  distance?: number;
   onHoverChange?: (hovered: boolean) => void;
 }) {
   const { t, locale } = useI18n();
@@ -77,6 +81,15 @@ export function PlaceCard({
               <span>{place.city}</span>
               <span className="size-0.5 rounded-full bg-white/50" />
               <span>{t.price[place.price_level]}</span>
+              {distance !== undefined && (
+                <>
+                  <span className="size-0.5 rounded-full bg-white/50" />
+                  <span className="flex items-center gap-1 whitespace-nowrap font-medium text-white">
+                    <Navigation className="size-3" />
+                    {t.explorer.away(formatDistance(distance, locale))}
+                  </span>
+                </>
+              )}
               {!compact && (
                 <>
                   <span className="size-0.5 rounded-full bg-white/50" />

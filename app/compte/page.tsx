@@ -1,10 +1,10 @@
-import { ArrowUpRight, Globe, Lock, LogOut, ShieldCheck, Trash2 } from "lucide-react";
+import { ArrowUpRight, Globe, Lock, ShieldCheck, Trash2 } from "lucide-react";
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/link";
 import { redirect } from "next/navigation";
-import { signOut } from "@/app/actions/auth";
 import { deleteItinerary, setItineraryVisibility } from "@/app/actions/itineraries";
 import { EmptyState } from "@/components/section-heading";
+import { SignOutForm } from "@/components/sign-out-form";
 import { Button } from "@/components/ui/button";
 import { FAVORITES_TITLE } from "@/lib/constants";
 import { getFavoriteIds, getMyItineraries, getSession } from "@/lib/data";
@@ -45,12 +45,7 @@ export default async function AccountPage() {
               </Link>
             </Button>
           )}
-          <form action={signOut}>
-            <Button variant="ghost" type="submit">
-              <LogOut />
-              {t.account.logout}
-            </Button>
-          </form>
+          <SignOutForm label={t.account.logout} />
         </div>
       </header>
 

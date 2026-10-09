@@ -1,14 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import Link from "@/components/link";
 import { cn } from "@/lib/utils";
-import { useI18n } from "@/lib/i18n/client";
+import { useI18n, usePathWithoutLocale } from "@/lib/i18n/client";
 import { NAV_ITEMS, isActive } from "./nav-items";
 
 export function BottomNav() {
-  const pathname = usePathname();
+  const pathname = usePathWithoutLocale();
   const { t } = useI18n();
   if (pathname.startsWith("/admin")) return null;
 

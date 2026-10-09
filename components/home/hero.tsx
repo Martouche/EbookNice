@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowDownRight, Map } from "lucide-react";
-import Link from "next/link";
+import Link from "@/components/link";
 import { Button } from "@/components/ui/button";
 import { useI18n } from "@/lib/i18n/client";
 import { HeroVideo } from "./hero-video";

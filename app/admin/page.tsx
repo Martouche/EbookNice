@@ -3,6 +3,7 @@ import Link from "next/link";
 import { deletePlace } from "@/app/actions/admin";
 import { BulkEnrichButton } from "@/components/admin/bulk-enrich-button";
 import { ConfirmDelete } from "@/components/admin/confirm-delete";
+import { ContentHealth } from "@/components/admin/content-health";
 import { CategoryIcon } from "@/components/category-icon";
 import { EmptyState } from "@/components/section-heading";
 import { Badge } from "@/components/ui/badge";
@@ -19,6 +20,8 @@ export default async function AdminPage() {
       <h1 className="mb-6 font-display text-5xl">
         Spots <span className="text-muted-foreground italic">({places.length})</span>
       </h1>
+
+      <ContentHealth places={places} />
 
       <BulkEnrichButton
         targets={places.filter((p) => p.images.length < MIN_PHOTOS).map((p) => ({ id: p.id, title: p.title }))}

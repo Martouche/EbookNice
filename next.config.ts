@@ -12,6 +12,8 @@ const nextConfig: NextConfig = {
   async headers() {
     // Vidéos du hero : cache CDN + navigateur (noms non versionnés → 7 jours, revalidation en arrière-plan).
     return [
+      // Service worker : toujours revalidé, pour que les mises à jour du cache hors ligne arrivent vite.
+      { source: "/sw.js", headers: [{ key: "Cache-Control", value: "no-cache" }] },
       {
         source: "/videos/:file*",
         headers: [{ key: "Cache-Control", value: "public, max-age=604800, stale-while-revalidate=86400" }],

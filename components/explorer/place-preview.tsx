@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowUpRight, Clock, Navigation } from "lucide-react";
-import Link from "next/link";
+import Link from "@/components/link";
 import { CategoryIcon } from "@/components/category-icon";
 import { FavoriteButton } from "@/components/favorite-button";
 import { PlaceImages } from "@/components/place-images";

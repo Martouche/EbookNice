@@ -1,13 +1,22 @@
 import { ArrowRight } from "lucide-react";
-import Link from "next/link";
+import type { Metadata } from "next";
+import { Suspense } from "react";
+import Link from "@/components/link";
 import { CategoryShowcase, type ShowcaseItem } from "@/components/home/category-showcase";
 import { Hero } from "@/components/home/hero";
+import { WeatherBanner } from "@/components/home/weather-banner";
 import { ItineraryGenerator } from "@/components/home/itinerary-generator";
 import { PlaceCard } from "@/components/place-card";
 import { EmptyState, SectionHeading } from "@/components/section-heading";
 import { CATEGORY_SHOWCASE } from "@/lib/constants";
 import { getCategories, getPlaces } from "@/lib/data";
-import { getI18n } from "@/lib/i18n/server";
+import { getI18n, localeAlternates } from "@/lib/i18n/server";
+
+export async function generateMetadata(): Promise<Metadata> {
+  return { alternates: await localeAlternates("/") };
+}
+
+const RAINY_TAG = "Jour de pluie";
 
 export default async function HomePage() {
   const [categories, places, { t }] = await Promise.all([getCategories(), getPlaces(), getI18n()]);
@@ -26,6 +35,13 @@ export default async function HomePage() {
       <Hero stats={{ places: places.length, free: places.filter((p) => p.is_free).length, categories: showcase.length }} />
 
       <div className="mx-auto max-w-7xl space-y-24 px-4 py-16 md:px-8 md:py-24">
+        <Suspense>
+          <WeatherBanner
+            rainyTag={places.some((p) => p.tags.includes(RAINY_TAG)) ? RAINY_TAG : null}
+            className="mb-10 md:mb-12"
+          />
+        </Suspense>
+
         <section id="envies">
           <SectionHeading
             kicker={t.home.showcaseKicker}

@@ -1,20 +1,22 @@
 import { ArrowLeft } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/components/link";
 import { notFound } from "next/navigation";
 import { PlaceMiniMap } from "@/components/place/place-mini-map";
 import { PlaceCard } from "@/components/place-card";
 import { EmptyState } from "@/components/section-heading";
 import { getChapterBySlug, getChapters, getPlaces } from "@/lib/data";
-import { getI18n } from "@/lib/i18n/server";
+import { getI18n, localeAlternates } from "@/lib/i18n/server";
 
 
 type Props = { params: Promise<{ slug: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const chapter = await getChapterBySlug((await params).slug);
-  return chapter ? { title: chapter.title, description: chapter.description ?? undefined } : {};
+  return chapter
+    ? { title: chapter.title, description: chapter.description ?? undefined, alternates: await localeAlternates(`/chapitres/${chapter.slug}`) }
+    : {};
 }
 
 export default async function ChapterPage({ params }: Props) {

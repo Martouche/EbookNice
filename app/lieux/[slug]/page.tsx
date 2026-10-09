@@ -1,6 +1,9 @@
 import { ArrowLeft, Clock, Download, MapPin, Navigation, Quote, Ticket } from "lucide-react";
 import type { Metadata } from "next";
-import Link from "next/link";
+import { localizePath, type Locale } from "@/lib/i18n/config";
+import { SITE_URL } from "@/lib/site";
+import type { PlaceWithRelations } from "@/lib/types";
+import Link from "@/components/link";
 import { notFound } from "next/navigation";
 import { CategoryIcon } from "@/components/category-icon";
 import { FavoriteButton } from "@/components/favorite-button";
@@ -13,26 +16,45 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { getPlaceBySlug, getPlaces } from "@/lib/data";
 import { tagLabel } from "@/lib/i18n/dictionaries";
-import { getI18n } from "@/lib/i18n/server";
+import { getI18n, localeAlternates } from "@/lib/i18n/server";
 
 type Props = { params: Promise<{ slug: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const [place, { t }] = await Promise.all([getPlaceBySlug((await params).slug), getI18n()]);
+  const [place, { t, locale }] = await Promise.all([getPlaceBySlug((await params).slug), getI18n()]);
   if (!place) return {};
+  const path = `/lieux/${place.slug}`;
   const description = place.description ?? place.local_tip ?? t.meta.placeFallback(place.category?.name ?? "Spot", place.city);
   // L'image OpenGraph est générée par ./opengraph-image.tsx (photo HD ou couverture typographique).
   return {
     title: place.title,
     description,
-    alternates: { canonical: `/lieux/${place.slug}` },
-    openGraph: { type: "article", title: place.title, description, url: `/lieux/${place.slug}` },
+    alternates: await localeAlternates(path),
+    openGraph: { type: "article", title: place.title, description, url: localizePath(path, locale) },
     twitter: { card: "summary_large_image", title: place.title, description },
   };
 }
 
+/** Données structurées schema.org : adresse, position et photos lisibles par Google (résultats enrichis). */
+function placeJsonLd(place: PlaceWithRelations, locale: Locale) {
+  const type = { restaurant: "Restaurant", plage: "Beach", randonnee: "Park" }[place.category?.slug ?? ""] ?? "TouristAttraction";
+  return {
+    "@context": "https://schema.org",
+    "@type": type,
+    name: place.title,
+    description: place.description ?? place.local_tip ?? undefined,
+    url: SITE_URL + localizePath(`/lieux/${place.slug}`, locale),
+    image: place.images.length ? place.images.slice(0, 5) : undefined,
+    address: { "@type": "PostalAddress", streetAddress: place.address ?? undefined, addressLocality: place.city, addressCountry: "FR" },
+    geo: { "@type": "GeoCoordinates", latitude: place.lat, longitude: place.lng },
+    isAccessibleForFree: place.is_free,
+    priceRange: !place.is_free && place.price_level > 0 ? "€".repeat(place.price_level) : undefined,
+    inLanguage: locale,
+  };
+}
+
 export default async function PlacePage({ params }: Props) {
-  const [place, { t }] = await Promise.all([getPlaceBySlug((await params).slug), getI18n()]);
+  const [place, { t, locale }] = await Promise.all([getPlaceBySlug((await params).slug), getI18n()]);
   if (!place) notFound();
 
   // Même type de lieu (plages, points de vue…) : la navigation suit les « envies » de l'accueil.
@@ -47,6 +69,11 @@ export default async function PlacePage({ params }: Props) {
 
   return (
     <article className="mx-auto max-w-7xl px-4 pt-4 pb-10 md:px-8 md:pt-8">
+      <script
+        type="application/ld+json"
+        // `<` échappé : aucune balise ne peut sortir du script, même si un texte saisi dans l'admin en contient.
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(placeJsonLd(place, locale)).replace(/</g, "\\u003c") }}
+      />
       <Link
         href={place.category ? `/explorer?category=${place.category.slug}` : "/explorer"}
         className="mb-4 hidden items-center gap-1.5 text-sm text-muted-foreground transition-colors duration-100 hover:text-foreground md:inline-flex"

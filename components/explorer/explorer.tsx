@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
 import dynamic from "next/dynamic";
 import { useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
+import { distanceMeters } from "@/lib/geo";
 import { PlaceCard } from "@/components/place-card";
 import { EmptyState } from "@/components/section-heading";
 import { Drawer, DrawerContent, DrawerTitle } from "@/components/ui/drawer";
@@ -41,14 +42,40 @@ export function Explorer({
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const asideRef = useRef<HTMLDivElement>(null);
+  // « Autour de moi » : position lue une fois (elle reste dans le navigateur), puis tri par distance.
+  const [origin, setOrigin] = useState<{ lat: number; lng: number } | null>(null);
+  const [locating, setLocating] = useState(false);
+  const [geoError, setGeoError] = useState(false);
+
+  const toggleNearMe = () => {
+    if (origin) return setOrigin(null);
+    if (!("geolocation" in navigator)) return setGeoError(true);
+    setLocating(true);
+    setGeoError(false);
+    navigator.geolocation.getCurrentPosition(
+      ({ coords }) => {
+        setOrigin({ lat: coords.latitude, lng: coords.longitude });
+        setLocating(false);
+      },
+      () => {
+        setGeoError(true);
+        setLocating(false);
+      },
+      { enableHighAccuracy: false, timeout: 10_000, maximumAge: 60_000 },
+    );
+  };
 
   // La frappe reste fluide même avec beaucoup de spots : le filtrage suit en différé.
   const deferredFilters = useDeferredValue(filters);
   // Les tags sont stockés en français : on cherche aussi dans leur traduction (« sea view », « rainy day »…).
-  const results = useMemo(
-    () => filterPlaces(places, deferredFilters, (p) => p.tags.map((tag) => tagLabel(t, tag)).join(" ")),
-    [places, deferredFilters, t],
+  const distances = useMemo(
+    () => (origin ? new Map(places.map((p) => [p.id, distanceMeters(origin, p)])) : null),
+    [places, origin],
   );
+  const results = useMemo(() => {
+    const filtered = filterPlaces(places, deferredFilters, (p) => p.tags.map((tag) => tagLabel(t, tag)).join(" "));
+    return distances ? filtered.sort((a, b) => distances.get(a.id)! - distances.get(b.id)!) : filtered;
+  }, [places, deferredFilters, t, distances]);
   const tags = useMemo(
     () => [...new Set(places.flatMap((p) => p.tags))].sort((a, b) => tagLabel(t, a).localeCompare(tagLabel(t, b), locale)),
     [places, t, locale],
@@ -80,6 +107,7 @@ export function Explorer({
       categories={categories}
       tags={tags}
       resultCount={results.length}
+      nearMe={{ active: !!origin, locating, toggle: toggleNearMe }}
       className={className}
     />
   );
@@ -92,13 +120,14 @@ export function Explorer({
           <p className="mb-6 font-mono text-[10px] tracking-[0.2em] text-muted-foreground uppercase">
             {t.common.places(results.length)}
           </p>
+          {geoError && <p role="alert" className="-mt-3 mb-6 text-sm text-red-500">{t.explorer.locationDenied}</p>}
           {results.length === 0 ? (
             <EmptyState>{t.explorer.noResults}</EmptyState>
           ) : (
             <motion.div layout className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
               <AnimatePresence mode="popLayout">
                 {results.map((place, i) => (
-                  <PlaceCard key={place.id} place={place} index={i} priority={i < 3} />
+                  <PlaceCard key={place.id} place={place} index={i} priority={i < 3} distance={distances?.get(place.id)} />
                 ))}
               </AnimatePresence>
             </motion.div>
@@ -126,6 +155,7 @@ export function Explorer({
                 <PlaceCard
                   place={place}
                   compact
+                  distance={distances?.get(place.id)}
                   active={place.id === hoveredId || place.id === selectedId}
                   onHoverChange={(h) => setHoveredId(h ? place.id : null)}
                 />
@@ -144,6 +174,7 @@ export function Explorer({
             padding={isDesktop ? { top: 48, bottom: 48 } : { top: 140, bottom: 110 }}
             focusOffsetY={isDesktop ? 0 : 140}
             geolocate
+            cluster
             controls={isDesktop ? "top-right" : "bottom-right"}
             className="map-above-nav"
           />

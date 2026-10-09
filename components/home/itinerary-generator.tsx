@@ -3,7 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { BookmarkPlus, Dices, Footprints, Loader2 } from "lucide-react";
 import dynamic from "next/dynamic";
-import Link from "next/link";
+import Link from "@/components/link";
 import { useRouter } from "next/navigation";
 import { useState, useTransition } from "react";
 import { createItinerary } from "@/app/actions/itineraries";
@@ -13,7 +13,7 @@ import { Button } from "@/components/ui/button";
 import { Chip } from "@/components/ui/chip";
 import { Segmented } from "@/components/ui/segmented";
 import { DURATIONS, VIBES, buildItinerary, type DurationId, type ItineraryStop, type VibeId } from "@/lib/itinerary";
-import { useI18n } from "@/lib/i18n/client";
+import { useI18n, useLocalize } from "@/lib/i18n/client";
 import type { PlaceWithRelations } from "@/lib/types";
 
 const PlacesMap = dynamic(() => import("@/components/map/places-map").then((m) => m.PlacesMap), { ssr: false });
@@ -23,6 +23,7 @@ const spring = { type: "spring", stiffness: 400, damping: 30 } as const;
 export function ItineraryGenerator({ places }: { places: PlaceWithRelations[] }) {
   const router = useRouter();
   const { t } = useI18n();
+  const localize = useLocalize();
   const { isAuthed } = useFavorites();
   const [duration, setDuration] = useState<DurationId>("half");
   const [vibe, setVibe] = useState<VibeId>("all");
@@ -38,7 +39,7 @@ export function ItineraryGenerator({ places }: { places: PlaceWithRelations[] })
   const save = () => {
     if (!stops) return;
     if (!isAuthed) {
-      router.push("/connexion?next=/");
+      router.push(localize(`/connexion?next=${encodeURIComponent(localize("/"))}`));
       return;
     }
     startSaving(async () => {
@@ -47,7 +48,7 @@ export function ItineraryGenerator({ places }: { places: PlaceWithRelations[] })
         placeIds: stops.map((s) => s.place.id),
         isPublic: true,
       });
-      if ("id" in result && result.id) router.push(`/carnet/${result.id}`);
+      if ("id" in result && result.id) router.push(localize(`/carnet/${result.id}`));
     });
   };
 

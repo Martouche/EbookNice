@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { LayoutGrid, Map as MapIcon, Search, SlidersHorizontal, X } from "lucide-react";
+import { LayoutGrid, Loader2, LocateFixed, Map as MapIcon, Search, SlidersHorizontal, X } from "lucide-react";
 import { useState, type Dispatch, type SetStateAction } from "react";
 import { CategoryIcon } from "@/components/category-icon";
 import { Chip } from "@/components/ui/chip";
@@ -24,6 +24,7 @@ export function FilterBar({
   categories,
   tags,
   resultCount,
+  nearMe,
   className,
 }: {
   filters: ExplorerFilters;
@@ -33,6 +34,8 @@ export function FilterBar({
   categories: Category[];
   tags: string[];
   resultCount: number;
+  /** Tri « Autour de moi » (géolocalisation du navigateur). */
+  nearMe: { active: boolean; locating: boolean; toggle: () => void };
   className?: string;
 }) {
   const { t } = useI18n();
@@ -67,6 +70,10 @@ export function FilterBar({
         </div>
 
         <div className="no-scrollbar -mx-4 flex gap-2 overflow-x-auto pr-12 pl-4 [mask-image:linear-gradient(to_right,black_88%,transparent)] md:mx-0 md:px-0 md:[mask-image:none]">
+          <Chip active={nearMe.active} onClick={nearMe.toggle} aria-busy={nearMe.locating}>
+            {nearMe.locating ? <Loader2 className="animate-spin" /> : <LocateFixed />}
+            {nearMe.locating ? t.explorer.locating : t.explorer.nearMe}
+          </Chip>
           <Chip
             active={isFree}
             onClick={() => setFilters((f) => ({ ...f, prices: toggleIn(f.prices, 0) }))}

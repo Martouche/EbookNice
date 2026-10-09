@@ -125,3 +125,20 @@
     display: none !important;
   }
 }
+
+/* Bulle de regroupement de marqueurs (carte de l'explorer). */
+.map-cluster {
+  display: grid;
+  place-items: center;
+  border: 2px solid #fff;
+  border-radius: 9999px;
+  background: var(--color-ocre, #e3a13b);
+  color: #14120f;
+  font: 600 13px/1 var(--font-geist-mono), ui-monospace, monospace;
+  box-shadow: 0 0 0 6px rgb(227 161 59 / 0.25), 0 2px 10px rgb(0 0 0 / 0.35);
+  cursor: pointer;
+  transition: transform 150ms ease-out;
+}
+.map-cluster:hover {
+  transform: scale(1.08);
+}

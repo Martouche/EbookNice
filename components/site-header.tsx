@@ -2,16 +2,15 @@
 
 import { motion } from "framer-motion";
 import { ShieldCheck } from "lucide-react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import Link from "@/components/link";
 import { cn } from "@/lib/utils";
-import { useI18n } from "@/lib/i18n/client";
+import { useI18n, usePathWithoutLocale } from "@/lib/i18n/client";
 import { LanguageToggle } from "./language-toggle";
 import { NAV_ITEMS, isActive } from "./nav-items";
 import { ThemeToggle } from "./theme-toggle";
 
 export function SiteHeader({ isAdmin }: { isAdmin: boolean }) {
-  const pathname = usePathname();
+  const pathname = usePathWithoutLocale();
   const { t } = useI18n();
 
   return (

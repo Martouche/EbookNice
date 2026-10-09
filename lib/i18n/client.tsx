@@ -1,7 +1,8 @@
 "use client";
 
-import { createContext, useContext } from "react";
-import type { Locale } from "./config";
+import { usePathname } from "next/navigation";
+import { createContext, useCallback, useContext } from "react";
+import { localizePath, splitLocalePath, type Locale } from "./config";
 import { getDictionary, type Dictionary } from "./dictionaries";
 
 const I18nContext = createContext<{ locale: Locale; t: Dictionary } | null>(null);
@@ -15,4 +16,15 @@ export function useI18n() {
   const ctx = useContext(I18nContext);
   if (!ctx) throw new Error("useI18n doit être utilisé dans <I18nProvider>");
   return ctx;
+}
+
+/** `localize("/explorer")` → « /en/explorer » pour un visiteur anglophone. */
+export function useLocalize() {
+  const { locale } = useI18n();
+  return useCallback((href: string) => localizePath(href, locale), [locale]);
+}
+
+/** Chemin courant sans le préfixe de langue (`/en/explorer` → `/explorer`), pour l'état actif de la navigation. */
+export function usePathWithoutLocale() {
+  return splitLocalePath(usePathname()).path;
 }

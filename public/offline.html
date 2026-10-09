@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b0b0a" />
+    <title>Hors ligne · Offline — Nice.</title>
+    <style>
+      :root { color-scheme: dark; }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100dvh;
+        display: grid;
+        place-items: center;
+        padding: 24px 16px;
+        background: #0b0b0a;
+        color: #f2eee6;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      }
+      main { max-width: 26rem; text-align: center; }
+      .logo { font-family: Georgia, "Times New Roman", serif; font-size: 2.5rem; margin: 0; }
+      .logo span { color: #e3a13b; }
+      h1 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; font-size: 2rem; line-height: 1.1; margin: 2rem 0 0.75rem; }
+      p { color: #a8a294; line-height: 1.6; margin: 0; }
+      .en { margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid #2a2722; }
+      button {
+        margin-top: 2rem;
+        border: 0;
+        border-radius: 999px;
+        padding: 0.85rem 1.75rem;
+        background: #e3a13b;
+        color: #14120f;
+        font: 600 1rem system-ui, sans-serif;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="logo">Nice<span>.</span></p>
+      <h1>Vous êtes hors ligne</h1>
+      <p>Cette page n'a pas encore été enregistrée sur votre téléphone. Les fiches et favoris déjà consultés restent disponibles sans réseau.</p>
+      <p class="en" lang="en">
+        <strong style="color: #f2eee6">You're offline.</strong> This page hasn't been saved on your device yet. Places and
+        favourites you've already opened stay available without a connection.
+      </p>
+      <button type="button" onclick="location.reload()">Réessayer · Try again</button>
+    </main>
+  </body>
+</html>

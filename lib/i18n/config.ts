@@ -16,3 +16,31 @@ export function detectLocale(acceptLanguage: string | null | undefined): Locale 
   if (!preferred || preferred === "*") return DEFAULT_LOCALE;
   return preferred.startsWith("fr") ? "fr" : "en";
 }
+
+/** En-tête interne posé par le middleware : langue déduite de l'URL (`/en/…` → en). */
+export const LOCALE_HEADER = "x-locale";
+
+/** Routes hors i18n (back-office en français, callbacks d'auth) : jamais préfixées. */
+const UNLOCALIZED = ["/admin", "/auth"];
+
+/** Pages du guide uniquement : ni back-office, ni fichiers (`/sitemap.xml`, `/sw.js`, `/manifest.webmanifest`…). */
+export const isLocalizable = (path: string) =>
+  !UNLOCALIZED.some((p) => path === p || path.startsWith(`${p}/`)) && !/\.[a-z0-9]+$/i.test(path);
+
+/** `/en/lieux/x` → { locale: "en", path: "/lieux/x" } ; `/lieux/x` → { locale: null, path: "/lieux/x" }. */
+export function splitLocalePath(pathname: string): { locale: Locale | null; path: string } {
+  const match = /^\/(en)(\/.*)?$/.exec(pathname);
+  return match ? { locale: match[1] as Locale, path: match[2] || "/" } : { locale: null, path: pathname };
+}
+
+/**
+ * Chemin interne dans la langue voulue : le français (langue par défaut) n'a pas de préfixe, l'anglais vit sous `/en`.
+ * Accepte une query string / un hash (`/explorer?view=map`, `/#envies`). Les URL externes sont renvoyées telles quelles.
+ */
+export function localizePath(href: string, locale: Locale): string {
+  if (!href.startsWith("/") || href.startsWith("//")) return href;
+  const [, pathname = "/", rest = ""] = /^([^?#]*)(.*)$/.exec(href) ?? [];
+  const { path } = splitLocalePath(pathname || "/");
+  if (locale === DEFAULT_LOCALE || !isLocalizable(path)) return `${path}${rest}`;
+  return `/${locale}${path === "/" ? "" : path}${rest}`;
+}

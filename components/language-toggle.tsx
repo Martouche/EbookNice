@@ -2,13 +2,13 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { LOCALE_COOKIE, LOCALES, type Locale } from "@/lib/i18n/config";
+import { LOCALE_COOKIE, LOCALES, localizePath, type Locale } from "@/lib/i18n/config";
 import { useI18n } from "@/lib/i18n/client";
 import { cn } from "@/lib/utils";
 
 /**
- * Bascule FR | EN. Changement rare : on écrit le cookie et on recharge la page — tout le contenu
- * (interface + lieux en base) est re-rendu côté serveur dans la nouvelle langue, sans état intermédiaire.
+ * Bascule FR | EN. Changement rare : on mémorise le choix (cookie) et on charge la même page dans l'autre langue
+ * (`/lieux/x` ⇄ `/en/lieux/x`) — interface et lieux en base sont re-rendus côté serveur, sans état intermédiaire.
  */
 export function LanguageToggle({ className }: { className?: string }) {
   const { locale, t } = useI18n();
@@ -18,7 +18,8 @@ export function LanguageToggle({ className }: { className?: string }) {
     if (next === locale) return;
     setPending(next);
     document.cookie = `${LOCALE_COOKIE}=${next}; path=/; max-age=${60 * 60 * 24 * 365}; samesite=lax`;
-    window.location.reload();
+    const { pathname, search, hash } = window.location;
+    window.location.assign(localizePath(pathname, next) + search + hash);
   };
 
   const shown = pending ?? locale;

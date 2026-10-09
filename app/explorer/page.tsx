@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import { Explorer } from "@/components/explorer/explorer";
 import { getCategories, getPlaces } from "@/lib/data";
 import { parseFilters, serializeFilters } from "@/lib/filters";
-import { getI18n } from "@/lib/i18n/server";
+import { getI18n, localeAlternates } from "@/lib/i18n/server";
 
 export async function generateMetadata(): Promise<Metadata> {
   const { t } = await getI18n();
-  return { title: t.meta.explorerTitle, description: t.meta.explorerDescription };
+  return { title: t.meta.explorerTitle, description: t.meta.explorerDescription, alternates: await localeAlternates("/explorer") };
 }
 
 export default async function ExplorerPage({

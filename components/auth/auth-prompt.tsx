@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/link";
 import { ResponsiveSheet } from "@/components/ui/responsive-sheet";
 import { useI18n } from "@/lib/i18n/client";
 import { QuickAuth } from "./quick-auth";

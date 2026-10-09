@@ -10,3 +10,6 @@ next-env.d.ts
 npm-debug.log*
 public/maplibre
 .claude/
+
+# Journaux des tests navigateur
+.playwright-mcp/

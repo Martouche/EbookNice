@@ -1,6 +1,6 @@
 import { Compass } from "lucide-react";
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/link";
 import { CarnetActions } from "@/components/carnet/carnet-actions";
 import { CarnetBoard } from "@/components/carnet/carnet-board";
 import { EmptyState } from "@/components/section-heading";

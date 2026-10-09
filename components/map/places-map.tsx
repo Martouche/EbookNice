@@ -2,9 +2,11 @@
 
 import "maplibre-gl/dist/maplibre-gl.css";
 import type { GeoJSONSource, Marker } from "maplibre-gl";
-import { useEffect, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { createRoot, type Root } from "react-dom/client";
+import Supercluster from "supercluster";
 import { CATEGORY_COLORS, DEFAULT_CATEGORY_COLOR } from "@/lib/constants";
+import { useI18n } from "@/lib/i18n/client";
 import type { PlaceWithRelations } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import { MarkerPin } from "./marker-pin";
@@ -25,6 +27,8 @@ interface PlacesMapProps {
   padding?: { top?: number; bottom?: number; left?: number; right?: number };
   /** Décalage vertical (px) du lieu sélectionné, pour le garder visible au-dessus d'un drawer. */
   focusOffsetY?: number;
+  /** Regroupe les marqueurs proches en bulles chiffrées quand on dézoome (carte de l'explorer). */
+  cluster?: boolean;
   /** Bouton « Me localiser » + point bleu. */
   geolocate?: boolean;
   controls?: MaplibreOptions["controls"];
@@ -43,14 +47,65 @@ export function PlacesMap({
   padding,
   focusOffsetY = 0,
   geolocate,
+  cluster,
   controls,
   className,
 }: PlacesMapProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const instance = useMaplibre(containerRef, { geolocate, controls });
   const markers = useRef(new Map<string, { marker: Marker; root: Root }>());
+  const { t } = useI18n();
+  const label = useRef(t.common.places);
   const callbacks = useRef({ onSelect, onHover });
   callbacks.current = { onSelect, onHover };
+
+  // Regroupement : index spatial des lieux, recalculé à chaque fin de zoom. Les lieux regroupés sont masqués
+  // (sauf le lieu sélectionné ou survolé) et remplacés par une bulle « N » qui zoome sur son groupe au clic.
+  const index = useMemo(() => {
+    if (!cluster || route) return null;
+    const sc = new Supercluster<{ id: string }>({ radius: 48, maxZoom: 15 });
+    sc.load(places.map((p) => ({ type: "Feature", properties: { id: p.id }, geometry: { type: "Point", coordinates: [p.lng, p.lat] } })));
+    return sc;
+  }, [places, cluster, route]);
+  const [clustered, setClustered] = useState<ReadonlySet<string>>(new Set());
+
+  useEffect(() => {
+    if (!instance || !index) {
+      setClustered(new Set());
+      return;
+    }
+    const { map, lib } = instance;
+    let bubbles: Marker[] = [];
+    const update = () => {
+      bubbles.forEach((m) => m.remove());
+      bubbles = [];
+      const hidden = new Set<string>();
+      for (const item of index.getClusters([-180, -85, 180, 85], Math.round(map.getZoom()))) {
+        if (!("cluster" in item.properties)) continue;
+        const { cluster_id: id, point_count: count } = item.properties;
+        index.getLeaves(id, Infinity).forEach((leaf) => hidden.add(leaf.properties.id));
+        const el = document.createElement("button");
+        el.type = "button";
+        el.className = "map-cluster";
+        el.textContent = String(count);
+        el.setAttribute("aria-label", label.current(count));
+        const size = Math.min(56, 34 + Math.log2(count) * 5);
+        el.style.width = el.style.height = `${size}px`;
+        el.addEventListener("click", (e) => {
+          e.stopPropagation();
+          map.easeTo({ center: item.geometry.coordinates as [number, number], zoom: index.getClusterExpansionZoom(id) + 0.5 });
+        });
+        bubbles.push(new lib.Marker({ element: el, anchor: "center" }).setLngLat(item.geometry.coordinates as [number, number]).addTo(map));
+      }
+      setClustered(hidden);
+    };
+    update();
+    map.on("zoomend", update);
+    return () => {
+      map.off("zoomend", update);
+      bubbles.forEach((m) => m.remove());
+    };
+  }, [instance, index]);
 
   // Synchronise les marqueurs avec la liste (filtrée) de lieux.
   useEffect(() => {
@@ -84,6 +139,7 @@ export function PlacesMap({
       const isHovered = place.id === hoveredId;
       entry.marker.setLngLat([place.lng, place.lat]);
       entry.marker.getElement().style.zIndex = isSelected ? "20" : isHovered ? "10" : "1";
+      entry.marker.getElement().style.display = clustered.has(place.id) && !isSelected && !isHovered ? "none" : "";
       entry.root.render(
         <MarkerPin
           color={CATEGORY_COLORS[place.category?.slug ?? ""] ?? DEFAULT_CATEGORY_COLOR}
@@ -95,7 +151,7 @@ export function PlacesMap({
         />,
       );
     });
-  }, [instance, places, selectedId, hoveredId, route]);
+  }, [instance, places, selectedId, hoveredId, route, clustered]);
 
   // Clic sur le fond de carte : désélection.
   useEffect(() => {

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import Link from "next/link";
+import Link from "@/components/link";
 import type { CSSProperties } from "react";
 import { CategoryIcon } from "@/components/category-icon";
 import { CATEGORY_COLORS, CATEGORY_INK, CATEGORY_LIGHT_BG, DEFAULT_CATEGORY_COLOR } from "@/lib/constants";

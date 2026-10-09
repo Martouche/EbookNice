@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Loader2 } from "lucide-react";
 import { useActionState, useState } from "react";
 import { signIn, signUp, type AuthState } from "@/app/actions/auth";
+import Link from "@/components/link";
 import { Button } from "@/components/ui/button";
 import { Input, Label } from "@/components/ui/input";
 import { Segmented } from "@/components/ui/segmented";
@@ -57,7 +58,14 @@ export function AuthForm({ next, initialError }: { next: string; initialError?: 
           <Input id="email" name="email" type="email" required autoComplete="email" placeholder={t.auth.emailPlaceholder} />
         </div>
         <div className="space-y-2">
-          <Label htmlFor="password">{t.auth.password}</Label>
+          <div className="flex items-baseline justify-between gap-2">
+            <Label htmlFor="password">{t.auth.password}</Label>
+            {!isSignUp && (
+              <Link href="/mot-de-passe-oublie" className="text-xs text-muted-foreground underline-offset-2 hover:text-foreground hover:underline">
+                {t.auth.forgot.link}
+              </Link>
+            )}
+          </div>
           <Input
             id="password"
             name="password"
