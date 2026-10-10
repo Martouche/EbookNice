@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import { LayoutGrid, Loader2, LocateFixed, Map as MapIcon, Search, SlidersHorizontal, X } from "lucide-react";
 import { useState, type Dispatch, type SetStateAction } from "react";
 import { CategoryIcon } from "@/components/category-icon";
@@ -11,6 +11,7 @@ import { useI18n } from "@/lib/i18n/client";
 import { tagLabel } from "@/lib/i18n/dictionaries";
 import type { Category } from "@/lib/types";
 import { cn } from "@/lib/utils";
+import { exitFast, motionTokens, springs } from "@/lib/motion-tokens";
 
 const toggleIn = <T,>(list: T[], value: T) => (list.includes(value) ? list.filter((v) => v !== value) : [...list, value]);
 
@@ -44,7 +45,7 @@ export function FilterBar({
   const activeCount = filters.categories.length + filters.prices.length + filters.tags.length;
 
   return (
-    <div className={cn("z-30 border-b border-line bg-glass backdrop-blur-2xl", className)}>
+    <div className={cn("z-30 border-b border-line bg-background", className)}>
       <div className="mx-auto max-w-7xl space-y-3 px-4 py-3 md:px-8">
         <div className="flex items-center gap-2">
           <label className="relative flex-1">
@@ -110,11 +111,10 @@ export function FilterBar({
         <AnimatePresence initial={false}>
           {showMore && (
             <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: "auto", opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ type: "spring", stiffness: 400, damping: 34 }}
-              className="overflow-hidden"
+              initial={{ opacity: 0, y: -motionTokens.distance.sm }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, transition: exitFast }}
+              transition={springs.snappy}
             >
               <div className="space-y-3 pb-1">
                 <div className="no-scrollbar -mx-4 flex items-center gap-2 overflow-x-auto pr-12 pl-4 [mask-image:linear-gradient(to_right,black_88%,transparent)] md:mx-0 md:px-0 md:[mask-image:none]">

@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import { BookmarkPlus, Dices, Footprints, Loader2 } from "lucide-react";
 import dynamic from "next/dynamic";
 import Link from "@/components/link";
@@ -15,10 +15,9 @@ import { Segmented } from "@/components/ui/segmented";
 import { DURATIONS, VIBES, buildItinerary, type DurationId, type ItineraryStop, type VibeId } from "@/lib/itinerary";
 import { useI18n, useLocalize } from "@/lib/i18n/client";
 import type { PlaceWithRelations } from "@/lib/types";
+import { springs } from "@/lib/motion-tokens";
 
 const PlacesMap = dynamic(() => import("@/components/map/places-map").then((m) => m.PlacesMap), { ssr: false });
-
-const spring = { type: "spring", stiffness: 400, damping: 30 } as const;
 
 export function ItineraryGenerator({ places }: { places: PlaceWithRelations[] }) {
   const router = useRouter();
@@ -53,7 +52,7 @@ export function ItineraryGenerator({ places }: { places: PlaceWithRelations[] })
   };
 
   return (
-    <div className="overflow-hidden rounded-[2rem] border border-line bg-card">
+    <div className="overflow-hidden rounded-3xl border border-line bg-card">
       <div className="grid gap-8 p-5 md:grid-cols-[1fr_1.1fr] md:p-10">
         <div className="min-w-0">
           <p className="font-mono text-[10px] tracking-[0.2em] text-ocre uppercase">{t.itinerary.kicker}</p>
@@ -115,7 +114,7 @@ export function ItineraryGenerator({ places }: { places: PlaceWithRelations[] })
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={spring}
+                transition={springs.snappy}
                 className="grid h-full min-h-64 place-items-center rounded-3xl border border-dashed border-line-strong p-8 text-center text-sm text-muted-foreground"
               >
                 {t.itinerary.empty}
@@ -136,7 +135,7 @@ export function ItineraryGenerator({ places }: { places: PlaceWithRelations[] })
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -12 }}
-                transition={spring}
+                transition={springs.snappy}
                 className="space-y-4"
               >
                 <div className="h-56 overflow-hidden rounded-3xl border border-line">

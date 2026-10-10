@@ -12,7 +12,7 @@ const buttonVariants = cva(
         accent: "bg-ocre text-[#14120f] hover:bg-ocre/90",
         outline: "border border-line-strong bg-transparent hover:bg-muted",
         ghost: "hover:bg-muted",
-        glass: "border border-line bg-glass backdrop-blur-xl hover:bg-muted",
+        overlay: "border border-white/15 bg-scrim text-white hover:bg-[#14120f]",
         destructive: "bg-red-600 text-white hover:bg-red-600/90",
       },
       size: {

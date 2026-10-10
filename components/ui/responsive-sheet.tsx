@@ -1,11 +1,12 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import { X } from "lucide-react";
 import { useEffect, type ReactNode } from "react";
 import { useI18n } from "@/lib/i18n/client";
 import { useIsDesktop } from "@/lib/use-media-query";
 import { Drawer, DrawerContent, DrawerDescription, DrawerTitle } from "./drawer";
+import { springs } from "@/lib/motion-tokens";
 
 interface ResponsiveSheetProps {
   open: boolean;
@@ -59,8 +60,8 @@ export function ResponsiveSheet({ open, onOpenChange, title, description, childr
             initial={{ opacity: 0, y: 16, scale: 0.97 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 8, scale: 0.98 }}
-            transition={{ type: "spring", stiffness: 400, damping: 30 }}
-            className="relative w-full max-w-md rounded-[1.75rem] border border-line bg-background p-7"
+            transition={springs.snappy}
+            className="relative w-full max-w-md rounded-3xl border border-line bg-background p-7"
           >
             <button
               type="button"

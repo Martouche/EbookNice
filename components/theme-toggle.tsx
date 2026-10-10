@@ -1,11 +1,12 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useSyncExternalStore } from "react";
 import { useI18n } from "@/lib/i18n/client";
 import { cn } from "@/lib/utils";
+import { springs } from "@/lib/motion-tokens";
 
 const subscribe = () => () => {};
 
@@ -31,7 +32,7 @@ export function ThemeToggle({ className }: { className?: string }) {
           initial={{ y: 14, opacity: 0, rotate: -40 }}
           animate={{ y: 0, opacity: 1, rotate: 0 }}
           exit={{ y: -14, opacity: 0, rotate: 40 }}
-          transition={{ type: "spring", stiffness: 400, damping: 30 }}
+          transition={springs.snappy}
         >
           {isDark ? <Moon className="size-4" /> : <Sun className="size-4" />}
         </motion.span>

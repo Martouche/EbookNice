@@ -1,10 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { getImageProps } from "next/image";
 import { useEffect, useRef, useState } from "react";
 import posterMobile from "@/public/videos/hero-nice-poster-mobile.jpg";
 import poster from "@/public/videos/hero-nice-poster.jpg";
+import { springs } from "@/lib/motion-tokens";
 
 const MOBILE_QUERY = "(max-width: 767px)";
 
@@ -89,7 +90,7 @@ export function HeroVideo() {
           onPlaying={() => setPlaying(true)}
           initial={{ opacity: 0 }}
           animate={{ opacity: playing ? 1 : 0 }}
-          transition={{ type: "spring", stiffness: 120, damping: 30 }}
+          transition={springs.release}
           className="absolute inset-0 h-full w-full object-cover"
         >
           {sources.map((s) => (

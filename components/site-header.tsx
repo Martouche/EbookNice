@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { ShieldCheck } from "lucide-react";
 import Link from "@/components/link";
 import { cn } from "@/lib/utils";
@@ -8,13 +8,14 @@ import { useI18n, usePathWithoutLocale } from "@/lib/i18n/client";
 import { LanguageToggle } from "./language-toggle";
 import { NAV_ITEMS, isActive } from "./nav-items";
 import { ThemeToggle } from "./theme-toggle";
+import { springs } from "@/lib/motion-tokens";
 
 export function SiteHeader({ isAdmin }: { isAdmin: boolean }) {
   const pathname = usePathWithoutLocale();
   const { t } = useI18n();
 
   return (
-    <header className="no-print sticky top-0 z-40 border-b border-line bg-glass pt-[env(safe-area-inset-top)] backdrop-blur-2xl">
+    <header className="no-print sticky top-0 z-40 border-b border-line bg-background pt-[env(safe-area-inset-top)]">
       <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-4 px-4 md:h-16 md:px-8">
         <Link href="/" className="group flex items-baseline gap-2">
           <span className="font-display text-2xl leading-none tracking-tight">
@@ -41,7 +42,7 @@ export function SiteHeader({ isAdmin }: { isAdmin: boolean }) {
                   <motion.span
                     layoutId="top-nav-pill"
                     className="absolute inset-0 rounded-full bg-muted"
-                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                    transition={springs.snappy}
                   />
                 )}
                 <span className="relative">{t.nav[key]}</span>

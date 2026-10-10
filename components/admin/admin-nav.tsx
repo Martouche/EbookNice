@@ -1,11 +1,12 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { Plus } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { springs } from "@/lib/motion-tokens";
 
 const LINKS = [
   { href: "/admin", label: "Spots" },
@@ -36,7 +37,7 @@ export function AdminNav() {
                   <motion.span
                     layoutId="admin-nav-pill"
                     className="absolute inset-0 rounded-full bg-muted"
-                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                    transition={springs.snappy}
                   />
                 )}
                 <span className="relative">{label}</span>

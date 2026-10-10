@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion, Reorder } from "framer-motion";
+import { AnimatePresence, motion, Reorder } from "motion/react";
 import { FileAudio, ImagePlus, Loader2, MapPin, Route, Save, X } from "lucide-react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
@@ -14,6 +14,7 @@ import { BEST_TIME_LABELS, NICE_CENTER, PRICE_LABELS, SUGGESTED_TAGS } from "@/l
 import { uploadToStorage, type Bucket } from "@/lib/storage";
 import type { BestTime, Category, Chapter, Place } from "@/lib/types";
 import { cn, slugify } from "@/lib/utils";
+import { springs } from "@/lib/motion-tokens";
 
 const LocationPicker = dynamic(() => import("@/components/map/location-picker").then((m) => m.LocationPicker), {
   ssr: false,
@@ -292,7 +293,7 @@ export function PlaceForm({
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                  transition={springs.snappy}
                   className="relative size-28 cursor-grab overflow-hidden rounded-2xl border border-line active:cursor-grabbing"
                 >
                   <Image src={src} alt="" fill sizes="112px" className="pointer-events-none object-cover" />
@@ -350,7 +351,7 @@ export function PlaceForm({
         {uploadError && <p className="text-sm text-red-500">{uploadError}</p>}
       </Panel>
 
-      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-glass pb-safe backdrop-blur-2xl">
+      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-background pb-safe">
         <div className="mx-auto flex max-w-6xl items-center justify-end gap-4 px-4 py-3 md:px-8">
           <AnimatePresence>
             {state.error && (
@@ -358,7 +359,7 @@ export function PlaceForm({
                 initial={{ opacity: 0, y: 6 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
-                transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                transition={springs.snappy}
                 className="text-sm text-red-500"
                 role="alert"
               >

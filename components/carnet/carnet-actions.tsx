@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import { Check, Download, Loader2, Printer, Share2 } from "lucide-react";
 import { useState, useTransition } from "react";
 import { shareFavorites } from "@/app/actions/itineraries";
@@ -9,6 +9,7 @@ import { placesToGpx } from "@/lib/gpx";
 import { useI18n, useLocalize } from "@/lib/i18n/client";
 import type { PlaceWithRelations } from "@/lib/types";
 import { slugify } from "@/lib/utils";
+import { springs } from "@/lib/motion-tokens";
 
 interface CarnetActionsProps {
   title: string;
@@ -73,7 +74,7 @@ export function CarnetActions({ title, places, itineraryId }: CarnetActionsProps
             initial={{ opacity: 0, x: -6 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0 }}
-            transition={{ type: "spring", stiffness: 400, damping: 30 }}
+            transition={springs.snappy}
             className="flex items-center gap-1 text-sm text-emerald-500"
           >
             <Check className="size-4" />

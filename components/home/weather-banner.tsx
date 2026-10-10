@@ -29,9 +29,7 @@ export async function WeatherBanner({ rainyTag, className }: { rainyTag: string 
           <Icon className="size-6" />
         </span>
         <span className="min-w-0 flex-1">
-          <span className="block font-mono text-[10px] tracking-[0.2em] text-muted-foreground uppercase">
-            Nice · {weather.temperature}°C
-          </span>
+          <span className="block text-xs text-muted-foreground tabular-nums">Nice, {weather.temperature}°C</span>
           <span className="mt-0.5 block font-medium text-balance">{t.weather[weather.mood]}</span>
         </span>
         <ArrowRight className="size-4 shrink-0 text-muted-foreground transition-transform duration-150 group-hover:translate-x-0.5" />

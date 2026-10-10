@@ -152,7 +152,7 @@ export async function enrichPlace(
 
   const exclude = new Set(credits.map((c) => `${c.provider}:${c.source_id}`));
   const { picked, usedFallback } = await findPhotos(place, missing, exclude);
-  if (dryRun) return { ...base, added: picked.length, usedFallback, preview: picked.map((c) => `${c.sourceId} — ${c.author}`) };
+  if (dryRun) return { ...base, added: picked.length, usedFallback, preview: picked.map((c) => `${c.sourceId} (${c.author})`) };
 
   const newImages: string[] = [];
   const newCredits: ImageCredit[] = [];

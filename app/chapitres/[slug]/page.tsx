@@ -59,12 +59,12 @@ export default async function ChapterPage({ params }: Props) {
           <EmptyState>{t.chapter.empty}</EmptyState>
         ) : (
           <>
-            <div className="h-64 overflow-hidden rounded-[2rem] border border-line md:h-80">
+            <div className="h-64 overflow-hidden rounded-3xl border border-line md:h-80">
               <PlaceMiniMap places={places} />
             </div>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {places.map((place, i) => (
-                <PlaceCard key={place.id} place={place} index={i} />
+                <PlaceCard key={place.id} place={place} />
               ))}
             </div>
           </>

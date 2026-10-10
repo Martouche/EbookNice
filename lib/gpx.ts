@@ -14,7 +14,7 @@ export function placesToGpx(
     .map(
       (p) => `  <wpt lat="${p.lat}" lon="${p.lng}">
     <name>${escapeXml(p.title)}</name>
-    <desc>${escapeXml([p.local_tip, p.address, p.city].filter(Boolean).join(" — "))}</desc>
+    <desc>${escapeXml([p.local_tip, p.address, p.city].filter(Boolean).join(". "))}</desc>
     <link href="${escapeXml(`${siteUrl}/lieux/${p.slug}`)}"><text>${escapeXml(labels.link)}</text></link>
     <type>${escapeXml(p.category?.name ?? labels.place)}</type>
   </wpt>`,
@@ -22,7 +22,7 @@ export function placesToGpx(
     .join("\n");
 
   return `<?xml version="1.0" encoding="UTF-8"?>
-<gpx version="1.1" creator="Nice — Le Guide des Locaux" xmlns="http://www.topografix.com/GPX/1/1">
+<gpx version="1.1" creator="Nice · Le Guide des Locaux" xmlns="http://www.topografix.com/GPX/1/1">
   <metadata><name>${escapeXml(title)}</name></metadata>
 ${waypoints}
 </gpx>

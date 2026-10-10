@@ -8,7 +8,7 @@ export default function CarnetLoading() {
         <Skeleton className="h-16 w-72" />
       </div>
       <div className="grid gap-6 lg:grid-cols-[1fr_1.1fr]">
-        <Skeleton className="h-72 rounded-[2rem] lg:h-[calc(100dvh-8rem)]" />
+        <Skeleton className="h-72 rounded-3xl lg:h-[calc(100dvh-8rem)]" />
         <div className="space-y-3">
           {Array.from({ length: 4 }, (_, i) => (
             <Skeleton key={i} className="h-32 rounded-3xl" />

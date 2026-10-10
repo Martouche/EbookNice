@@ -12,7 +12,7 @@ export default function ChapterLoading() {
         </div>
       </div>
       <div className="mx-auto max-w-7xl space-y-12 px-4 py-12 md:px-8">
-        <Skeleton className="h-64 rounded-[2rem] md:h-80" />
+        <Skeleton className="h-64 rounded-3xl md:h-80" />
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {Array.from({ length: 3 }, (_, i) => (
             <PlaceCardSkeleton key={i} />

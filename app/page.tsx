@@ -32,7 +32,7 @@ export default async function HomePage() {
 
   return (
     <>
-      <Hero stats={{ places: places.length, free: places.filter((p) => p.is_free).length, categories: showcase.length }} />
+      <Hero />
 
       <div className="mx-auto max-w-7xl space-y-24 px-4 py-16 md:px-8 md:py-24">
         <Suspense>
@@ -44,7 +44,6 @@ export default async function HomePage() {
 
         <section id="envies">
           <SectionHeading
-            kicker={t.home.showcaseKicker}
             title={<>{t.home.showcaseTitle[0]}<span className="italic text-muted-foreground">{t.home.showcaseTitle[1]}</span></>}
           />
           {showcase.length > 0 ? (
@@ -61,7 +60,6 @@ export default async function HomePage() {
         {featured.length > 0 && (
           <section>
             <SectionHeading
-              kicker={t.home.featuredKicker}
               title={<>{t.home.featuredTitle[0]}<span className="italic text-muted-foreground">{t.home.featuredTitle[1]}</span></>}
               action={
                 <Link
@@ -75,7 +73,7 @@ export default async function HomePage() {
             <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory scroll-px-4 gap-4 overflow-x-auto overscroll-x-contain px-4 pb-1 md:mx-0 md:grid md:grid-cols-3 md:overflow-visible md:px-0">
               {featured.map((place, i) => (
                 <div key={place.id} className="w-[80vw] max-w-sm shrink-0 snap-start sm:w-[45vw] md:w-auto md:max-w-none">
-                  <PlaceCard place={place} index={i} />
+                  <PlaceCard place={place} />
                 </div>
               ))}
             </div>

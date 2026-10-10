@@ -18,7 +18,7 @@ export function PlacePreview({ place, titleAs: Title = "h3" }: { place: PlaceWit
       <div className="group relative aspect-[16/10] overflow-hidden rounded-2xl">
         <PlaceImages images={place.images} title={place.title} category={place.category} sizes="(min-width: 768px) 360px, 100vw" />
         <div className="pointer-events-none absolute top-3.5 left-3 flex gap-1.5">
-          {place.is_free ? <Badge variant="free">{t.common.freeBadge}</Badge> : <Badge variant="glass">{t.price[place.price_level]}</Badge>}
+          {place.is_free ? <Badge variant="free">{t.common.freeBadge}</Badge> : <Badge variant="overlay">{t.price[place.price_level]}</Badge>}
         </div>
         <FavoriteButton placeId={place.id} className="absolute top-3 right-3 z-10" />
       </div>

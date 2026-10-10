@@ -3,7 +3,7 @@ import type { BestTime } from "./types";
 export const PRICE_LABELS = ["Gratuit", "€", "€€", "€€€", "€€€€"] as const;
 
 export function priceLabel(level: number) {
-  return PRICE_LABELS[level] ?? "—";
+  return PRICE_LABELS[level] ?? "?";
 }
 
 export const BEST_TIME_LABELS: Record<BestTime, string> = {

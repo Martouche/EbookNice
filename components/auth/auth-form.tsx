@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import { Loader2 } from "lucide-react";
 import { useActionState, useState } from "react";
 import { signIn, signUp, type AuthState } from "@/app/actions/auth";
@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Input, Label } from "@/components/ui/input";
 import { Segmented } from "@/components/ui/segmented";
 import { useI18n } from "@/lib/i18n/client";
+import { exitFast, motionTokens, springs } from "@/lib/motion-tokens";
 
 type Mode = "connexion" | "inscription";
 
@@ -40,11 +41,10 @@ export function AuthForm({ next, initialError }: { next: string; initialError?: 
         <AnimatePresence initial={false}>
           {isSignUp && (
             <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: "auto", opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ type: "spring", stiffness: 400, damping: 34 }}
-              className="overflow-hidden"
+              initial={{ opacity: 0, y: -motionTokens.distance.sm }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, transition: exitFast }}
+              transition={springs.snappy}
             >
               <div className="space-y-2 pb-1">
                 <Label htmlFor="full_name">{t.auth.firstName}</Label>

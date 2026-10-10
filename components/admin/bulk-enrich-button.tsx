@@ -1,11 +1,12 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import { Check, Loader2, X, Zap } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useRef, useState } from "react";
 import { enrichPlacePhotos } from "@/app/actions/photos";
 import { Button } from "@/components/ui/button";
+import { exitFast, motionTokens, springs } from "@/lib/motion-tokens";
 
 interface Target {
   id: string;
@@ -76,17 +77,17 @@ export function BulkEnrichButton({ targets }: { targets: Target[] }) {
       <AnimatePresence initial={false}>
         {(running || log.length > 0) && (
           <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ type: "spring", stiffness: 400, damping: 34 }}
-            className="overflow-hidden"
+            initial={{ opacity: 0, y: -motionTokens.distance.sm }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, transition: exitFast }}
+            transition={springs.snappy}
           >
             <div className="mt-5 h-1.5 overflow-hidden rounded-full bg-muted">
               <motion.div
-                className="h-full rounded-full bg-ocre"
-                animate={{ width: `${(done / Math.max(targets.length, 1)) * 100}%` }}
-                transition={{ type: "spring", stiffness: 200, damping: 30 }}
+                className="h-full origin-left rounded-full bg-ocre"
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: done / Math.max(targets.length, 1) }}
+                transition={springs.gentle}
               />
             </div>
             <p className="mt-2 font-mono text-[11px] tracking-wide text-muted-foreground" role="status">

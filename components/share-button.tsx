@@ -1,10 +1,11 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import { Check, Share } from "lucide-react";
 import { useState } from "react";
 import { useI18n } from "@/lib/i18n/client";
 import { cn } from "@/lib/utils";
+import { springs } from "@/lib/motion-tokens";
 
 /** Partage natif (WhatsApp, Messages…) via navigator.share, sinon copie du lien. */
 export function ShareButton({ title, text, className }: { title: string; text?: string; className?: string }) {
@@ -35,10 +36,10 @@ export function ShareButton({ title, text, className }: { title: string; text?: 
       type="button"
       onClick={share}
       whileTap={{ scale: 0.85 }}
-      transition={{ type: "spring", stiffness: 500, damping: 30 }}
+      transition={springs.instant}
       aria-label={copied ? t.place.linkCopied : t.place.share}
       className={cn(
-        "relative grid size-9 place-items-center rounded-full border border-white/15 bg-black/40 text-white backdrop-blur-md",
+        "relative grid size-9 place-items-center rounded-full border border-white/15 bg-scrim text-white",
         className,
       )}
     >
@@ -48,7 +49,7 @@ export function ShareButton({ title, text, className }: { title: string; text?: 
           initial={{ scale: 0.4, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.4, opacity: 0 }}
-          transition={{ type: "spring", stiffness: 500, damping: 25 }}
+          transition={springs.instant}
         >
           {copied ? <Check className="size-4 text-emerald-400" /> : <Share className="size-4" />}
         </motion.span>

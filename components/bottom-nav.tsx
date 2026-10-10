@@ -1,10 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import Link from "@/components/link";
 import { cn } from "@/lib/utils";
 import { useI18n, usePathWithoutLocale } from "@/lib/i18n/client";
 import { NAV_ITEMS, isActive } from "./nav-items";
+import { springs } from "@/lib/motion-tokens";
 
 export function BottomNav() {
   const pathname = usePathWithoutLocale();
@@ -14,7 +15,7 @@ export function BottomNav() {
   return (
     <nav
       aria-label={t.nav.main}
-      className="no-print fixed inset-x-0 bottom-0 z-40 border-t border-line bg-glass pb-safe backdrop-blur-2xl md:hidden"
+      className="no-print fixed inset-x-0 bottom-0 z-40 border-t border-line bg-background pb-safe md:hidden"
     >
       <ul className="mx-auto grid max-w-md grid-cols-4">
         {NAV_ITEMS.map(({ href, key, icon: Icon }) => {
@@ -32,7 +33,7 @@ export function BottomNav() {
                   <motion.span
                     layoutId="bottom-nav-pill"
                     className="absolute top-2 h-8 w-14 rounded-full bg-muted"
-                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                    transition={springs.snappy}
                   />
                 )}
                 <motion.span whileTap={{ scale: 0.85 }} className="relative grid h-8 place-items-center">

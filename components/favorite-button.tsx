@@ -1,23 +1,24 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import { Heart } from "lucide-react";
 import { useState } from "react";
 import { useI18n } from "@/lib/i18n/client";
 import { cn } from "@/lib/utils";
 import { useFavorites } from "./favorites-provider";
+import { springs } from "@/lib/motion-tokens";
 
 const PARTICLES = Array.from({ length: 6 }, (_, i) => (i / 6) * Math.PI * 2);
 
 export function FavoriteButton({
   placeId,
   className,
-  variant = "glass",
+  variant = "overlay",
 }: {
   placeId: string;
   className?: string;
-  /** `glass` sur photo, `solid` sur fond uni (fiche, drawer). */
-  variant?: "glass" | "solid";
+  /** `overlay` sur photo, `solid` sur fond uni (fiche, drawer). */
+  variant?: "overlay" | "solid";
 }) {
   const { isFavorite, toggle, isAuthed } = useFavorites();
   const { t } = useI18n();
@@ -36,11 +37,11 @@ export function FavoriteButton({
         toggle(placeId);
       }}
       whileTap={{ scale: 0.8 }}
-      transition={{ type: "spring", stiffness: 500, damping: 30 }}
+      transition={springs.instant}
       className={cn(
         "relative grid size-9 place-items-center rounded-full after:absolute after:-inset-2 after:content-['']",
-        variant === "glass"
-          ? "border border-white/15 bg-black/40 text-white backdrop-blur-md"
+        variant === "overlay"
+          ? "border border-white/15 bg-scrim text-white"
           : "border border-line-strong bg-card text-foreground",
         className,
       )}
@@ -54,7 +55,7 @@ export function FavoriteButton({
               className="pointer-events-none absolute size-1.5 rounded-full bg-terracotta"
               initial={{ x: 0, y: 0, opacity: 1, scale: 1 }}
               animate={{ x: Math.cos(angle) * 20, y: Math.sin(angle) * 20, opacity: 0, scale: 0.4 }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              transition={springs.gentle}
             />
           ))}
       </AnimatePresence>
@@ -64,7 +65,7 @@ export function FavoriteButton({
           initial={{ scale: 0.3, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.3, opacity: 0 }}
-          transition={{ type: "spring", stiffness: 500, damping: 22 }}
+          transition={springs.bouncy}
         >
           <Heart className={cn("size-4", active && "fill-terracotta stroke-terracotta")} />
         </motion.span>

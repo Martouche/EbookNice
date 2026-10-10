@@ -39,7 +39,7 @@ export function PhotoGallery({ images, title, credits, category, actions }: Phot
 
   if (images.length === 0) {
     return (
-      <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] sm:aspect-[21/9]">
+      <div className="relative aspect-[4/5] overflow-hidden rounded-3xl sm:aspect-[21/9]">
         <PlaceCover title={title} category={category} />
         <div className="absolute top-4 right-4 flex gap-2">{actions}</div>
       </div>
@@ -77,7 +77,7 @@ export function PhotoGallery({ images, title, credits, category, actions }: Phot
           </div>
         </div>
         {images.length > 1 && (
-          <span className="pointer-events-none absolute right-4 bottom-4 rounded-full bg-black/60 px-2.5 py-1 font-mono text-[11px] text-white backdrop-blur">
+          <span className="pointer-events-none absolute right-4 bottom-4 rounded-full bg-scrim px-2.5 py-1 font-mono text-[11px] text-white">
             {index + 1} / {images.length}
           </span>
         )}
@@ -87,7 +87,7 @@ export function PhotoGallery({ images, title, credits, category, actions }: Phot
       {/* Desktop : mosaïque bento */}
       <div
         className={cn(
-          "relative hidden h-[min(34rem,62vh)] gap-2 overflow-hidden rounded-[2rem] md:grid",
+          "relative hidden h-[min(34rem,62vh)] gap-2 overflow-hidden rounded-3xl md:grid",
           tiles.length === 1 && "grid-cols-1",
           tiles.length === 2 && "grid-cols-2",
           tiles.length >= 3 && "grid-cols-4 grid-rows-2",

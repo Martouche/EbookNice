@@ -6,7 +6,7 @@ import { getI18n } from "@/lib/i18n/server";
 export default async function manifest(): Promise<MetadataRoute.Manifest> {
   const { locale, t } = await getI18n();
   return {
-    name: locale === "en" ? "Nice — The Locals' Guide" : "Nice — Le Guide des Locaux",
+    name: locale === "en" ? "Nice · The Locals' Guide" : "Nice · Le Guide des Locaux",
     short_name: "Nice.",
     description: t.meta.description,
     lang: locale,

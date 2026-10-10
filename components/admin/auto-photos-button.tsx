@@ -1,10 +1,11 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import { Loader2, Search } from "lucide-react";
 import { useState, useTransition } from "react";
 import { enrichPlacePhotos } from "@/app/actions/photos";
 import { Button } from "@/components/ui/button";
+import { springs } from "@/lib/motion-tokens";
 
 /** « Auto-générer des photos » : 3 à 5 photos HD trouvées et ajoutées en 1 clic. */
 export function AutoPhotosButton({
@@ -49,7 +50,7 @@ export function AutoPhotosButton({
             initial={{ opacity: 0, x: -6 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0 }}
-            transition={{ type: "spring", stiffness: 400, damping: 30 }}
+            transition={springs.snappy}
             className={
               message.tone === "ok" ? "text-sm text-emerald-500" : message.tone === "warn" ? "text-sm text-ocre" : "text-sm text-red-500"
             }

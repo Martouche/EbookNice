@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 import Link from "@/components/link";
 import type { CSSProperties } from "react";
@@ -10,6 +10,7 @@ import { useI18n } from "@/lib/i18n/client";
 import type { Category } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import { CategoryIllustration } from "./category-illustrations";
+import { springs } from "@/lib/motion-tokens";
 
 export interface ShowcaseItem {
   category: Category;
@@ -29,8 +30,6 @@ const LAYOUT = [
   "md:col-span-2 lg:h-[28rem]",
 ];
 
-const spring = { type: "spring", stiffness: 400, damping: 30 } as const;
-
 export function CategoryShowcase({ items }: { items: ShowcaseItem[] }) {
   const { t } = useI18n();
   return (
@@ -48,7 +47,7 @@ export function CategoryShowcase({ items }: { items: ShowcaseItem[] }) {
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
-            transition={{ ...spring, delay: (i % 3) * 0.05 }}
+            transition={{ ...springs.gentle, delay: (i % 3) * 0.05 }}
             className={cn("h-[26rem] sm:h-[28rem] md:h-[26rem]", LAYOUT[i] ?? "md:col-span-2 lg:h-[28rem]")}
           >
             <MotionLink
@@ -57,10 +56,10 @@ export function CategoryShowcase({ items }: { items: ShowcaseItem[] }) {
               animate="rest"
               whileHover="hover"
               whileTap={{ scale: 0.985 }}
-              transition={spring}
+              transition={springs.snappy}
               style={{ backgroundColor: color, "--ink": ink } as CSSProperties}
               className={cn(
-                "flex h-full flex-col overflow-hidden rounded-[1.75rem]",
+                "flex h-full flex-col overflow-hidden rounded-3xl",
                 lightBg ? "text-(--ink)" : "text-white",
               )}
             >
@@ -71,7 +70,7 @@ export function CategoryShowcase({ items }: { items: ShowcaseItem[] }) {
                 </span>
                 <motion.span
                   variants={{ rest: { rotate: 0 }, hover: { rotate: 45 } }}
-                  transition={spring}
+                  transition={springs.snappy}
                   className={cn(
                     "grid size-10 shrink-0 place-items-center rounded-full border",
                     lightBg ? "border-(--ink)/30" : "border-white/35",
@@ -83,7 +82,7 @@ export function CategoryShowcase({ items }: { items: ShowcaseItem[] }) {
 
               <motion.div
                 variants={{ rest: { y: 0, scale: 1 }, hover: { y: -6, scale: 1.03 } }}
-                transition={{ type: "spring", stiffness: 300, damping: 24 }}
+                transition={springs.gentle}
                 className="relative min-h-0 flex-1"
               >
                 <CategoryIllustration slug={slug} className="absolute inset-0 h-full w-full" />

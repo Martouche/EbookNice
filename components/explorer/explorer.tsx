@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import { X } from "lucide-react";
 import dynamic from "next/dynamic";
 import { useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
@@ -16,13 +16,12 @@ import type { Category, PlaceWithRelations } from "@/lib/types";
 import { useIsDesktop } from "@/lib/use-media-query";
 import { FilterBar } from "./filter-bar";
 import { PlacePreview } from "./place-preview";
+import { springs } from "@/lib/motion-tokens";
 
 const PlacesMap = dynamic(() => import("@/components/map/places-map").then((m) => m.PlacesMap), {
   ssr: false,
   loading: () => <Skeleton className="h-full w-full rounded-none" />,
 });
-
-const spring = { type: "spring", stiffness: 400, damping: 30 } as const;
 
 export function Explorer({
   places,
@@ -125,9 +124,9 @@ export function Explorer({
             <EmptyState>{t.explorer.noResults}</EmptyState>
           ) : (
             <motion.div layout className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              <AnimatePresence mode="popLayout">
+              <AnimatePresence initial={false} mode="popLayout">
                 {results.map((place, i) => (
-                  <PlaceCard key={place.id} place={place} index={i} priority={i < 3} distance={distances?.get(place.id)} />
+                  <PlaceCard key={place.id} place={place} enter priority={i < 3} distance={distances?.get(place.id)} />
                 ))}
               </AnimatePresence>
             </motion.div>
@@ -188,8 +187,8 @@ export function Explorer({
                 initial={{ opacity: 0, y: 16, scale: 0.97 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: 8, scale: 0.98 }}
-                transition={spring}
-                className="absolute right-6 bottom-6 w-[360px] rounded-[1.75rem] border border-line bg-background/95 p-4 backdrop-blur-xl"
+                transition={springs.snappy}
+                className="absolute right-6 bottom-6 w-[360px] rounded-3xl border border-line bg-background p-4"
               >
                 <button
                   type="button"

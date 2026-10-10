@@ -7,7 +7,8 @@ export function SectionHeading({
   action,
   className,
 }: {
-  kicker: string;
+  /** Surtitre optionnel : 1 pour 3 sections au maximum sur une page. */
+  kicker?: string;
   title: ReactNode;
   action?: ReactNode;
   className?: string;
@@ -15,8 +16,8 @@ export function SectionHeading({
   return (
     <div className={cn("mb-8 flex items-end justify-between gap-6 border-b border-line pb-4", className)}>
       <div className="min-w-0">
-        <p className="font-mono text-[10px] tracking-[0.2em] text-muted-foreground uppercase">{kicker}</p>
-        <h2 className="mt-2 font-display text-[2.25rem] leading-[1.05] text-balance break-words md:text-5xl">{title}</h2>
+        {kicker && <p className="mb-2 font-mono text-[10px] tracking-[0.2em] text-muted-foreground uppercase">{kicker}</p>}
+        <h2 className="font-display text-[2.25rem] leading-[1.05] text-balance break-words md:text-5xl">{title}</h2>
       </div>
       {action && <div className="shrink-0">{action}</div>}
     </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import dynamic from "next/dynamic";
 import Link from "@/components/link";
 import { useState } from "react";
@@ -10,6 +10,7 @@ import { PlaceCover } from "@/components/place-cover";
 import { useI18n } from "@/lib/i18n/client";
 import type { PlaceWithRelations } from "@/lib/types";
 import { cn } from "@/lib/utils";
+import { springs } from "@/lib/motion-tokens";
 
 const PlacesMap = dynamic(() => import("@/components/map/places-map").then((m) => m.PlacesMap), {
   ssr: false,
@@ -31,7 +32,7 @@ export function CarnetBoard({
 
   return (
     <div className="grid gap-6 lg:grid-cols-[1fr_1.1fr]">
-      <div className="no-print h-72 overflow-hidden rounded-[2rem] border border-line lg:sticky lg:top-[calc(var(--header-h)+2rem)] lg:h-[calc(100dvh-var(--header-h)-4rem)]">
+      <div className="no-print h-72 overflow-hidden rounded-3xl border border-line lg:sticky lg:top-[calc(var(--header-h)+2rem)] lg:h-[calc(100dvh-var(--header-h)-4rem)]">
         <PlacesMap places={places} selectedId={selectedId} onSelect={setSelectedId} route={route} geolocate />
       </div>
 
@@ -44,7 +45,7 @@ export function CarnetBoard({
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.97 }}
-              transition={{ type: "spring", stiffness: 400, damping: 30 }}
+              transition={springs.snappy}
               onMouseEnter={() => setSelectedId(place.id)}
               className={cn(
                 "relative flex items-stretch gap-4 rounded-3xl border bg-card p-3 transition-colors duration-100 break-inside-avoid",

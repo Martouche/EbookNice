@@ -30,7 +30,7 @@ export default async function LoginPage({
           {t.auth.pageLead}
         </p>
       </div>
-      <div className="space-y-6 rounded-[2rem] border border-line bg-card p-6 md:p-8">
+      <div className="space-y-6 rounded-3xl border border-line bg-card p-6 md:p-8">
         <QuickAuth next={next} />
         <div className="flex items-center gap-3 font-mono text-[10px] tracking-[0.2em] text-muted-foreground uppercase">
           <span className="h-px flex-1 bg-line" />

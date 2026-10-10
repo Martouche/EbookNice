@@ -1,8 +1,9 @@
 import { Analytics } from "@vercel/analytics/next";
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
+import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import { BottomNav } from "@/components/bottom-nav";
 import { FavoritesProvider } from "@/components/favorites-provider";
+import { MotionProvider } from "@/components/motion-provider";
 import { ServiceWorker } from "@/components/service-worker";
 import { SiteHeader } from "@/components/site-header";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -12,11 +13,11 @@ import { getI18n } from "@/lib/i18n/server";
 import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
-const display = Instrument_Serif({
+// Titres : Playfair Display (direction éditoriale, guide imprimé). Police variable : une seule requête pour toutes les graisses.
+const display = Playfair_Display({
   subsets: ["latin"],
-  weight: "400",
   style: ["normal", "italic"],
-  variable: "--font-instrument-serif",
+  variable: "--font-playfair",
 });
 const sans = Geist({ subsets: ["latin"], variable: "--font-geist" });
 const mono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" });
@@ -50,6 +51,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html lang={locale} suppressHydrationWarning>
       <body className={`${display.variable} ${sans.variable} ${mono.variable} font-sans antialiased`}>
         <I18nProvider locale={locale}>
+        <MotionProvider>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
           <FavoritesProvider key={user?.id ?? "anon"} initialIds={favoriteIds} isAuthed={!!user}>
             <SiteHeader isAdmin={profile?.role === "ADMIN"} />
@@ -59,6 +61,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <Analytics />
           </FavoritesProvider>
         </ThemeProvider>
+        </MotionProvider>
         </I18nProvider>
       </body>
     </html>

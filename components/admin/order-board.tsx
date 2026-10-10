@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion, Reorder, useDragControls } from "framer-motion";
+import { AnimatePresence, motion, Reorder, useDragControls } from "motion/react";
 import { ArrowDown, ArrowUp, Check, GripVertical, Loader2, Save, Star } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState, useTransition } from "react";
@@ -12,6 +12,7 @@ import { Chip } from "@/components/ui/chip";
 import { priceLabel } from "@/lib/constants";
 import type { PlaceWithRelations } from "@/lib/types";
 import { cn } from "@/lib/utils";
+import { springs } from "@/lib/motion-tokens";
 
 export interface OrderGroup {
   slug: string;
@@ -19,8 +20,6 @@ export interface OrderGroup {
   icon: string;
   places: PlaceWithRelations[];
 }
-
-const spring = { type: "spring", stiffness: 400, damping: 30 } as const;
 
 function OrderRow({
   place,
@@ -44,7 +43,7 @@ function OrderRow({
       value={place}
       dragListener={false}
       dragControls={controls}
-      transition={spring}
+      transition={springs.snappy}
       whileDrag={{ scale: 1.02, boxShadow: "0 12px 32px rgb(0 0 0 / 0.25)" }}
       className="flex items-center gap-3 rounded-2xl border border-line bg-card p-2.5 pr-3"
     >
@@ -52,12 +51,12 @@ function OrderRow({
         type="button"
         aria-label={`Déplacer ${place.title}`}
         onPointerDown={(e) => controls.start(e)}
-        className="grid h-12 w-8 shrink-0 cursor-grab touch-none place-items-center rounded-lg text-muted-foreground hover:bg-muted active:cursor-grabbing"
+        className="grid h-12 w-8 shrink-0 cursor-grab touch-none place-items-center rounded-full text-muted-foreground hover:bg-muted active:cursor-grabbing"
       >
         <GripVertical className="size-4" />
       </button>
       <span className="w-6 shrink-0 text-center font-mono text-xs text-muted-foreground">{rank}</span>
-      <div className="relative size-12 shrink-0 overflow-hidden rounded-xl">
+      <div className="relative size-12 shrink-0 overflow-hidden rounded-2xl">
         <PlaceCover src={place.images[0]} title={place.title} category={place.category} sizes="48px" />
       </div>
       <div className="min-w-0 flex-1">
@@ -188,7 +187,7 @@ export function OrderBoard({ groups }: { groups: OrderGroup[] }) {
         </Reorder.Group>
       )}
 
-      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-glass pb-safe backdrop-blur-2xl">
+      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-background pb-safe">
         <div className="mx-auto flex max-w-6xl items-center justify-end gap-4 px-4 py-3 md:px-8">
           <AnimatePresence>
             {message && (
@@ -196,7 +195,7 @@ export function OrderBoard({ groups }: { groups: OrderGroup[] }) {
                 initial={{ opacity: 0, y: 6 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
-                transition={spring}
+                transition={springs.snappy}
                 className={cn("flex items-center gap-1.5 text-sm", message.ok ? "text-emerald-500" : "text-red-500")}
                 role="status"
               >

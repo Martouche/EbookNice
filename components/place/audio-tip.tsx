@@ -1,9 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { Pause, Play } from "lucide-react";
 import { useRef, useState } from "react";
 import { useI18n } from "@/lib/i18n/client";
+import { springs } from "@/lib/motion-tokens";
 
 const BARS = 28;
 
@@ -26,7 +27,7 @@ export function AudioTip({ src }: { src: string }) {
         type="button"
         onClick={toggle}
         whileTap={{ scale: 0.9 }}
-        transition={{ type: "spring", stiffness: 500, damping: 30 }}
+        transition={springs.instant}
         aria-label={playing ? t.place.pause : t.place.listen}
         className="grid size-11 shrink-0 place-items-center rounded-full bg-ocre text-[#14120f]"
       >

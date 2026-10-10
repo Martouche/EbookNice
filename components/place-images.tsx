@@ -109,7 +109,7 @@ export function PlaceImages({
         >
           <span
             className={cn(
-              "absolute top-1/2 grid size-8 -translate-y-1/2 place-items-center rounded-full bg-black/35 text-white backdrop-blur-sm transition-opacity duration-150 md:bg-white/90 md:text-[#14120f] md:opacity-0 md:group-hover/images:opacity-100",
+              "absolute top-1/2 grid size-8 -translate-y-1/2 place-items-center rounded-full bg-scrim text-white transition-opacity duration-150 md:bg-white/90 md:text-[#14120f] md:opacity-0 md:group-hover/images:opacity-100",
               arrow,
             )}
           >

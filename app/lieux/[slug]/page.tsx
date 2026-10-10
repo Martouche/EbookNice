@@ -141,7 +141,7 @@ export default async function PlacePage({ params }: Props) {
           )}
 
           <section className="mt-10">
-            <div className="h-72 overflow-hidden rounded-[2rem] border border-line md:h-96">
+            <div className="h-72 overflow-hidden rounded-3xl border border-line md:h-96">
               <PlaceMiniMap places={[place]} />
             </div>
             <p className="mt-2 text-right font-mono text-[10px] tracking-wider text-muted-foreground">
@@ -152,7 +152,7 @@ export default async function PlacePage({ params }: Props) {
 
         {/* Carte d'action : collante sur desktop */}
         <aside className="md:sticky md:top-24 md:self-start">
-          <div className="rounded-[1.75rem] border border-line bg-card p-5">
+          <div className="rounded-3xl border border-line bg-card p-5">
             <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-line bg-line text-sm">
               <div className="bg-card p-3">
                 <dt className="flex items-center gap-1.5 font-mono text-[10px] tracking-[0.18em] text-muted-foreground uppercase">

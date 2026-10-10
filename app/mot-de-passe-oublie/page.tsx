@@ -13,7 +13,7 @@ export default async function ForgotPasswordPage() {
     <div className="mx-auto max-w-md px-4 py-12 md:py-24">
       <h1 className="font-display text-5xl leading-[0.95] text-balance">{t.auth.forgot.title}</h1>
       <p className="mt-4 leading-relaxed text-muted-foreground">{t.auth.forgot.lead}</p>
-      <div className="mt-8 rounded-[2rem] border border-line bg-card p-6 md:p-8">
+      <div className="mt-8 rounded-3xl border border-line bg-card p-6 md:p-8">
         <ForgotPasswordForm />
       </div>
       <Link href="/connexion" className="mt-6 inline-block text-sm text-muted-foreground underline underline-offset-2 hover:text-foreground">

@@ -10,7 +10,7 @@ const badgeVariants = cva(
         default: "border border-line bg-muted text-foreground",
         free: "bg-emerald-500 text-white",
         accent: "bg-ocre/15 text-[#8a5a12] ring-1 ring-ocre/40 dark:text-ocre",
-        glass: "border border-white/15 bg-black/40 text-white backdrop-blur-md",
+        overlay: "border border-white/15 bg-scrim text-white",
       },
     },
     defaultVariants: { variant: "default" },

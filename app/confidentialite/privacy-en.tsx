@@ -19,7 +19,7 @@ export function PrivacyEn() {
       <div className="mt-12 space-y-10">
         <Section id="controller" title="Data controller">
           <p>
-            The website <strong>ebook.martinvantalon.com</strong> (&ldquo;Nice &amp; the French Riviera — The Locals&apos;
+            The website <strong>ebook.martinvantalon.com</strong> (&ldquo;Nice &amp; the French Riviera · The Locals&apos;
             Guide&rdquo;) is published by Martin Vantalon, independent developer. For any question about your data:{" "}
             <a href={`mailto:${CONTACT}`}>{CONTACT}</a>.
           </p>

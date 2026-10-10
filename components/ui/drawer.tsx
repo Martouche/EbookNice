@@ -19,7 +19,7 @@ export function DrawerContent({ className, children, ...props }: ComponentProps<
       <DrawerPrimitive.Overlay className="fixed inset-0 z-50 bg-black/50 backdrop-blur-[2px]" />
       <DrawerPrimitive.Content
         className={cn(
-          "fixed inset-x-0 bottom-0 z-50 mt-24 flex max-h-[92dvh] flex-col rounded-t-[1.75rem] border-t border-line bg-background pb-safe outline-none",
+          "fixed inset-x-0 bottom-0 z-50 mt-24 flex max-h-[92dvh] flex-col rounded-t-3xl border-t border-line bg-background pb-safe outline-none",
           className,
         )}
         {...props}

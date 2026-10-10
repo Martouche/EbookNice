@@ -1,7 +1,8 @@
 "use client";
 
-import { motion, type HTMLMotionProps } from "framer-motion";
+import { motion, type HTMLMotionProps } from "motion/react";
 import { cn } from "@/lib/utils";
+import { springs } from "@/lib/motion-tokens";
 
 export function Chip({
   active,
@@ -14,7 +15,7 @@ export function Chip({
       type="button"
       aria-pressed={active}
       whileTap={{ scale: 0.94 }}
-      transition={{ type: "spring", stiffness: 500, damping: 30 }}
+      transition={springs.instant}
       className={cn(
         "inline-flex h-9 shrink-0 items-center gap-1.5 rounded-full border px-3.5 text-[13px] font-medium whitespace-nowrap transition-colors duration-100 [&_svg]:size-3.5",
         active

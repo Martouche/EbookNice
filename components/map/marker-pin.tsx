@@ -21,7 +21,7 @@ export function MarkerPin({
   return (
     <div className="group relative flex cursor-pointer flex-col items-center">
       {highlighted && !selected && (
-        <span aria-hidden className="absolute top-0 size-8 animate-ping rounded-full opacity-60" style={{ backgroundColor: color }} />
+        <span aria-hidden className="absolute top-0 size-8 animate-ping rounded-full opacity-60 motion-reduce:hidden" style={{ backgroundColor: color }} />
       )}
       <div
         className={cn(
@@ -39,7 +39,7 @@ export function MarkerPin({
       </div>
       <span
         className={cn(
-          "pointer-events-none absolute top-full mt-1 whitespace-nowrap rounded-full bg-black/80 px-2 py-0.5 text-[11px] font-medium text-white backdrop-blur",
+          "pointer-events-none absolute top-full mt-1 whitespace-nowrap rounded-full bg-[#14120f] px-2 py-0.5 text-[11px] font-medium text-white",
           emphasized ? "opacity-100" : "opacity-0 group-hover:opacity-100",
         )}
       >

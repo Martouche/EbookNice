@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { Clock, Navigation } from "lucide-react";
 import { formatDistance } from "@/lib/geo";
 import Link from "@/components/link";
@@ -10,22 +10,24 @@ import { cn } from "@/lib/utils";
 import { FavoriteButton } from "./favorite-button";
 import { PlaceImages } from "./place-images";
 import { Badge } from "./ui/badge";
+import { exitFast, motionTokens, springs } from "@/lib/motion-tokens";
 
 export function PlaceCard({
   place,
-  index,
   compact,
   active,
   priority,
+  enter,
   distance,
   onHoverChange,
 }: {
   place: PlaceWithRelations;
-  index?: number;
   compact?: boolean;
   /** Mise en évidence (survol du marqueur correspondant sur la carte). */
   active?: boolean;
   priority?: boolean;
+  /** Fondu d'entrée (cartes ajoutées par un filtre, dans un <AnimatePresence initial={false}>). */
+  enter?: boolean;
   /** Distance (m) depuis la position du visiteur (« Autour de moi »). */
   distance?: number;
   onHoverChange?: (hovered: boolean) => void;
@@ -34,11 +36,12 @@ export function PlaceCard({
   return (
     <motion.article
       layout
-      initial={{ opacity: 0, y: 12 }}
+      // Visible dès le rendu serveur ; seule la grille filtrée de l'explorer anime les cartes qui entrent.
+      initial={enter ? { opacity: 0, y: motionTokens.distance.sm } : false}
       animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, scale: 0.96 }}
-      transition={{ type: "spring", stiffness: 400, damping: 30 }}
-      whileHover={{ y: -3 }}
+      exit={{ opacity: 0, scale: motionTokens.scale.subtle, transition: exitFast }}
+      transition={springs.snappy}
+      whileHover={{ y: -motionTokens.distance.xs }}
       onMouseEnter={() => onHoverChange?.(true)}
       onMouseLeave={() => onHoverChange?.(false)}
       className={cn(
@@ -59,15 +62,10 @@ export function PlaceCard({
 
           <div className="pointer-events-none absolute top-3.5 right-14 left-3 flex flex-wrap gap-1.5">
             {place.is_free && <Badge variant="free">{t.common.freeBadge}</Badge>}
-            {place.category && <Badge variant="glass">{place.category.name}</Badge>}
+            {place.category && <Badge variant="overlay">{place.category.name}</Badge>}
           </div>
 
           <div className="pointer-events-none absolute right-0 bottom-0 left-0 min-w-0 p-4 text-white">
-            {index !== undefined && (
-              <span className="font-mono text-[10px] tracking-[0.2em] text-white/60">
-                N°{String(index + 1).padStart(2, "0")}
-              </span>
-            )}
             <h3
               lang={locale}
               className={cn(

@@ -1,8 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
+import { springs } from "@/lib/motion-tokens";
 
 interface SegmentedProps<T extends string> {
   /** Identifiant unique : sert au layoutId de la pastille active. */
@@ -34,7 +35,7 @@ export function Segmented<T extends string>({ id, value, onChange, options, clas
               <motion.span
                 layoutId={`segmented-${id}`}
                 className="absolute inset-0 rounded-full bg-foreground"
-                transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                transition={springs.snappy}
               />
             )}
             <span className="relative flex items-center gap-1.5">{option.label}</span>

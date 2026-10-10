@@ -3,15 +3,15 @@ import { CATEGORY_COLORS, DEFAULT_CATEGORY_COLOR } from "@/lib/constants";
 import { getPlaceBySlug } from "@/lib/data";
 import { getI18n } from "@/lib/i18n/server";
 
-export const alt = "Spot du Guide des Locaux — Nice & Côte d'Azur";
+export const alt = "Spot du Guide des Locaux, Nice & Côte d'Azur";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-/** Charge Instrument Serif depuis Google Fonts, limitée aux glyphes utiles. */
+/** Charge Playfair Display (police des titres du site) depuis Google Fonts, limitée aux glyphes utiles. */
 async function loadDisplayFont(text: string) {
   try {
     const css = await (
-      await fetch(`https://fonts.googleapis.com/css2?family=Instrument+Serif&text=${encodeURIComponent(text)}`)
+      await fetch(`https://fonts.googleapis.com/css2?family=Playfair+Display&text=${encodeURIComponent(text)}`)
     ).text();
     const url = css.match(/src: url\((.+?)\) format/)?.[1];
     return url ? await (await fetch(url)).arrayBuffer() : null;

@@ -1,7 +1,7 @@
 "use client";
 
 import useEmblaCarousel from "embla-carousel-react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState, useSyncExternalStore } from "react";
@@ -10,6 +10,7 @@ import { BLUR_DATA_URL } from "@/lib/image";
 import { useI18n } from "@/lib/i18n/client";
 import type { ImageCredit } from "@/lib/types";
 import { PhotoCredit, creditFor } from "./photo-credit";
+import { springs } from "@/lib/motion-tokens";
 
 interface LightboxProps {
   images: string[];
@@ -83,7 +84,7 @@ function LightboxContent({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ type: "spring", stiffness: 400, damping: 40 }}
+      transition={springs.gentle}
       className="fixed inset-0 z-[60] flex flex-col bg-black text-white"
     >
       <div className="flex items-center justify-between px-4 py-3 pt-[max(0.75rem,env(safe-area-inset-top))]">
@@ -144,7 +145,7 @@ function LightboxContent({
                 type="button"
                 aria-label={t.place.photo(i + 1)}
                 onClick={() => embla?.scrollTo(i)}
-                className={`relative size-12 shrink-0 overflow-hidden rounded-lg transition-opacity duration-100 ${i === index ? "opacity-100 ring-2 ring-white" : "opacity-50 hover:opacity-80"}`}
+                className={`relative size-12 shrink-0 overflow-hidden rounded-2xl transition-opacity duration-100 ${i === index ? "opacity-100 ring-2 ring-white" : "opacity-50 hover:opacity-80"}`}
               >
                 <Image src={src} alt="" fill sizes="48px" className="object-cover" />
               </button>

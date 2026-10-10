@@ -19,7 +19,7 @@ export function PrivacyFr() {
       <div className="mt-12 space-y-10">
         <Section id="responsable" title="Responsable du traitement">
           <p>
-            Le site <strong>ebook.martinvantalon.com</strong> (« Nice &amp; Côte d&apos;Azur — Le Guide des Locaux ») est édité
+            Le site <strong>ebook.martinvantalon.com</strong> (« Nice &amp; Côte d&apos;Azur · Le Guide des Locaux ») est édité
             par Martin Vantalon, développeur indépendant. Pour toute question relative à vos données :{" "}
             <a href={`mailto:${CONTACT}`}>{CONTACT}</a>.
           </p>

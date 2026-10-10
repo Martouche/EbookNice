@@ -1,10 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { useState } from "react";
 import { LOCALE_COOKIE, LOCALES, localizePath, type Locale } from "@/lib/i18n/config";
 import { useI18n } from "@/lib/i18n/client";
 import { cn } from "@/lib/utils";
+import { springs } from "@/lib/motion-tokens";
 
 /**
  * Bascule FR | EN. Changement rare : on mémorise le choix (cookie) et on charge la même page dans l'autre langue
@@ -48,7 +49,7 @@ export function LanguageToggle({ className }: { className?: string }) {
             <motion.span
               layoutId="language-pill"
               className="absolute inset-0 rounded-full bg-foreground"
-              transition={{ type: "spring", stiffness: 400, damping: 30 }}
+              transition={springs.snappy}
             />
           )}
           <span className="relative">{l}</span>
