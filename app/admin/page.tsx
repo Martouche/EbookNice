@@ -1,7 +1,6 @@
 import { Pencil, Star } from "lucide-react";
 import Link from "next/link";
 import { deletePlace } from "@/app/actions/admin";
-import { BulkEnrichButton } from "@/components/admin/bulk-enrich-button";
 import { ConfirmDelete } from "@/components/admin/confirm-delete";
 import { ContentHealth } from "@/components/admin/content-health";
 import { CategoryIcon } from "@/components/category-icon";
@@ -10,7 +9,6 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { priceLabel } from "@/lib/constants";
 import { getPlaces } from "@/lib/data";
-import { MIN_PHOTOS } from "@/lib/photos/enrich";
 
 export default async function AdminPage() {
   const places = await getPlaces(undefined, { raw: true });
@@ -22,10 +20,6 @@ export default async function AdminPage() {
       </h1>
 
       <ContentHealth places={places} />
-
-      <BulkEnrichButton
-        targets={places.filter((p) => p.images.length < MIN_PHOTOS).map((p) => ({ id: p.id, title: p.title }))}
-      />
 
       {places.length === 0 ? (
         <EmptyState>Aucun spot. Commencez par en créer un.</EmptyState>

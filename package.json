@@ -8,7 +8,6 @@
     "start": "next start",
     "typecheck": "tsc --noEmit",
     "postinstall": "node scripts/copy-maplibre-worker.mjs",
-    "enrich:photos": "tsx scripts/enrich-photos.ts",
     "optimize:photos": "tsx scripts/optimize-photos.ts"
   },
   "dependencies": {

@@ -62,3 +62,6 @@ export const CATEGORY_SHOWCASE: { slug: string; title: string; tagline: string }
   { slug: "randonnee", title: "Randonnées", tagline: "Sentiers du littoral et chemins muletiers qui se méritent." },
   { slug: "activite", title: "Balades & activités", tagline: "Marchés, musées et flâneries au fil de la ville." },
 ];
+
+/** En dessous, le lieu est signalé dans « Santé du contenu » de l'admin. */
+export const MIN_PHOTOS = 3;

@@ -6,7 +6,6 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useActionState, useState, type ChangeEvent, type ReactNode } from "react";
 import { savePlace, type FormState } from "@/app/actions/admin";
-import { AutoPhotosButton } from "@/components/admin/auto-photos-button";
 import { Button } from "@/components/ui/button";
 import { Chip } from "@/components/ui/chip";
 import { Input, Label, Select, Textarea } from "@/components/ui/input";
@@ -314,12 +313,6 @@ export function PlaceForm({
             </label>
           </Reorder.Group>
         </Field>
-
-        <AutoPhotosButton
-          placeId={place?.id}
-          disabled={uploading !== null}
-          onImages={(fromDb) => setImages((prev) => [...prev, ...fromDb.filter((url) => !prev.includes(url))])}
-        />
 
         <Field label="Tracé GPX (randonnées)">
           <div className="flex flex-wrap items-center gap-3">

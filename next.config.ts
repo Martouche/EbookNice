@@ -3,11 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
-      { protocol: "https", hostname: "*.supabase.co", pathname: "/storage/v1/object/public/**" },
-      // Photos auto-importées en hotlink (exigé par les guidelines Unsplash).
-      { protocol: "https", hostname: "images.unsplash.com" },
-      { protocol: "https", hostname: "images.pexels.com" },
-    ],
+      { protocol: "https", hostname: "*.supabase.co", pathname: "/storage/v1/object/public/**" },    ],
   },
   async headers() {
     // Vidéos du hero : cache CDN + navigateur (noms non versionnés → 7 jours, revalidation en arrière-plan).

@@ -1,0 +1,476 @@
+{
+  "stamp": "2026-10-27-22-44-00",
+  "bucket": "places-images",
+  "places": [
+    {
+      "id": "811a96b6-09b2-4b0a-bf09-443554c77486",
+      "slug": "fort-du-mont-alban",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/fort-du-mont-alban/fort-du-mont-alban-01-acf659bc.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/fort-du-mont-alban/fort-du-mont-alban-02-b90d87fd.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/fort-du-mont-alban/fort-du-mont-alban-03-4de20a15.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/fort-du-mont-alban/fort-du-mont-alban-04-82bed221.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/fort-du-mont-alban/fort-du-mont-alban-05-307e399a.webp"
+      ],
+      "image_credits": []
+    },
+    {
+      "id": "3d471807-b26a-4b3d-b7dc-efb3f9e738c5",
+      "slug": "coco-beach",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/coco-beach/coco-beach-01-e9f59a88.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/coco-beach/coco-beach-02-e887b3c7.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/coco-beach/coco-beach-03-54bc7776.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/coco-beach/coco-beach-04-41cb03e3.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/coco-beach/coco-beach-05-9928b636.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/coco-beach/coco-beach-06-b02ef308.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/coco-beach/coco-beach-07-77cce560.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/coco-beach/coco-beach-08-c4b0a897.webp"
+      ],
+      "image_credits": []
+    },
+    {
+      "id": "ae4ee3e4-a1da-4e8a-aeb8-0e9ced0c11ca",
+      "slug": "chez-pipo",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/chez-pipo/chez-pipo-01-f2963c85.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/chez-pipo/chez-pipo-02-ddd2f57d.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/chez-pipo/chez-pipo-03-4bd74a7f.webp"
+      ],
+      "image_credits": []
+    },
+    {
+      "id": "cd534001-2824-4042-816b-8c4b7f885968",
+      "slug": "colline-du-chateau",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/colline-du-chateau/colline-du-chateau-01-db8602e2.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/colline-du-chateau/colline-du-chateau-02-b90d87fd.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/colline-du-chateau/colline-du-chateau-03-aac7b7c8.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/colline-du-chateau/colline-du-chateau-04-c4c72374.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/colline-du-chateau/colline-du-chateau-05-b296f3a9.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/colline-du-chateau/colline-du-chateau-06-eff8c60c.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/colline-du-chateau/colline-du-chateau-07-ad3eaf95.webp"
+      ],
+      "image_credits": []
+    },
+    {
+      "id": "3ebcf47a-0016-40cc-bf21-31c15d367874",
+      "slug": "cours-saleya",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/cours-saleya/cours-saleya-01-44db8440.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/cours-saleya/cours-saleya-02-eaa2eec2.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/cours-saleya/cours-saleya-03-e709e6a6.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/cours-saleya/cours-saleya-04-4e0a9c32.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/cours-saleya/cours-saleya-05-c9dab26d.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/cours-saleya/cours-saleya-06-5082d854.webp"
+      ],
+      "image_credits": []
+    },
+    {
+      "id": "67bc8842-1383-4a03-89c4-a029360bfeae",
+      "slug": "le-plongeoir",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/le-plongeoir/le-plongeoir-01-27d5aae1.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/le-plongeoir/le-plongeoir-02-18707c43.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/le-plongeoir/le-plongeoir-03-2242a1a5.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/le-plongeoir/le-plongeoir-04-aacb8abd.webp"
+      ],
+      "image_credits": [
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/le-plongeoir/le-plongeoir-04-aacb8abd.webp",
+          "author": "Jon Rosenoer",
+          "license": "CC BY 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Divers Nice.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Divers_Nice.jpg",
+          "license_url": "https://creativecommons.org/licenses/by/4.0"
+        }
+      ]
+    },
+    {
+      "id": "8241e86f-9277-4db7-b6b5-13d16856d1d2",
+      "slug": "chemin-de-nietzsche",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/chemin-de-nietzsche/chemin-de-nietzsche-01-988c0332.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/chemin-de-nietzsche/chemin-de-nietzsche-02-a7acd97b.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/chemin-de-nietzsche/chemin-de-nietzsche-03-d7a6accf.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/chemin-de-nietzsche/chemin-de-nietzsche-04-97a74304.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/chemin-de-nietzsche/chemin-de-nietzsche-05-893bad1c.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/chemin-de-nietzsche/chemin-de-nietzsche-06-8f421e62.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/chemin-de-nietzsche/chemin-de-nietzsche-07-5f1824bd.webp"
+      ],
+      "image_credits": []
+    },
+    {
+      "id": "af792283-7317-4810-920e-eb196937b4e7",
+      "slug": "rade-de-villefranche",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/rade-de-villefranche/rade-de-villefranche-01-bf43bc65.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/rade-de-villefranche/rade-de-villefranche-02-bb4beda7.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/rade-de-villefranche/rade-de-villefranche-03-fa9811cf.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/rade-de-villefranche/rade-de-villefranche-04-54e01c53.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/rade-de-villefranche/rade-de-villefranche-05-58984339.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/rade-de-villefranche/rade-de-villefranche-06-2f0e1c89.webp"
+      ],
+      "image_credits": []
+    },
+    {
+      "id": "1366bcfa-9a67-48c3-86bf-48e4183a0d0f",
+      "slug": "plage-de-la-mala",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-la-mala/plage-de-la-mala-01-0ede526a.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-la-mala/plage-de-la-mala-02-b788acf5.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-la-mala/plage-de-la-mala-03-79336d82.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-la-mala/plage-de-la-mala-04-3d77ff8f.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-la-mala/plage-de-la-mala-05-e50f8a12.webp"
+      ],
+      "image_credits": []
+    },
+    {
+      "id": "e023ce16-0276-4066-bbd3-bc4824bdbf73",
+      "slug": "musee-matisse",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/musee-matisse/musee-matisse-01-ce2f0b0d.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/musee-matisse/musee-matisse-02-d77f3230.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/musee-matisse/musee-matisse-03-1a19c025.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/musee-matisse/musee-matisse-04-4ecaeec3.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/musee-matisse/musee-matisse-05-e3673dd4.webp"
+      ],
+      "image_credits": [
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/musee-matisse/musee-matisse-02-d77f3230.webp",
+          "author": "Al*from*Lig",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Nizza Cimiez, museo Matisse.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Nizza_Cimiez,_museo_Matisse.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        }
+      ]
+    },
+    {
+      "id": "722c4c00-38c5-41a2-9fe7-9e067c7c8169",
+      "slug": "sentier-cap-ferrat",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/sentier-cap-ferrat/sentier-cap-ferrat-01-ceeb9963.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/sentier-cap-ferrat/sentier-cap-ferrat-02-1b8812bb.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/sentier-cap-ferrat/sentier-cap-ferrat-03-ce50096d.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/sentier-cap-ferrat/sentier-cap-ferrat-04-3b93190c.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/sentier-cap-ferrat/sentier-cap-ferrat-05-664b8fbd.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/sentier-cap-ferrat/sentier-cap-ferrat-06-9a52b47a.webp"
+      ],
+      "image_credits": []
+    },
+    {
+      "id": "12128bd7-d11a-417e-a157-f3b2b8971009",
+      "slug": "promenade-du-paillon",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/promenade-du-paillon/promenade-du-paillon-01-c6e1e679.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/promenade-du-paillon/promenade-du-paillon-02-fa86d82d.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/promenade-du-paillon/promenade-du-paillon-03-a7484c8b.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/promenade-du-paillon/promenade-du-paillon-04-070042f4.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/promenade-du-paillon/promenade-du-paillon-05-4196dfc5.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/promenade-du-paillon/promenade-du-paillon-06-0818ca18.webp"
+      ],
+      "image_credits": []
+    },
+    {
+      "id": "0b0cadf4-90cb-4481-b580-e595bc28d599",
+      "slug": "lou-pilha-leva",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/lou-pilha-leva/lou-pilha-leva-01-780405e5.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/lou-pilha-leva/lou-pilha-leva-02-491fe71a.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/lou-pilha-leva/lou-pilha-leva-03-e24fea4a.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/lou-pilha-leva/lou-pilha-leva-04-812c722e.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/lou-pilha-leva/lou-pilha-leva-05-36c5b9f2.webp"
+      ],
+      "image_credits": [
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/lou-pilha-leva/lou-pilha-leva-03-e24fea4a.webp",
+          "author": "Myrabella",
+          "license": "CC BY-SA 3.0",
+          "provider": "wikimedia",
+          "source_id": "File:Socca a Nice.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Socca_a_Nice.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/lou-pilha-leva/lou-pilha-leva-04-812c722e.webp",
+          "author": "Schellack at English Wikipedia",
+          "license": "CC BY 3.0",
+          "provider": "wikimedia",
+          "source_id": "File:Socca slices Nice.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Socca_slices_Nice.jpg",
+          "license_url": "https://creativecommons.org/licenses/by/3.0"
+        }
+      ]
+    },
+    {
+      "id": "3b0c055f-8e65-4b27-a3c5-6c068eb46ab1",
+      "slug": "parc-du-vinaigrier",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/parc-du-vinaigrier/parc-du-vinaigrier-01-280c5494.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/parc-du-vinaigrier/parc-du-vinaigrier-02-b91eca75.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/parc-du-vinaigrier/parc-du-vinaigrier-03-892d3de7.webp"
+      ],
+      "image_credits": []
+    },
+    {
+      "id": "1ee7e3a7-da38-40b7-a4e1-7705708b578d",
+      "slug": "plage-de-passable",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-passable/plage-de-passable-01-73bec8d4.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-passable/plage-de-passable-02-c91d16dd.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-passable/plage-de-passable-03-00b7ae38.webp"
+      ],
+      "image_credits": []
+    },
+    {
+      "id": "e20ab20a-1afe-4d77-914d-15bf21155e2e",
+      "slug": "farago-on-the-roof",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/farago-on-the-roof/farago-on-the-roof-01-8cc5883f.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/farago-on-the-roof/farago-on-the-roof-02-3b2bdb98.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/farago-on-the-roof/farago-on-the-roof-03-c84f66ee.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/farago-on-the-roof/farago-on-the-roof-04-83c0e94a.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/farago-on-the-roof/farago-on-the-roof-05-4630329d.webp"
+      ],
+      "image_credits": []
+    },
+    {
+      "id": "cced7df2-ec08-45a5-89d2-0fcc9d835998",
+      "slug": "sentier-littoral-cap-de-nice",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/sentier-littoral-cap-de-nice/sentier-littoral-cap-de-nice-01-263b0bcd.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/sentier-littoral-cap-de-nice/sentier-littoral-cap-de-nice-02-4df70021.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/sentier-littoral-cap-de-nice/sentier-littoral-cap-de-nice-03-54bc7776.webp"
+      ],
+      "image_credits": []
+    },
+    {
+      "id": "8a9d13ae-f4c9-4416-9dde-39442bbde7b1",
+      "slug": "club-nautique-nice",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/club-nautique-nice/club-nautique-nice-01-e675eb89.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/club-nautique-nice/club-nautique-nice-02-a0be8c4b.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/club-nautique-nice/club-nautique-nice-03-a82ed71a.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/club-nautique-nice/club-nautique-nice-04-7337704e.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/club-nautique-nice/club-nautique-nice-05-6ce73f76.webp"
+      ],
+      "image_credits": []
+    },
+    {
+      "id": "f36be918-6c46-4539-8424-90a8ecdf728f",
+      "slug": "mont-chauve-aspremont",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/mont-chauve-aspremont/mont-chauve-aspremont-01-5533ec9b.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/mont-chauve-aspremont/mont-chauve-aspremont-02-7b678643.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/mont-chauve-aspremont/mont-chauve-aspremont-03-030427c0.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/mont-chauve-aspremont/mont-chauve-aspremont-04-dd443932.webp"
+      ],
+      "image_credits": []
+    },
+    {
+      "id": "11a643b7-fc46-4371-a8ee-1bd0113fe45d",
+      "slug": "jardin-monastere-cimiez",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/jardin-monastere-cimiez/jardin-monastere-cimiez-01-3d59d5f4.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/jardin-monastere-cimiez/jardin-monastere-cimiez-02-54cfe209.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/jardin-monastere-cimiez/jardin-monastere-cimiez-03-36162e3e.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/jardin-monastere-cimiez/jardin-monastere-cimiez-04-3bc5181c.webp"
+      ],
+      "image_credits": []
+    },
+    {
+      "id": "878854a3-983e-4d8a-9642-1a0266fa6701",
+      "slug": "plage-de-la-paloma",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-la-paloma/plage-de-la-paloma-01-0d875959.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-la-paloma/plage-de-la-paloma-02-370fc1b8.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-la-paloma/plage-de-la-paloma-03-cb3ca2b7.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-la-paloma/plage-de-la-paloma-04-357b4a39.webp"
+      ],
+      "image_credits": []
+    },
+    {
+      "id": "5ac2fbe5-8bc1-4b08-9b1c-e1a2d63b47a8",
+      "slug": "baou-de-saint-jeannet",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/baou-de-saint-jeannet/baou-de-saint-jeannet-01-0f148222.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/baou-de-saint-jeannet/baou-de-saint-jeannet-02-3583a959.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/baou-de-saint-jeannet/baou-de-saint-jeannet-03-faf4615e.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/baou-de-saint-jeannet/baou-de-saint-jeannet-04-c8a747e9.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/baou-de-saint-jeannet/baou-de-saint-jeannet-05-c4fd8a72.webp"
+      ],
+      "image_credits": [
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/baou-de-saint-jeannet/baou-de-saint-jeannet-03-faf4615e.webp",
+          "author": "Baptiste Rossi",
+          "license": "Public domain",
+          "provider": "wikimedia",
+          "source_id": "File:Baou-Saint-Jeannet.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Baou-Saint-Jeannet.jpg",
+          "license_url": null
+        }
+      ]
+    },
+    {
+      "id": "714dea4d-80c8-45e3-9b51-656691ed3839",
+      "slug": "le-galet",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/le-galet/le-galet-01-912eb48e.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/le-galet/le-galet-02-b36d2321.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/le-galet/le-galet-03-db33c987.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/le-galet/le-galet-04-369a6be9.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/le-galet/le-galet-05-9a97ba4b.webp"
+      ],
+      "image_credits": []
+    },
+    {
+      "id": "d6643b5a-7bec-47c4-82b3-4cbd64d9c863",
+      "slug": "plage-petite-afrique",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-petite-afrique/plage-petite-afrique-01-535bac07.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-petite-afrique/plage-petite-afrique-02-51448edd.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-petite-afrique/plage-petite-afrique-03-81f66782.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-petite-afrique/plage-petite-afrique-04-55205c66.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-petite-afrique/plage-petite-afrique-05-fbb14027.webp"
+      ],
+      "image_credits": []
+    },
+    {
+      "id": "ede7d20d-2a5f-48c1-9eaa-9f8808b5fc07",
+      "slug": "lou-pantail",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/lou-pantail/lou-pantail-01-5cfc16d2.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/lou-pantail/lou-pantail-02-eaa840d7.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/lou-pantail/lou-pantail-03-d28dd60b.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/lou-pantail/lou-pantail-04-672c01cb.webp"
+      ],
+      "image_credits": []
+    },
+    {
+      "id": "b829bab9-085e-481e-a495-ba0acd5a812b",
+      "slug": "made-in-sud",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/made-in-sud/made-in-sud-01-a0c5b008.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/made-in-sud/made-in-sud-02-eef7e831.webp"
+      ],
+      "image_credits": []
+    },
+    {
+      "id": "309fc411-4ec1-46a8-b781-0f3d936f5415",
+      "slug": "auberge-aire-saint-michel",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/auberge-aire-saint-michel/auberge-aire-saint-michel-01-656f07cf.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/auberge-aire-saint-michel/auberge-aire-saint-michel-02-d4aa9947.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/auberge-aire-saint-michel/auberge-aire-saint-michel-03-8c69c1ec.webp"
+      ],
+      "image_credits": []
+    },
+    {
+      "id": "14fa365c-f002-4f6d-b475-a2ce29f9b42e",
+      "slug": "chez-michel-castagniers",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/chez-michel-castagniers/chez-michel-castagniers-01-9d778752.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/chez-michel-castagniers/chez-michel-castagniers-02-6f3c9c86.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/chez-michel-castagniers/chez-michel-castagniers-03-fc24ac82.webp"
+      ],
+      "image_credits": []
+    },
+    {
+      "id": "21e470ad-0eb3-467a-bced-3fe5c717b84d",
+      "slug": "baie-des-milliardaires",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/baie-des-milliardaires/baie-des-milliardaires-01-74e91f70.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/baie-des-milliardaires/baie-des-milliardaires-02-d7c1047f.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/baie-des-milliardaires/baie-des-milliardaires-03-c2019ab2.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/baie-des-milliardaires/baie-des-milliardaires-04-49bda815.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/baie-des-milliardaires/baie-des-milliardaires-05-4379c482.webp"
+      ],
+      "image_credits": []
+    },
+    {
+      "id": "c9a40c35-090d-442b-aed3-0b3006586ae1",
+      "slug": "vallee-des-merveilles",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/vallee-des-merveilles/vallee-des-merveilles-01-d07fa03f.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/vallee-des-merveilles/vallee-des-merveilles-02-f9124a53.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/vallee-des-merveilles/vallee-des-merveilles-03-f6e0e7b5.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/vallee-des-merveilles/vallee-des-merveilles-04-b8d2c448.webp"
+      ],
+      "image_credits": [
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/vallee-des-merveilles/vallee-des-merveilles-01-d07fa03f.webp",
+          "author": "Muztiko",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Refuge des Merveilles sept 2016.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Refuge_des_Merveilles_sept_2016.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/vallee-des-merveilles/vallee-des-merveilles-02-f9124a53.webp",
+          "author": "rene boulay",
+          "license": "CC BY-SA 3.0",
+          "provider": "wikimedia",
+          "source_id": "File:Alpes-Maritimes Vallee Des Merveilles Le Pas De L'Arpette - panoramio.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Alpes-Maritimes_Vallee_Des_Merveilles_Le_Pas_De_L%27Arpette_-_panoramio.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/vallee-des-merveilles/vallee-des-merveilles-03-f6e0e7b5.webp",
+          "author": "rene boulay",
+          "license": "CC BY-SA 3.0",
+          "provider": "wikimedia",
+          "source_id": "File:La Roya Casterino Fontanalba Vallee Merveilles Lac Intermediaire - panoramio.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:La_Roya_Casterino_Fontanalba_Vallee_Merveilles_Lac_Intermediaire_-_panoramio.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/vallee-des-merveilles/vallee-des-merveilles-04-b8d2c448.webp",
+          "author": "Patafisik",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Lac des Merveilles abc20.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Lac_des_Merveilles_abc20.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        }
+      ]
+    },
+    {
+      "id": "2fdc8d1a-77cc-4612-b30b-b24ed92795db",
+      "slug": "iles-de-lerins",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/iles-de-lerins/iles-de-lerins-01-d74aca26.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/iles-de-lerins/iles-de-lerins-02-8312bd4a.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/iles-de-lerins/iles-de-lerins-03-9c2f1f83.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/iles-de-lerins/iles-de-lerins-04-ba43a4f0.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/iles-de-lerins/iles-de-lerins-05-8ad48534.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/iles-de-lerins/iles-de-lerins-06-8b8d50eb.webp"
+      ],
+      "image_credits": []
+    },
+    {
+      "id": "2001e15d-04e5-40b8-96ff-addcc23cfef7",
+      "slug": "lac-de-trecolpas",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/lac-de-trecolpas/lac-de-trecolpas-01-f5438151.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/lac-de-trecolpas/lac-de-trecolpas-02-86a66c81.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/lac-de-trecolpas/lac-de-trecolpas-03-07751bab.webp"
+      ],
+      "image_credits": []
+    },
+    {
+      "id": "483500f8-96ae-42d1-b4d1-bb037b071de2",
+      "slug": "plage-de-l-aiguille",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-l-aiguille/plage-de-l-aiguille-01-c8d5e7de.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-l-aiguille/plage-de-l-aiguille-02-fdf3c581.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-l-aiguille/plage-de-l-aiguille-03-f0b0ea86.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-l-aiguille/plage-de-l-aiguille-04-989d6961.webp"
+      ],
+      "image_credits": []
+    }
+  ]
+}

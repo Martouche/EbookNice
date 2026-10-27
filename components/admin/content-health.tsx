@@ -1,6 +1,6 @@
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
-import { MIN_PHOTOS } from "@/lib/photos/enrich";
+import { MIN_PHOTOS } from "@/lib/constants";
 import { createClient } from "@/lib/supabase/server";
 import type { PlaceWithRelations } from "@/lib/types";
 
