@@ -1,0 +1,1532 @@
+{
+  "stamp": "2026-10-27-20-59-32",
+  "bucket": "places-images",
+  "places": [
+    {
+      "id": "811a96b6-09b2-4b0a-bf09-443554c77486",
+      "slug": "fort-du-mont-alban",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/fort-du-mont-alban/9ee9ed7d-1989-418d-84ac-5c383794c50c.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/fort-du-mont-alban/9d328c6a-dd9b-4b1c-981e-829f6c0b33b5.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/fort-du-mont-alban/7449bdbe-489c-4885-bda7-aed605d7d574.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/fort-du-mont-alban/d14ea832-52d3-42ac-9a97-ebcc3ffb1220.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/fort-du-mont-alban/5becdfe8-1202-4a76-8556-c63a2c9a9bc6.jpg"
+      ],
+      "image_credits": [
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/fort-du-mont-alban/auto-wikimedia-08ff31490a13.jpg",
+          "author": "Zairon",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Nice Mont Alban Vue sur Nice 01.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Nice_Mont_Alban_Vue_sur_Nice_01.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/fort-du-mont-alban/auto-wikimedia-f60cc7cd6a7d.jpg",
+          "author": "Zairon",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Nice Mont Alban Vue sur Nice 11.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Nice_Mont_Alban_Vue_sur_Nice_11.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/fort-du-mont-alban/auto-wikimedia-2b1c5d4c90cb.jpg",
+          "author": "Zairon",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Nice Mont Alban Vue sur Nice 26.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Nice_Mont_Alban_Vue_sur_Nice_26.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/fort-du-mont-alban/auto-wikimedia-f21b0050da8a.jpg",
+          "author": "Zairon",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Nice Mont Alban Vue sur Nice 18.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Nice_Mont_Alban_Vue_sur_Nice_18.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/fort-du-mont-alban/auto-wikimedia-b2c27908f261.jpg",
+          "author": "Zairon",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Nice Mont Alban Vue sur Nice 16.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Nice_Mont_Alban_Vue_sur_Nice_16.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        }
+      ]
+    },
+    {
+      "id": "3d471807-b26a-4b3d-b7dc-efb3f9e738c5",
+      "slug": "coco-beach",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/coco-beach/259a69a9-2c51-4b73-8c7e-a4bd3de05e9a.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/coco-beach/4b453533-3e16-4810-96cc-55cc62d75569.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/coco-beach/18f59931-0a3c-4a09-8075-70ebe72fd0f2.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/coco-beach/b4ac6b17-1f0d-4f48-b67c-40edf8ba8a68.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/coco-beach/15657f7d-3c71-4d21-be4e-cb4cc9385fe1.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/coco-beach/f19270b3-b4ba-4b5d-8b58-4f04444d2b0e.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/coco-beach/5f7354ea-537e-4a2f-aca6-ef898b5cf66b.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/coco-beach/598859d5-44ef-4209-b752-b1fed0ff6d42.webp"
+      ],
+      "image_credits": [
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/coco-beach/auto-wikimedia-ae98224e12e6.jpg",
+          "author": "Dorian06200",
+          "license": "CC BY-SA 3.0",
+          "provider": "wikimedia",
+          "source_id": "File:Les galets de la plage de Nice.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Les_galets_de_la_plage_de_Nice.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/coco-beach/auto-wikimedia-9a9b5dbf8276.jpg",
+          "author": "Uhooep",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Promenade des Anglais (Nice), plage.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Promenade_des_Anglais_(Nice),_plage.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/coco-beach/auto-wikimedia-733e4dcae987.jpg",
+          "author": "Zairon",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Nice Promenade des Anglais Plage 1.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Nice_Promenade_des_Anglais_Plage_1.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        }
+      ]
+    },
+    {
+      "id": "ae4ee3e4-a1da-4e8a-aeb8-0e9ced0c11ca",
+      "slug": "chez-pipo",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/chez-pipo/e41cb4b3-5897-4b0a-88e6-d5c39594fcbb.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/chez-pipo/4fab185e-73c1-4e3e-9a66-6c3e9d2a95b2.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/chez-pipo/86021f0a-6162-4bd1-9763-4da210ac5567.jpg"
+      ],
+      "image_credits": [
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/chez-pipo/auto-wikimedia-9e9c2999dc74.jpg",
+          "author": "Myrabella",
+          "license": "CC BY-SA 3.0",
+          "provider": "wikimedia",
+          "source_id": "File:Socca a Nice.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Socca_a_Nice.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/chez-pipo/auto-wikimedia-b25c6465f57a.jpg",
+          "author": "Renbo",
+          "license": "CC BY-SA 3.0",
+          "provider": "wikimedia",
+          "source_id": "File:Socca nice.JPG",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Socca_nice.JPG",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/chez-pipo/auto-wikimedia-3488627a47b2.jpg",
+          "author": "Schellack at English Wikipedia",
+          "license": "CC BY 3.0",
+          "provider": "wikimedia",
+          "source_id": "File:Socca slices Nice.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Socca_slices_Nice.jpg",
+          "license_url": "https://creativecommons.org/licenses/by/3.0"
+        }
+      ]
+    },
+    {
+      "id": "3ebcf47a-0016-40cc-bf21-31c15d367874",
+      "slug": "cours-saleya",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/cours-saleya/4c9296f2-602b-4b27-8b62-58cdff2d5513.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/cours-saleya/383788b1-e5f9-48e9-a133-6355fe03380b.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/cours-saleya/3ecea811-6053-4be5-bcc3-f98e88eea7be.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/cours-saleya/a5ff6c5f-4125-49c0-af9b-50f839a85d4f.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/cours-saleya/e51c6910-3660-4f27-b2f6-3602e692e37b.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/cours-saleya/3c4164a2-ec97-42ac-85c4-eaf807edcc72.jpg"
+      ],
+      "image_credits": [
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/cours-saleya/auto-wikimedia-2eeaa1a8f658.jpg",
+          "author": "dalbera",
+          "license": "CC BY 2.0",
+          "provider": "wikimedia",
+          "source_id": "File:Cours Saleya - Chapelle de la Miséricorde - Nice.jpeg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Cours_Saleya_-_Chapelle_de_la_Mis%C3%A9ricorde_-_Nice.jpeg",
+          "license_url": "https://creativecommons.org/licenses/by/2.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/cours-saleya/auto-wikimedia-8d8c2cebdceb.jpg",
+          "author": "Arnaud 25",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Marché couyrs salaya de Nice.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:March%C3%A9_couyrs_salaya_de_Nice.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/cours-saleya/auto-wikimedia-c80ff8df07e5.jpg",
+          "author": "Arnaud 25",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Marché de Provence 012.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:March%C3%A9_de_Provence_012.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/cours-saleya/auto-wikimedia-b325bf97c91d.jpg",
+          "author": "Tangopaso",
+          "license": "Public domain",
+          "provider": "wikimedia",
+          "source_id": "File:Marché aux fleurs de Nice.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:March%C3%A9_aux_fleurs_de_Nice.jpg",
+          "license_url": null
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/cours-saleya/auto-wikimedia-40da9043eea7.jpg",
+          "author": "Arnaud 25",
+          "license": "CC0",
+          "provider": "wikimedia",
+          "source_id": "File:Olives niçoises 01.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Olives_ni%C3%A7oises_01.jpg",
+          "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+        }
+      ]
+    },
+    {
+      "id": "cd534001-2824-4042-816b-8c4b7f885968",
+      "slug": "colline-du-chateau",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/colline-du-chateau/e6ee891a-b1f7-4b45-8e4d-d0d780f984e2.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/colline-du-chateau/6531c31a-be18-4f09-93d4-72baf223c114.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/colline-du-chateau/ac05f61f-68a0-4e16-9ac0-8c25f640ed63.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/colline-du-chateau/c8692791-e372-4e6b-90cf-37e125aaa1a4.jpeg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/colline-du-chateau/ec2ae38a-8c0c-4871-af70-d5a974d5d72a.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/colline-du-chateau/42957409-b037-4b6c-8904-9d0bd74a931e.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/colline-du-chateau/36abef21-d6a9-4fa5-8d52-5a598a0350d0.jpeg"
+      ],
+      "image_credits": [
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/colline-du-chateau/auto-wikimedia-d6e3b19ed240.jpg",
+          "author": "Al*from*Lig",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Nizza, Collina du Château.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Nizza,_Collina_du_Ch%C3%A2teau.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/colline-du-chateau/auto-wikimedia-bbae5f2236b0.jpg",
+          "author": "Al*from*Lig",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Nizza Cimiez- vista panoramica.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Nizza_Cimiez-_vista_panoramica.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/colline-du-chateau/auto-wikimedia-72fdf3330e03.jpg",
+          "author": "Ștefan Jurcă from Grenoble, France",
+          "license": "CC BY 2.0",
+          "provider": "wikimedia",
+          "source_id": "File:View across Nice (32572999297).jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:View_across_Nice_(32572999297).jpg",
+          "license_url": "https://creativecommons.org/licenses/by/2.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/colline-du-chateau/auto-wikimedia-2cee1639317f.jpg",
+          "author": "Zairon",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Nice Parc du Château de Nice Allée Francois Aragaon.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Nice_Parc_du_Ch%C3%A2teau_de_Nice_All%C3%A9e_Francois_Aragaon.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/colline-du-chateau/auto-wikimedia-261ea60a2faf.jpg",
+          "author": "Florian Pépellin",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Port de Nice depuis la Colline du Château (novembre 2007).JPG",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Port_de_Nice_depuis_la_Colline_du_Ch%C3%A2teau_(novembre_2007).JPG",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        }
+      ]
+    },
+    {
+      "id": "1366bcfa-9a67-48c3-86bf-48e4183a0d0f",
+      "slug": "plage-de-la-mala",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-la-mala/e0d88b52-a04d-4595-836d-9d614ae62df9.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-la-mala/69928a5a-d6d8-41ec-99ae-13ee62cdeee1.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-la-mala/10a61dad-68ab-4355-8d63-9baf7e35a17f.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-la-mala/6f79d8c8-054d-4469-96b4-014db3c309e3.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-la-mala/67cab066-83eb-4787-926f-94c7b7d8520f.jpg"
+      ],
+      "image_credits": [
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-la-mala/auto-wikimedia-239d6693beba.jpg",
+          "author": "Renek78",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Littoral path between Plage de la Mala and Plage Marquet in Cap-d'Ail 07.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Littoral_path_between_Plage_de_la_Mala_and_Plage_Marquet_in_Cap-d%27Ail_07.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-la-mala/auto-wikimedia-1e6558fc1f11.jpg",
+          "author": "Renek78",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Littoral path between Plage de la Mala and Plage Marquet in Cap-d'Ail 06.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Littoral_path_between_Plage_de_la_Mala_and_Plage_Marquet_in_Cap-d%27Ail_06.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-la-mala/auto-wikimedia-4c0bb9440ca0.jpg",
+          "author": "Renek78",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Littoral path between Plage de la Mala and Plage Marquet in Cap-d'Ail 01.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Littoral_path_between_Plage_de_la_Mala_and_Plage_Marquet_in_Cap-d%27Ail_01.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-la-mala/auto-wikimedia-7de9729080d2.jpg",
+          "author": "Renek78",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Littoral path between Plage de la Mala and Plage Marquet in Cap-d'Ail 03.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Littoral_path_between_Plage_de_la_Mala_and_Plage_Marquet_in_Cap-d%27Ail_03.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-la-mala/auto-wikimedia-67a6f678f439.jpg",
+          "author": "Renek78",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Littoral path between Plage de la Mala and Plage Marquet in Cap-d'Ail 04.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Littoral_path_between_Plage_de_la_Mala_and_Plage_Marquet_in_Cap-d%27Ail_04.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        }
+      ]
+    },
+    {
+      "id": "e023ce16-0276-4066-bbd3-bc4824bdbf73",
+      "slug": "musee-matisse",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/musee-matisse/7776d14e-2590-499e-9ad3-f83254382cc8.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/musee-matisse/auto-wikimedia-31ba6b60ebf6.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/musee-matisse/05f955bf-ab9c-4ed4-92b6-8e88c5123dc5.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/musee-matisse/029a52d3-e4d5-4ea3-a723-bfcb4ee51deb.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/musee-matisse/92a92fe0-bc32-4720-8f88-2c22fd1dc219.jpg"
+      ],
+      "image_credits": [
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/musee-matisse/auto-wikimedia-28eb245527fe.jpg",
+          "author": "ermell",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Nizza-Matisse-Museum-4060732.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Nizza-Matisse-Museum-4060732.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/musee-matisse/auto-wikimedia-31ba6b60ebf6.jpg",
+          "author": "Al*from*Lig",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Nizza Cimiez, museo Matisse.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Nizza_Cimiez,_museo_Matisse.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/musee-matisse/auto-wikimedia-43aaa2113731.jpg",
+          "author": "GFreihalter",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Nice (06) Musée Matisse 594.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Nice_(06)_Mus%C3%A9e_Matisse_594.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/musee-matisse/auto-wikimedia-62de384971b0.jpg",
+          "author": "GFreihalter",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Nice (06) Musée Matisse 592.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Nice_(06)_Mus%C3%A9e_Matisse_592.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/musee-matisse/auto-wikimedia-ff0f319893f4.jpg",
+          "author": "GFreihalter",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Nice (06) Musée Matisse 591.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Nice_(06)_Mus%C3%A9e_Matisse_591.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        }
+      ]
+    },
+    {
+      "id": "af792283-7317-4810-920e-eb196937b4e7",
+      "slug": "rade-de-villefranche",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/rade-de-villefranche/8f67ffa5-b070-465a-b6fa-54544f4bc35e.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/rade-de-villefranche/b2b19c00-6553-455e-b0d7-d8f6ce50a7d7.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/rade-de-villefranche/a1a53556-3ff0-4bdc-a590-f152284a3846.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/rade-de-villefranche/c7a221c5-30c9-4ef0-a29b-316e9d72e2c0.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/rade-de-villefranche/baab4b0f-8446-478f-873d-2a40e420cae8.jpeg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/rade-de-villefranche/ee786e58-ad70-40ce-a745-a349ceeb1300.jpg"
+      ],
+      "image_credits": [
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/rade-de-villefranche/auto-wikimedia-5f1b1d124d65.jpg",
+          "author": "Tangopaso",
+          "license": "Public domain",
+          "provider": "wikimedia",
+          "source_id": "File:Rade de Villefranche-sur-Mer vue depuis la gare.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Rade_de_Villefranche-sur-Mer_vue_depuis_la_gare.jpg",
+          "license_url": null
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/rade-de-villefranche/auto-wikimedia-c0facb487592.jpg",
+          "author": "The original uploader was Law1621 at French Wikipedia.",
+          "license": "CC BY-SA 2.5",
+          "provider": "wikimedia",
+          "source_id": "File:Villefranche Sur Mer Rade.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Villefranche_Sur_Mer_Rade.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/2.5"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/rade-de-villefranche/auto-wikimedia-c14745013266.jpg",
+          "author": "Villefranche-sur-Mer_-_Le_fort_Saint-Elme_contrôlant_la_rade_de_Villefranche_entre_le_cap_Ferrat_et_le_mont_Boron.jpg: MOSSOT derivative work: Inkey",
+          "license": "CC BY-SA 3.0",
+          "provider": "wikimedia",
+          "source_id": "File:Villefranche-sur-Mer banner.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Villefranche-sur-Mer_banner.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/rade-de-villefranche/auto-wikimedia-43ada9b52910.jpg",
+          "author": "Pierrette13",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Rade de Villefranche-sur-Mer (2).jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Rade_de_Villefranche-sur-Mer_(2).jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/rade-de-villefranche/auto-wikimedia-de635a2fee5f.jpg",
+          "author": "Rijksmuseum",
+          "license": "CC0",
+          "provider": "wikimedia",
+          "source_id": "File:Vlooteskader op de rede van Villefranche-sur-Mer Rade de Villefranche et escadre (titel op object), RP-F-F01092-BT.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Vlooteskader_op_de_rede_van_Villefranche-sur-Mer_Rade_de_Villefranche_et_escadre_(titel_op_object),_RP-F-F01092-BT.jpg",
+          "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+        }
+      ]
+    },
+    {
+      "id": "67bc8842-1383-4a03-89c4-a029360bfeae",
+      "slug": "le-plongeoir",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/le-plongeoir/5c565d13-2822-468b-9354-01cbf90e5cf0.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/le-plongeoir/1e14922d-6267-43b2-aec3-460d0004225a.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/le-plongeoir/2f2c9441-cf33-4416-9899-6d4e4ffb82e8.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/le-plongeoir/auto-wikimedia-a2279557d883.jpg"
+      ],
+      "image_credits": [
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/le-plongeoir/auto-wikimedia-217a33d26316.jpg",
+          "author": "Jorge Franganillo",
+          "license": "CC BY 2.0",
+          "provider": "wikimedia",
+          "source_id": "File:Nice Le Plongeoir (54477073189).jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Nice_Le_Plongeoir_(54477073189).jpg",
+          "license_url": "https://creativecommons.org/licenses/by/2.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/le-plongeoir/auto-wikimedia-bacc162f63ad.jpg",
+          "author": "Pierrette13",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Plongeoir 2023.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Plongeoir_2023.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/le-plongeoir/auto-wikimedia-a2279557d883.jpg",
+          "author": "Jon Rosenoer",
+          "license": "CC BY 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Divers Nice.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Divers_Nice.jpg",
+          "license_url": "https://creativecommons.org/licenses/by/4.0"
+        }
+      ]
+    },
+    {
+      "id": "8241e86f-9277-4db7-b6b5-13d16856d1d2",
+      "slug": "chemin-de-nietzsche",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/chemin-de-nietzsche/3342415a-6766-41b6-ae00-8024c277558a.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/chemin-de-nietzsche/3daace42-0bde-4e72-830b-6b6424a3666d.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/chemin-de-nietzsche/bb212dd0-552a-4b2c-928b-029c388c02b9.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/chemin-de-nietzsche/a511a729-4af9-4e13-b98e-cb4aeba0dc7e.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/chemin-de-nietzsche/f7239d95-4cfd-4f73-9d06-92508734c7d8.jpeg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/chemin-de-nietzsche/57e414dd-81d8-45fb-8c00-24b68c3731a8.jpeg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/chemin-de-nietzsche/85ad5477-e5aa-4a0a-bb81-5c902e3198f4.jpeg"
+      ],
+      "image_credits": [
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/chemin-de-nietzsche/auto-wikimedia-fbb63758fbee.jpg",
+          "author": "Rémih",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Èze Chemin de Nietzsche 01.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:%C3%88ze_Chemin_de_Nietzsche_01.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/chemin-de-nietzsche/auto-wikimedia-174eea607d27.jpg",
+          "author": "Rémih",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Èze Chemin de Nietzsche 02.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:%C3%88ze_Chemin_de_Nietzsche_02.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/chemin-de-nietzsche/auto-wikimedia-d6efa1cf8863.jpg",
+          "author": "Solundir",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:View from Nietzsche Path.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:View_from_Nietzsche_Path.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/chemin-de-nietzsche/auto-wikimedia-c7d81e19b5ae.jpg",
+          "author": "Tangopaso",
+          "license": "CC BY-SA 3.0",
+          "provider": "wikimedia",
+          "source_id": "File:Chemin de Nietzsche 03.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Chemin_de_Nietzsche_03.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/chemin-de-nietzsche/auto-wikimedia-ed79df78cb9e.jpg",
+          "author": "Tangopaso",
+          "license": "CC BY-SA 3.0",
+          "provider": "wikimedia",
+          "source_id": "File:Chemin de Nietzsche 02.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Chemin_de_Nietzsche_02.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+        }
+      ]
+    },
+    {
+      "id": "722c4c00-38c5-41a2-9fe7-9e067c7c8169",
+      "slug": "sentier-cap-ferrat",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/sentier-cap-ferrat/307a2fdd-712a-41c3-863f-3121ec2c23a9.jpeg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/sentier-cap-ferrat/8aec257f-7f97-4deb-839f-6e475f745c74.jpeg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/sentier-cap-ferrat/984cc876-20cb-49d8-9b76-bf6f25db315c.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/sentier-cap-ferrat/cee1fc18-ff7a-4b4b-bf63-01413ab62bb2.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/sentier-cap-ferrat/a779c378-927a-418d-ba44-c1adddd2b381.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/sentier-cap-ferrat/da17250c-9a1c-4041-a0b5-ad515f155ae0.jpeg"
+      ],
+      "image_credits": [
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/sentier-cap-ferrat/auto-wikimedia-65b6e89989d5.jpg",
+          "author": "Horizon06",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:20211209 122308 Le sentier du littoral à Saint-Jean-Cap-Ferrat.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:20211209_122308_Le_sentier_du_littoral_%C3%A0_Saint-Jean-Cap-Ferrat.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/sentier-cap-ferrat/auto-wikimedia-e2721294746e.jpg",
+          "author": "Tangopaso",
+          "license": "Public domain",
+          "provider": "wikimedia",
+          "source_id": "File:Littoral path in Saint-Jean Cap-Ferrat.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Littoral_path_in_Saint-Jean_Cap-Ferrat.jpg",
+          "license_url": null
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/sentier-cap-ferrat/auto-wikimedia-1ed19e188490.jpg",
+          "author": "Tangopaso",
+          "license": "Public domain",
+          "provider": "wikimedia",
+          "source_id": "File:Littoral path in Saint-Jean Cap-Ferrat2.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Littoral_path_in_Saint-Jean_Cap-Ferrat2.jpg",
+          "license_url": null
+        }
+      ]
+    },
+    {
+      "id": "12128bd7-d11a-417e-a157-f3b2b8971009",
+      "slug": "promenade-du-paillon",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/promenade-du-paillon/076de327-c4ed-47e8-b609-3d3957451989.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/promenade-du-paillon/7dcc0274-aa72-4815-9498-7539eb9c447e.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/promenade-du-paillon/0ca0d347-bf3a-4031-af3e-ea3ebf4cf720.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/promenade-du-paillon/9ded8c0f-9772-4f8c-9c79-834b312f59dc.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/promenade-du-paillon/7f375769-be98-4538-bf94-cc6fa5b72a60.avif",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/promenade-du-paillon/2c2372c2-bcd7-41d5-98f5-cfb138d880ab.jpg"
+      ],
+      "image_credits": [
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/promenade-du-paillon/auto-wikimedia-d75ec516fe7b.jpg",
+          "author": "imdutch",
+          "license": "CC BY 3.0",
+          "provider": "wikimedia",
+          "source_id": "File:Promenade du Paillon, Nice - panoramio (1).jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Promenade_du_Paillon,_Nice_-_panoramio_(1).jpg",
+          "license_url": "https://creativecommons.org/licenses/by/3.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/promenade-du-paillon/auto-wikimedia-e4bca4ca8aa3.jpg",
+          "author": "Miguel Mendez",
+          "license": "CC BY 2.0",
+          "provider": "wikimedia",
+          "source_id": "File:Promenade du Paillon Nice water jets 2019.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Promenade_du_Paillon_Nice_water_jets_2019.jpg",
+          "license_url": "https://creativecommons.org/licenses/by/2.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/promenade-du-paillon/auto-wikimedia-a6b5cc0d5182.jpg",
+          "author": "Cristina.ciutan",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Nice-Promenade du Paillon.JPG",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Nice-Promenade_du_Paillon.JPG",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/promenade-du-paillon/auto-wikimedia-b075683d8b91.jpg",
+          "author": "Sheila Sund from Salem, United States",
+          "license": "CC BY 2.0",
+          "provider": "wikimedia",
+          "source_id": "File:LAVA ERUPTS FROM GROUND IN NICE! (30473423601).jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:LAVA_ERUPTS_FROM_GROUND_IN_NICE!_(30473423601).jpg",
+          "license_url": "https://creativecommons.org/licenses/by/2.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/promenade-du-paillon/auto-wikimedia-371784268f8b.jpg",
+          "author": "Steven Lek",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Promenade du Paillon Nice 2014.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Promenade_du_Paillon_Nice_2014.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        }
+      ]
+    },
+    {
+      "id": "0b0cadf4-90cb-4481-b580-e595bc28d599",
+      "slug": "lou-pilha-leva",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/lou-pilha-leva/abc4e454-3fee-428d-85c4-43d45ee53c4b.jpeg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/lou-pilha-leva/bd92959f-2d99-4740-85d6-f424fc3caa12.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/lou-pilha-leva/auto-wikimedia-9e9c2999dc74.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/lou-pilha-leva/auto-wikimedia-3488627a47b2.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/lou-pilha-leva/9e29f701-e4ba-4c17-a821-9ff09cc924f4.jpeg"
+      ],
+      "image_credits": [
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/lou-pilha-leva/auto-wikimedia-9e9c2999dc74.jpg",
+          "author": "Myrabella",
+          "license": "CC BY-SA 3.0",
+          "provider": "wikimedia",
+          "source_id": "File:Socca a Nice.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Socca_a_Nice.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/lou-pilha-leva/auto-wikimedia-b25c6465f57a.jpg",
+          "author": "Renbo",
+          "license": "CC BY-SA 3.0",
+          "provider": "wikimedia",
+          "source_id": "File:Socca nice.JPG",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Socca_nice.JPG",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/lou-pilha-leva/auto-wikimedia-3488627a47b2.jpg",
+          "author": "Schellack at English Wikipedia",
+          "license": "CC BY 3.0",
+          "provider": "wikimedia",
+          "source_id": "File:Socca slices Nice.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Socca_slices_Nice.jpg",
+          "license_url": "https://creativecommons.org/licenses/by/3.0"
+        }
+      ]
+    },
+    {
+      "id": "cced7df2-ec08-45a5-89d2-0fcc9d835998",
+      "slug": "sentier-littoral-cap-de-nice",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/sentier-littoral-cap-de-nice/3b20bfa2-2e8f-46d7-89e7-e01c5091f9e9.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/sentier-littoral-cap-de-nice/63328713-48b0-41a6-9654-dcdbda28a6b5.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/sentier-littoral-cap-de-nice/5ad594eb-6515-4993-8f47-f1d130fdc562.jpg"
+      ],
+      "image_credits": [
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/sentier-littoral-cap-de-nice/auto-wikimedia-65b6e89989d5.jpg",
+          "author": "Horizon06",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:20211209 122308 Le sentier du littoral à Saint-Jean-Cap-Ferrat.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:20211209_122308_Le_sentier_du_littoral_%C3%A0_Saint-Jean-Cap-Ferrat.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/sentier-littoral-cap-de-nice/auto-wikimedia-e2721294746e.jpg",
+          "author": "Tangopaso",
+          "license": "Public domain",
+          "provider": "wikimedia",
+          "source_id": "File:Littoral path in Saint-Jean Cap-Ferrat.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Littoral_path_in_Saint-Jean_Cap-Ferrat.jpg",
+          "license_url": null
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/sentier-littoral-cap-de-nice/auto-wikimedia-1ed19e188490.jpg",
+          "author": "Tangopaso",
+          "license": "Public domain",
+          "provider": "wikimedia",
+          "source_id": "File:Littoral path in Saint-Jean Cap-Ferrat2.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Littoral_path_in_Saint-Jean_Cap-Ferrat2.jpg",
+          "license_url": null
+        }
+      ]
+    },
+    {
+      "id": "3b0c055f-8e65-4b27-a3c5-6c068eb46ab1",
+      "slug": "parc-du-vinaigrier",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/parc-du-vinaigrier/1b0e08f0-b837-4ae7-a93d-f78bee3754dd.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/parc-du-vinaigrier/58eac4d1-1845-4f56-9296-0ed2932355d6.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/parc-du-vinaigrier/2956e619-7682-4ac6-a47a-ce7d7f155d06.webp"
+      ],
+      "image_credits": [
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/parc-du-vinaigrier/auto-wikimedia-6061035dfb91.jpg",
+          "author": "Punx",
+          "license": "CC BY-SA 3.0",
+          "provider": "wikimedia",
+          "source_id": "File:Vinaigriersupérieur.JPG",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Vinaigriersup%C3%A9rieur.JPG",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/parc-du-vinaigrier/auto-wikimedia-e0cef3477301.jpg",
+          "author": "Tristan Mimet",
+          "license": "CC BY 3.0",
+          "provider": "wikimedia",
+          "source_id": "File:Panorama Nice (181237359).jpeg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Panorama_Nice_(181237359).jpeg",
+          "license_url": "https://creativecommons.org/licenses/by/3.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/parc-du-vinaigrier/auto-wikimedia-1cf4c7bdff50.jpg",
+          "author": "Ernmuhl at lb.wikipedia",
+          "license": "CC BY-SA 3.0",
+          "provider": "wikimedia",
+          "source_id": "File:Panorama vu Nice.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Panorama_vu_Nice.jpg",
+          "license_url": "http://creativecommons.org/licenses/by-sa/3.0/"
+        }
+      ]
+    },
+    {
+      "id": "e20ab20a-1afe-4d77-914d-15bf21155e2e",
+      "slug": "farago-on-the-roof",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/farago-on-the-roof/bcc4e291-d048-4afa-8566-d441b55a4374.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/farago-on-the-roof/2edd0d82-b629-4f85-855a-be030a3934de.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/farago-on-the-roof/e59ec6b3-1649-4423-b741-66440b152fe3.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/farago-on-the-roof/e740b714-203c-4eae-811b-1eed3eb9dae2.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/farago-on-the-roof/23e73014-b401-40b7-a525-b97e23a48a29.webp"
+      ],
+      "image_credits": [
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/farago-on-the-roof/auto-wikimedia-9e9c2999dc74.jpg",
+          "author": "Myrabella",
+          "license": "CC BY-SA 3.0",
+          "provider": "wikimedia",
+          "source_id": "File:Socca a Nice.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Socca_a_Nice.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/farago-on-the-roof/auto-wikimedia-b25c6465f57a.jpg",
+          "author": "Renbo",
+          "license": "CC BY-SA 3.0",
+          "provider": "wikimedia",
+          "source_id": "File:Socca nice.JPG",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Socca_nice.JPG",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/farago-on-the-roof/auto-wikimedia-3488627a47b2.jpg",
+          "author": "Schellack at English Wikipedia",
+          "license": "CC BY 3.0",
+          "provider": "wikimedia",
+          "source_id": "File:Socca slices Nice.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Socca_slices_Nice.jpg",
+          "license_url": "https://creativecommons.org/licenses/by/3.0"
+        }
+      ]
+    },
+    {
+      "id": "1ee7e3a7-da38-40b7-a4e1-7705708b578d",
+      "slug": "plage-de-passable",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-passable/5fe5453e-a13a-41d9-a8c5-bf72b3616200.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-passable/c0fafbf1-4df4-40f3-9f5c-3fa22c7453cb.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-passable/7415d7b6-bc85-49c6-b9a7-e4057768e4f0.jpg"
+      ],
+      "image_credits": [
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-passable/auto-wikimedia-bc26626f79dd.jpg",
+          "author": "Tangopaso",
+          "license": "Public domain",
+          "provider": "wikimedia",
+          "source_id": "File:Plage de Passable.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Plage_de_Passable.jpg",
+          "license_url": null
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-passable/auto-wikimedia-ab2981c75f6e.jpg",
+          "author": "Ewa Jaros (czupirek), Maciej Nux",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Plage de Passable 2025-11-13.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Plage_de_Passable_2025-11-13.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-passable/auto-wikimedia-ae98224e12e6.jpg",
+          "author": "Dorian06200",
+          "license": "CC BY-SA 3.0",
+          "provider": "wikimedia",
+          "source_id": "File:Les galets de la plage de Nice.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Les_galets_de_la_plage_de_Nice.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+        }
+      ]
+    },
+    {
+      "id": "8a9d13ae-f4c9-4416-9dde-39442bbde7b1",
+      "slug": "club-nautique-nice",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/club-nautique-nice/38ca7183-d72c-42e8-af08-43a592ccc77d.jpeg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/club-nautique-nice/9b91e99c-f545-4e10-9023-ca3fbb7109a0.jpeg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/club-nautique-nice/64966c7c-5411-49c3-a8fc-dbfd778c08f7.jpeg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/club-nautique-nice/11a25f4f-ce64-45c7-bea5-a77c2d855edf.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/club-nautique-nice/dbedae7d-d1e3-427b-b9e7-cfc3fbd915d8.webp"
+      ],
+      "image_credits": [
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/club-nautique-nice/auto-wikimedia-9e9c2999dc74.jpg",
+          "author": "Myrabella",
+          "license": "CC BY-SA 3.0",
+          "provider": "wikimedia",
+          "source_id": "File:Socca a Nice.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Socca_a_Nice.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/club-nautique-nice/auto-wikimedia-b25c6465f57a.jpg",
+          "author": "Renbo",
+          "license": "CC BY-SA 3.0",
+          "provider": "wikimedia",
+          "source_id": "File:Socca nice.JPG",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Socca_nice.JPG",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/club-nautique-nice/auto-wikimedia-3488627a47b2.jpg",
+          "author": "Schellack at English Wikipedia",
+          "license": "CC BY 3.0",
+          "provider": "wikimedia",
+          "source_id": "File:Socca slices Nice.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Socca_slices_Nice.jpg",
+          "license_url": "https://creativecommons.org/licenses/by/3.0"
+        }
+      ]
+    },
+    {
+      "id": "11a643b7-fc46-4371-a8ee-1bd0113fe45d",
+      "slug": "jardin-monastere-cimiez",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/jardin-monastere-cimiez/defa6e77-44e9-4cbf-ba85-093a857e188f.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/jardin-monastere-cimiez/882974fd-cd7a-4574-9951-1496865c6571.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/jardin-monastere-cimiez/66e03558-7678-4f9b-adc7-8fa3d02fa665.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/jardin-monastere-cimiez/942a5f54-2de6-4258-bde4-fcd3c2ad67fa.jpg"
+      ],
+      "image_credits": [
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/jardin-monastere-cimiez/auto-wikimedia-e0cef3477301.jpg",
+          "author": "Tristan Mimet",
+          "license": "CC BY 3.0",
+          "provider": "wikimedia",
+          "source_id": "File:Panorama Nice (181237359).jpeg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Panorama_Nice_(181237359).jpeg",
+          "license_url": "https://creativecommons.org/licenses/by/3.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/jardin-monastere-cimiez/auto-wikimedia-1cf4c7bdff50.jpg",
+          "author": "Ernmuhl at lb.wikipedia",
+          "license": "CC BY-SA 3.0",
+          "provider": "wikimedia",
+          "source_id": "File:Panorama vu Nice.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Panorama_vu_Nice.jpg",
+          "license_url": "http://creativecommons.org/licenses/by-sa/3.0/"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/jardin-monastere-cimiez/auto-wikimedia-191942412afb.jpg",
+          "author": "Michal Osmenda from Brussels, Belgium",
+          "license": "CC BY-SA 2.0",
+          "provider": "wikimedia",
+          "source_id": "File:Nice, Southern France (2860460178).jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Nice,_Southern_France_(2860460178).jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
+        }
+      ]
+    },
+    {
+      "id": "878854a3-983e-4d8a-9642-1a0266fa6701",
+      "slug": "plage-de-la-paloma",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-la-paloma/c5772cb5-b1ef-493f-8e9e-42ca01493ef5.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-la-paloma/f0ac0884-8418-41ef-89ea-394cb5df2117.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-la-paloma/6c3fb76c-af68-44b7-a92e-61f212119990.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-la-paloma/16b108d5-fbc7-4d00-b22f-33e717d6c7ff.jpg"
+      ],
+      "image_credits": [
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-la-paloma/auto-wikimedia-0052171a80d2.jpg",
+          "author": "Horizon06",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:20211209 123405 Plage de la Paloma.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:20211209_123405_Plage_de_la_Paloma.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-la-paloma/auto-wikimedia-ae98224e12e6.jpg",
+          "author": "Dorian06200",
+          "license": "CC BY-SA 3.0",
+          "provider": "wikimedia",
+          "source_id": "File:Les galets de la plage de Nice.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Les_galets_de_la_plage_de_Nice.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-la-paloma/auto-wikimedia-9a9b5dbf8276.jpg",
+          "author": "Uhooep",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Promenade des Anglais (Nice), plage.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Promenade_des_Anglais_(Nice),_plage.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        }
+      ]
+    },
+    {
+      "id": "f36be918-6c46-4539-8424-90a8ecdf728f",
+      "slug": "mont-chauve-aspremont",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/mont-chauve-aspremont/0f2ae1fd-5c3e-4f90-bde9-ed91c96543e8.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/mont-chauve-aspremont/c829e2bd-ec7f-4e4f-9421-e69cde26e7f6.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/mont-chauve-aspremont/8671fefd-ab0e-4abb-a473-5d82e0bdc002.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/mont-chauve-aspremont/ab5518c2-5362-48d7-9ac5-e3a8688b2e68.jpg"
+      ],
+      "image_credits": [
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/mont-chauve-aspremont/auto-wikimedia-65b6e89989d5.jpg",
+          "author": "Horizon06",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:20211209 122308 Le sentier du littoral à Saint-Jean-Cap-Ferrat.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:20211209_122308_Le_sentier_du_littoral_%C3%A0_Saint-Jean-Cap-Ferrat.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/mont-chauve-aspremont/auto-wikimedia-e2721294746e.jpg",
+          "author": "Tangopaso",
+          "license": "Public domain",
+          "provider": "wikimedia",
+          "source_id": "File:Littoral path in Saint-Jean Cap-Ferrat.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Littoral_path_in_Saint-Jean_Cap-Ferrat.jpg",
+          "license_url": null
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/mont-chauve-aspremont/auto-wikimedia-1ed19e188490.jpg",
+          "author": "Tangopaso",
+          "license": "Public domain",
+          "provider": "wikimedia",
+          "source_id": "File:Littoral path in Saint-Jean Cap-Ferrat2.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Littoral_path_in_Saint-Jean_Cap-Ferrat2.jpg",
+          "license_url": null
+        }
+      ]
+    },
+    {
+      "id": "714dea4d-80c8-45e3-9b51-656691ed3839",
+      "slug": "le-galet",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/le-galet/4afb5615-2457-41e5-b517-edee86fea99f.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/le-galet/26a46181-e54c-4b6c-a001-20cbc91b79c2.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/le-galet/a7f00982-e8a1-4b08-ae92-11c1128a94eb.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/le-galet/2d6bfcab-6f43-4aae-8851-80224709afde.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/le-galet/f374476b-5c33-46c4-8384-9dad23ac4463.jpg"
+      ],
+      "image_credits": [
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/le-galet/auto-wikimedia-ae98224e12e6.jpg",
+          "author": "Dorian06200",
+          "license": "CC BY-SA 3.0",
+          "provider": "wikimedia",
+          "source_id": "File:Les galets de la plage de Nice.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Les_galets_de_la_plage_de_Nice.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/le-galet/auto-wikimedia-6c540b8b22e6.jpg",
+          "author": "Jean-Pierre Dalbéra from Paris, France",
+          "license": "CC BY 2.0",
+          "provider": "wikimedia",
+          "source_id": "File:Le jardin de la villa Arson (Nice) (5954763458).jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Le_jardin_de_la_villa_Arson_(Nice)_(5954763458).jpg",
+          "license_url": "https://creativecommons.org/licenses/by/2.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/le-galet/auto-wikimedia-ac0ea3db3aba.jpg",
+          "author": "Jean-Pierre Dalbéra from Paris, France",
+          "license": "CC BY 2.0",
+          "provider": "wikimedia",
+          "source_id": "File:Le jardin de la villa Arson (Nice) (5954761246).jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Le_jardin_de_la_villa_Arson_(Nice)_(5954761246).jpg",
+          "license_url": "https://creativecommons.org/licenses/by/2.0"
+        }
+      ]
+    },
+    {
+      "id": "d6643b5a-7bec-47c4-82b3-4cbd64d9c863",
+      "slug": "plage-petite-afrique",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-petite-afrique/a16d5178-6719-4e9f-9555-5423ec59ecab.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-petite-afrique/4da474d6-dbad-4f42-ba58-3e09cc0ed979.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-petite-afrique/df34e70d-e797-48d8-ab61-e0878b85cf0d.jpeg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-petite-afrique/63a371f3-7268-4304-b89f-180a867955f5.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-petite-afrique/71af2172-4a77-4606-bbfb-84182663818b.jpg"
+      ],
+      "image_credits": [
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-petite-afrique/auto-wikimedia-ae98224e12e6.jpg",
+          "author": "Dorian06200",
+          "license": "CC BY-SA 3.0",
+          "provider": "wikimedia",
+          "source_id": "File:Les galets de la plage de Nice.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Les_galets_de_la_plage_de_Nice.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-petite-afrique/auto-wikimedia-9a9b5dbf8276.jpg",
+          "author": "Uhooep",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Promenade des Anglais (Nice), plage.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Promenade_des_Anglais_(Nice),_plage.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-petite-afrique/auto-wikimedia-9bfaa039ef60.jpg",
+          "author": "Zairon",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Nice Promenade des Anglais Plage 4.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Nice_Promenade_des_Anglais_Plage_4.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        }
+      ]
+    },
+    {
+      "id": "5ac2fbe5-8bc1-4b08-9b1c-e1a2d63b47a8",
+      "slug": "baou-de-saint-jeannet",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/baou-de-saint-jeannet/208d19d0-e0d0-42d0-9933-91e35110c99f.jpeg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/baou-de-saint-jeannet/e94c9aa2-cc15-4995-b86b-ee68f4d5f8e9.jpeg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/baou-de-saint-jeannet/auto-wikimedia-c1c8880f1395.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/baou-de-saint-jeannet/a146d486-a8f2-4375-8cde-4c6502bc796c.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/baou-de-saint-jeannet/40addc3f-d4cc-4df8-b65e-a2b43f7ce02a.jpeg"
+      ],
+      "image_credits": [
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/baou-de-saint-jeannet/auto-wikimedia-f7bb40b35fbd.jpg",
+          "author": "Olivier Cleynen",
+          "license": "CC BY 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Saint-Jeannet 02.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Saint-Jeannet_02.jpg",
+          "license_url": "https://creativecommons.org/licenses/by/4.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/baou-de-saint-jeannet/auto-wikimedia-3e2bac8960cb.jpg",
+          "author": "Olivier Cleynen",
+          "license": "CC BY 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Saint-Jeannet 01.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Saint-Jeannet_01.jpg",
+          "license_url": "https://creativecommons.org/licenses/by/4.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/baou-de-saint-jeannet/auto-wikimedia-d394d9a9b77b.jpg",
+          "author": "fr.zil",
+          "license": "CC BY-SA 2.0",
+          "provider": "wikimedia",
+          "source_id": "File:Baou des noirs, baou de Saint-Jeannet et baou de La Gaude.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Baou_des_noirs,_baou_de_Saint-Jeannet_et_baou_de_La_Gaude.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/baou-de-saint-jeannet/auto-wikimedia-c1c8880f1395.jpg",
+          "author": "Baptiste Rossi",
+          "license": "Public domain",
+          "provider": "wikimedia",
+          "source_id": "File:Baou-Saint-Jeannet.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Baou-Saint-Jeannet.jpg",
+          "license_url": null
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/baou-de-saint-jeannet/auto-wikimedia-b82f999b986d.jpg",
+          "author": "Pierre-Auguste Renoir",
+          "license": "Public domain",
+          "provider": "wikimedia",
+          "source_id": "File:Vallée de la Cagne et la baou de Saint-Jeannet - Pierre-Auguste Renoir - Musée Renoir de Cagnes-sur-Mer-9811 (without frame).jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Vall%C3%A9e_de_la_Cagne_et_la_baou_de_Saint-Jeannet_-_Pierre-Auguste_Renoir_-_Mus%C3%A9e_Renoir_de_Cagnes-sur-Mer-9811_(without_frame).jpg",
+          "license_url": null
+        }
+      ]
+    },
+    {
+      "id": "ede7d20d-2a5f-48c1-9eaa-9f8808b5fc07",
+      "slug": "lou-pantail",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/lou-pantail/07269d19-27af-41e6-bd27-ae83c0da37ef.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/lou-pantail/58e8bf1d-1206-4d6e-b78c-35656c8ff34b.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/lou-pantail/8d544a4d-27e2-4189-82a3-03dd52b2c03f.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/lou-pantail/7ab5a473-4dd4-41ab-bd03-6c5ade4c5e71.jpg"
+      ],
+      "image_credits": [
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/lou-pantail/auto-wikimedia-9e9c2999dc74.jpg",
+          "author": "Myrabella",
+          "license": "CC BY-SA 3.0",
+          "provider": "wikimedia",
+          "source_id": "File:Socca a Nice.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Socca_a_Nice.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/lou-pantail/auto-wikimedia-b25c6465f57a.jpg",
+          "author": "Renbo",
+          "license": "CC BY-SA 3.0",
+          "provider": "wikimedia",
+          "source_id": "File:Socca nice.JPG",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Socca_nice.JPG",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/lou-pantail/auto-wikimedia-3488627a47b2.jpg",
+          "author": "Schellack at English Wikipedia",
+          "license": "CC BY 3.0",
+          "provider": "wikimedia",
+          "source_id": "File:Socca slices Nice.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Socca_slices_Nice.jpg",
+          "license_url": "https://creativecommons.org/licenses/by/3.0"
+        }
+      ]
+    },
+    {
+      "id": "b829bab9-085e-481e-a495-ba0acd5a812b",
+      "slug": "made-in-sud",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/made-in-sud/4ce3712d-db9f-4b09-9a35-9bff66e6ff09.png",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/made-in-sud/8f286599-9ae3-4db5-8633-4a645b5ba93f.jpg"
+      ],
+      "image_credits": [
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/made-in-sud/auto-wikimedia-f51328cfac0d.jpg",
+          "author": "GFreihalter",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Nice (06) Gare du Sud 693.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Nice_(06)_Gare_du_Sud_693.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/made-in-sud/auto-wikimedia-b498bc2353ea.jpg",
+          "author": "GFreihalter",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Nice (06) Gare du Sud 696.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Nice_(06)_Gare_du_Sud_696.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/made-in-sud/auto-wikimedia-5f56631b82ba.jpg",
+          "author": "GFreihalter",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Nice (06) Gare du Sud 695.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Nice_(06)_Gare_du_Sud_695.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/made-in-sud/auto-wikimedia-db4b1d4d44dd.jpg",
+          "author": "GFreihalter",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Nice (06) Gare du Sud 692.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Nice_(06)_Gare_du_Sud_692.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/made-in-sud/auto-wikimedia-1ff991929f8b.jpg",
+          "author": "GFreihalter",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Nice (06) Gare du Sud 694.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Nice_(06)_Gare_du_Sud_694.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        }
+      ]
+    },
+    {
+      "id": "309fc411-4ec1-46a8-b781-0f3d936f5415",
+      "slug": "auberge-aire-saint-michel",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/auberge-aire-saint-michel/c599345a-3a39-4d58-864e-c3d85181fe89.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/auberge-aire-saint-michel/c8d00146-188f-4175-92b8-04493de6ef1e.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/auberge-aire-saint-michel/705f3c2b-60dd-46e6-90f6-9440b4482a77.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/auberge-aire-saint-michel/3eadaa10-19d7-44be-b190-dba4e3f10044.jpg"
+      ],
+      "image_credits": [
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/auberge-aire-saint-michel/auto-wikimedia-9e9c2999dc74.jpg",
+          "author": "Myrabella",
+          "license": "CC BY-SA 3.0",
+          "provider": "wikimedia",
+          "source_id": "File:Socca a Nice.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Socca_a_Nice.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/auberge-aire-saint-michel/auto-wikimedia-b25c6465f57a.jpg",
+          "author": "Renbo",
+          "license": "CC BY-SA 3.0",
+          "provider": "wikimedia",
+          "source_id": "File:Socca nice.JPG",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Socca_nice.JPG",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/auberge-aire-saint-michel/auto-wikimedia-3488627a47b2.jpg",
+          "author": "Schellack at English Wikipedia",
+          "license": "CC BY 3.0",
+          "provider": "wikimedia",
+          "source_id": "File:Socca slices Nice.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Socca_slices_Nice.jpg",
+          "license_url": "https://creativecommons.org/licenses/by/3.0"
+        }
+      ]
+    },
+    {
+      "id": "14fa365c-f002-4f6d-b475-a2ce29f9b42e",
+      "slug": "chez-michel-castagniers",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/chez-michel-castagniers/1bff8d68-cad2-4a6a-a1a4-b9a1a84aaa64.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/chez-michel-castagniers/67bdb785-3b4d-422b-afb2-7e749f9097ce.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/chez-michel-castagniers/1c150050-1696-4b63-b4eb-14949d220fa5.png",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/chez-michel-castagniers/14d1a3a8-33d7-4182-a2d4-1465298d1eb3.jpg"
+      ],
+      "image_credits": [
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/chez-michel-castagniers/auto-wikimedia-9e9c2999dc74.jpg",
+          "author": "Myrabella",
+          "license": "CC BY-SA 3.0",
+          "provider": "wikimedia",
+          "source_id": "File:Socca a Nice.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Socca_a_Nice.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/chez-michel-castagniers/auto-wikimedia-b25c6465f57a.jpg",
+          "author": "Renbo",
+          "license": "CC BY-SA 3.0",
+          "provider": "wikimedia",
+          "source_id": "File:Socca nice.JPG",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Socca_nice.JPG",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/chez-michel-castagniers/auto-wikimedia-3488627a47b2.jpg",
+          "author": "Schellack at English Wikipedia",
+          "license": "CC BY 3.0",
+          "provider": "wikimedia",
+          "source_id": "File:Socca slices Nice.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Socca_slices_Nice.jpg",
+          "license_url": "https://creativecommons.org/licenses/by/3.0"
+        }
+      ]
+    },
+    {
+      "id": "c9a40c35-090d-442b-aed3-0b3006586ae1",
+      "slug": "vallee-des-merveilles",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/vallee-des-merveilles/auto-wikimedia-ba624db84b61.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/vallee-des-merveilles/auto-wikimedia-3e60ccbb93a7.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/vallee-des-merveilles/auto-wikimedia-894282f01559.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/vallee-des-merveilles/auto-wikimedia-f373cbb4477d.jpg"
+      ],
+      "image_credits": [
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/vallee-des-merveilles/auto-wikimedia-ba624db84b61.jpg",
+          "author": "Muztiko",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Refuge des Merveilles sept 2016.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Refuge_des_Merveilles_sept_2016.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/vallee-des-merveilles/auto-wikimedia-3e60ccbb93a7.jpg",
+          "author": "rene boulay",
+          "license": "CC BY-SA 3.0",
+          "provider": "wikimedia",
+          "source_id": "File:Alpes-Maritimes Vallee Des Merveilles Le Pas De L'Arpette - panoramio.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Alpes-Maritimes_Vallee_Des_Merveilles_Le_Pas_De_L%27Arpette_-_panoramio.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/vallee-des-merveilles/auto-wikimedia-894282f01559.jpg",
+          "author": "rene boulay",
+          "license": "CC BY-SA 3.0",
+          "provider": "wikimedia",
+          "source_id": "File:La Roya Casterino Fontanalba Vallee Merveilles Lac Intermediaire - panoramio.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:La_Roya_Casterino_Fontanalba_Vallee_Merveilles_Lac_Intermediaire_-_panoramio.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/vallee-des-merveilles/auto-wikimedia-f373cbb4477d.jpg",
+          "author": "Patafisik",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Lac des Merveilles abc20.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Lac_des_Merveilles_abc20.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        }
+      ]
+    },
+    {
+      "id": "21e470ad-0eb3-467a-bced-3fe5c717b84d",
+      "slug": "baie-des-milliardaires",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/baie-des-milliardaires/7e67d8de-b8dc-4c03-8171-f8630e14b621.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/baie-des-milliardaires/7f347bfc-1199-4f1a-bc7a-84cc4c2d8580.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/baie-des-milliardaires/e13dca4d-b008-4d57-a974-fa6dd6f7dce4.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/baie-des-milliardaires/8c229029-7ce6-4fa0-9fd8-c7667a96956a.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/baie-des-milliardaires/79d5b00a-884f-4b8e-9466-db59a4a98632.webp"
+      ],
+      "image_credits": [
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/baie-des-milliardaires/auto-wikimedia-538f53c7464a.jpg",
+          "author": "Spike",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Antibes Baie des Milliardaires 01.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Antibes_Baie_des_Milliardaires_01.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/baie-des-milliardaires/auto-wikimedia-b103e0f28864.jpg",
+          "author": "Abxbay",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Baie des Milliardaires Cap d Antibes 03.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Baie_des_Milliardaires_Cap_d_Antibes_03.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/baie-des-milliardaires/auto-wikimedia-4880271c3f33.jpg",
+          "author": "Abxbay",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Baie des Milliardaires Cap d Antibes 02.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Baie_des_Milliardaires_Cap_d_Antibes_02.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/baie-des-milliardaires/auto-wikimedia-4b0bf8e3f5dd.jpg",
+          "author": "Abxbay",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Baie des Milliardaires Cap d Antibes 01.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Baie_des_Milliardaires_Cap_d_Antibes_01.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        }
+      ]
+    },
+    {
+      "id": "2fdc8d1a-77cc-4612-b30b-b24ed92795db",
+      "slug": "iles-de-lerins",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/iles-de-lerins/a4f1d862-e60e-4a8a-ad9a-bf0c34f325c1.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/iles-de-lerins/d7d16b1e-853c-4e9c-9c87-79b4d1a0a357.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/iles-de-lerins/75d05f15-9dc8-47d5-87e3-6a1ab69366af.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/iles-de-lerins/8b733eff-c806-4a20-b15c-a78db2389157.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/iles-de-lerins/b3803966-088e-4e66-b68e-2cb1ef92d23a.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/iles-de-lerins/34c8454c-ba49-4985-9350-611ce1f5a5f0.webp"
+      ],
+      "image_credits": [
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/iles-de-lerins/auto-wikimedia-5b683256be67.jpg",
+          "author": "Photochrom Print Collection",
+          "license": "Public domain",
+          "provider": "wikimedia",
+          "source_id": "File:Les Isles de Lerins, Cannes, Riviera-LCCN2001699288.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Les_Isles_de_Lerins,_Cannes,_Riviera-LCCN2001699288.jpg",
+          "license_url": null
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/iles-de-lerins/auto-wikimedia-60cca93732cf.jpg",
+          "author": "Tangopaso",
+          "license": "Public domain",
+          "provider": "wikimedia",
+          "source_id": "File:Hotel Majestic (Cannes).jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Hotel_Majestic_(Cannes).jpg",
+          "license_url": null
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/iles-de-lerins/auto-wikimedia-548b44e4ef93.jpg",
+          "author": "Tangopaso",
+          "license": "Public domain",
+          "provider": "wikimedia",
+          "source_id": "File:Shuttle ship between Cannes and Lerins islands.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Shuttle_ship_between_Cannes_and_Lerins_islands.jpg",
+          "license_url": null
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/iles-de-lerins/auto-wikimedia-ebeb86387bfe.jpg",
+          "author": "MOSSOT",
+          "license": "CC BY-SA 3.0",
+          "provider": "wikimedia",
+          "source_id": "File:Cannes - Plage du Midi, la rade et les îles de Lérins.JPG",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Cannes_-_Plage_du_Midi,_la_rade_et_les_%C3%AEles_de_L%C3%A9rins.JPG",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/iles-de-lerins/auto-wikimedia-adc39f666f4e.jpg",
+          "author": "Luna N.",
+          "license": "CC BY 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Mobeye-ÉtéDesVilles-Cannes-51.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Mobeye-%C3%89t%C3%A9DesVilles-Cannes-51.jpg",
+          "license_url": "https://creativecommons.org/licenses/by/4.0"
+        }
+      ]
+    },
+    {
+      "id": "2001e15d-04e5-40b8-96ff-addcc23cfef7",
+      "slug": "lac-de-trecolpas",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/lac-de-trecolpas/d1a460bc-06af-4000-953b-d650d1b8e33b.webp",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/lac-de-trecolpas/ca835a53-3587-4aa0-b356-110e24e042aa.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/lac-de-trecolpas/04c0faf2-0dd4-4aec-a602-ef10a4b3e941.jpg"
+      ],
+      "image_credits": [
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/lac-de-trecolpas/auto-wikimedia-65b6e89989d5.jpg",
+          "author": "Horizon06",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:20211209 122308 Le sentier du littoral à Saint-Jean-Cap-Ferrat.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:20211209_122308_Le_sentier_du_littoral_%C3%A0_Saint-Jean-Cap-Ferrat.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/lac-de-trecolpas/auto-wikimedia-e2721294746e.jpg",
+          "author": "Tangopaso",
+          "license": "Public domain",
+          "provider": "wikimedia",
+          "source_id": "File:Littoral path in Saint-Jean Cap-Ferrat.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Littoral_path_in_Saint-Jean_Cap-Ferrat.jpg",
+          "license_url": null
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/lac-de-trecolpas/auto-wikimedia-1ed19e188490.jpg",
+          "author": "Tangopaso",
+          "license": "Public domain",
+          "provider": "wikimedia",
+          "source_id": "File:Littoral path in Saint-Jean Cap-Ferrat2.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Littoral_path_in_Saint-Jean_Cap-Ferrat2.jpg",
+          "license_url": null
+        }
+      ]
+    },
+    {
+      "id": "483500f8-96ae-42d1-b4d1-bb037b071de2",
+      "slug": "plage-de-l-aiguille",
+      "images": [
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-l-aiguille/f5a26bac-8779-4ea8-bd35-605805f6a98d.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-l-aiguille/c884df85-1e52-4ce6-9b27-5746b882b1c9.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-l-aiguille/e0b3bac6-d836-4431-ae3b-20a861e4fe1a.jpg",
+        "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-l-aiguille/10985431-b872-449a-b388-bee1edd9b17d.jpg"
+      ],
+      "image_credits": [
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-l-aiguille/auto-wikimedia-9a90a482f7b3.jpg",
+          "author": "Moreau.henri",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:558 Théoule.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:558_Th%C3%A9oule.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-l-aiguille/auto-wikimedia-ae98224e12e6.jpg",
+          "author": "Dorian06200",
+          "license": "CC BY-SA 3.0",
+          "provider": "wikimedia",
+          "source_id": "File:Les galets de la plage de Nice.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Les_galets_de_la_plage_de_Nice.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+        },
+        {
+          "url": "https://zheeymhpyaefnefqyakb.supabase.co/storage/v1/object/public/places-images/plage-de-l-aiguille/auto-wikimedia-9a9b5dbf8276.jpg",
+          "author": "Uhooep",
+          "license": "CC BY-SA 4.0",
+          "provider": "wikimedia",
+          "source_id": "File:Promenade des Anglais (Nice), plage.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Promenade_des_Anglais_(Nice),_plage.jpg",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+        }
+      ]
+    }
+  ]
+}

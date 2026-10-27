@@ -11,13 +11,17 @@
  *  - orientation corrigée, métadonnées EXIF supprimées (dont la position GPS du téléphone) ;
  *  - 2000 px maximum sur le grand côté (jamais agrandie ici), WebP qualité 76 (65 si la source était plus légère) ;
  *  - nom lisible et stable : `<slug>/<slug>-01-<empreinte>.webp` (l'empreinte du contenu évite les caches périmés) ;
- * puis la fiche est mise à jour (ordre conservé, crédits Wikimedia remappés, crédits orphelins retirés)
- * et les anciens fichiers du dossier du lieu sont supprimés. Déjà optimisée = ignorée (relance sans effet).
+ * puis la fiche est mise à jour (ordre conservé, crédits Wikimedia remappés, crédits orphelins retirés).
+ *
+ * Rien n'est supprimé : avant toute écriture, l'état des fiches est sauvegardé dans
+ * supabase/photo-snapshots/photos-<horodatage>.json (à commiter), et les anciens fichiers sont DÉPLACÉS dans
+ * _archive/<horodatage>/. Retour arrière complet : npx tsx scripts/restore-photos.ts --stamp=<horodatage>.
+ * Déjà optimisée = ignorée (relance sans effet).
  *
  * Requiert SUPABASE_SERVICE_ROLE_KEY dans .env.local (jamais commitée, jamais sur Vercel).
  */
 import { createHash } from "node:crypto";
-import { existsSync, readdirSync, readFileSync } from "node:fs";
+import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { createClient } from "@supabase/supabase-js";
 import sharp from "sharp";
@@ -41,6 +45,10 @@ const MAX_SIDE = 2000;
 const QUALITY = 76;
 /** Source déjà très compressée : on baisse la qualité plutôt que d'alourdir le fichier. */
 const QUALITY_FALLBACK = 65;
+/** Horodatage de cette exécution : nom du dossier d'archive et de la sauvegarde. */
+const STAMP = new Date().toISOString().slice(0, 19).replace(/[:T]/g, "-");
+const ARCHIVE = "_archive";
+const SNAPSHOTS = "supabase/photo-snapshots";
 const OPTIMIZED = /\/([a-z0-9-]+)-\d{2}-[0-9a-f]{8}\.webp$/;
 
 const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -110,13 +118,13 @@ async function processPlace(place: Place) {
     .eq("id", place.id);
   if (error) throw new Error(`mise à jour de la fiche : ${error.message}`);
 
-  // Ménage : tout ce qui reste dans le dossier du lieu et n'est plus référencé.
+  // Anciens fichiers du dossier : déplacés dans l'archive (jamais supprimés), pour un retour arrière possible.
   const { data: files } = await supabase.storage.from(BUCKET).list(place.slug, { limit: 1000 });
   const keep = new Set(next.map((n) => n.path));
-  const stale = (files ?? []).map((f) => `${place.slug}/${f.name}`).filter((p) => !keep.has(p));
-  if (stale.length) {
-    const { error: rmError } = await supabase.storage.from(BUCKET).remove(stale);
-    if (rmError) console.warn(`   ⚠ anciens fichiers non supprimés : ${rmError.message}`);
+  const stale = (files ?? []).filter((f) => f.id).map((f) => `${place.slug}/${f.name}`).filter((p) => !keep.has(p));
+  for (const p of stale) {
+    const { error: mvError } = await supabase.storage.from(BUCKET).move(p, `${ARCHIVE}/${STAMP}/${p}`);
+    if (mvError) console.warn(`   ⚠ ${p} non archivé (laissé en place) : ${mvError.message}`);
   }
   return { skipped: false, before, after };
 }
@@ -129,6 +137,15 @@ async function main() {
   if (error) throw new Error(error.message);
 
   console.log(`${apply ? "Optimisation" : "Simulation (ajoutez --apply pour exécuter)"} · ${data.length} lieu(x)\n`);
+  if (apply) {
+    // Sauvegarde AVANT toute écriture, versionnée dans git (uniquement des URL publiques, rien de sensible).
+    // Le bucket n'accepte que des images : l'état des fiches ne peut pas y être stocké.
+    mkdirSync(SNAPSHOTS, { recursive: true });
+    writeFileSync(`${SNAPSHOTS}/photos-${STAMP}.json`, JSON.stringify({ stamp: STAMP, bucket: BUCKET, places: data }, null, 2));
+    console.log(`Sauvegarde : ${SNAPSHOTS}/photos-${STAMP}.json`);
+    console.log(`Retour arrière : npx tsx scripts/restore-photos.ts --stamp=${STAMP}\n`);
+  }
+
   let before = 0;
   let after = 0;
   for (const place of data as Place[]) {

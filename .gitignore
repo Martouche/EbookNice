@@ -13,3 +13,6 @@ public/maplibre
 
 # Journaux des tests navigateur
 .playwright-mcp/
+
+# Sauvegardes locales des photos (scripts/optimize-photos.ts)
+backups/
