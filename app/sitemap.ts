@@ -10,20 +10,22 @@ export const revalidate = 3600;
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [places, chapters] = await Promise.all([getPlaces(undefined, { raw: true }), getChapters({ raw: true })]);
 
-  const entry = (path: string, priority: number, lastModified?: string) => {
+  // `images` : sitemap image de Google, pour que les photos des lieux apparaissent dans Google Images.
+  const entry = (path: string, priority: number, lastModified?: string, images?: string[]) => {
     const languages = { fr: SITE_URL + localizePath(path, "fr"), en: SITE_URL + localizePath(path, "en") };
     return (["fr", "en"] as const).map((locale) => ({
       url: languages[locale],
       lastModified: lastModified ? new Date(lastModified) : undefined,
       priority,
       alternates: { languages },
+      ...(images?.length ? { images } : {}),
     }));
   };
 
   return [
     ...entry("/", 1),
     ...entry("/explorer", 0.9),
-    ...places.flatMap((p) => entry(`/lieux/${p.slug}`, p.is_featured ? 0.8 : 0.7, p.created_at)),
+    ...places.flatMap((p) => entry(`/lieux/${p.slug}`, p.is_featured ? 0.8 : 0.7, p.created_at, p.images)),
     ...chapters.flatMap((c) => entry(`/chapitres/${c.slug}`, 0.5)),
     ...entry("/confidentialite", 0.1),
   ];
